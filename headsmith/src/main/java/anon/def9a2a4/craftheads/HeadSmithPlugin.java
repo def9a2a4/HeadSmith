@@ -1,4 +1,4 @@
-package anon.def9a2a4.craftheads;
+package anon.def9a2a4.headsmith;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -47,9 +47,9 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import static anon.def9a2a4.craftheads.HeadUtils.*;
+import static anon.def9a2a4.headsmith.HeadUtils.*;
 
-public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabCompleter {
+public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCompleter {
 
     private final Map<String, HeadDef> headsById = new LinkedHashMap<>();
     private final Map<String, String> headIdByTextureId = new HashMap<>();
@@ -65,7 +65,7 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
 
     @Override
     public void onEnable() {
-        int pluginId = 28526;
+        int pluginId = 28528;
         Metrics metrics = new Metrics(this, pluginId);
 
         pdcHeadIdKey = new NamespacedKey(this, "head_id");
@@ -81,7 +81,7 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(propertiesListener, this);
         propertiesListener.startParticleTask();
-        getLogger().info("CraftHeads enabled: loaded " + headsById.size() + " heads");
+        getLogger().info("HeadSmith enabled: loaded " + headsById.size() + " heads");
     }
 
     @Override
@@ -97,10 +97,10 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (!command.getName().equalsIgnoreCase("craftheads")) return false;
+        if (!command.getName().equalsIgnoreCase("headsmith")) return false;
 
         if (args.length == 0) {
-            sender.sendMessage(ChatColor.RED + "Usage: /craftheads [show|search <query>|reload|give <id> [player] [amount]]");
+            sender.sendMessage(ChatColor.RED + "Usage: /headsmith [show|search <query>|reload|give <id> [player] [amount]]");
             return true;
         }
 
@@ -116,13 +116,13 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
         }
 
         if (subCmd.equals("reload")) {
-            if (!sender.hasPermission("craftheads.admin")) {
+            if (!sender.hasPermission("headsmith.admin")) {
                 sender.sendMessage(ChatColor.RED + "You don't have permission to do that.");
                 return true;
             }
             reloadHeads();
             menus = new HeadMenus(headsById, headStonecutterRecipes, firstHeadByTag, tagChildren, pdcHeadIdKey, this::makeHeadItem);
-            sender.sendMessage(ChatColor.GREEN + "CraftHeads reloaded: " + headsById.size() + " heads.");
+            sender.sendMessage(ChatColor.GREEN + "HeadSmith reloaded: " + headsById.size() + " heads.");
             return true;
         }
 
@@ -132,7 +132,7 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
                 return true;
             }
             if (args.length < 2) {
-                player.sendMessage(ChatColor.RED + "Usage: /craftheads search <query>");
+                player.sendMessage(ChatColor.RED + "Usage: /headsmith search <query>");
                 return true;
             }
             String query = String.join(" ", Arrays.copyOfRange(args, 1, args.length));
@@ -141,12 +141,12 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
         }
 
         if (subCmd.equals("give")) {
-            if (!sender.hasPermission("craftheads.admin")) {
+            if (!sender.hasPermission("headsmith.admin")) {
                 sender.sendMessage(ChatColor.RED + "You don't have permission to do that.");
                 return true;
             }
             if (args.length < 2) {
-                sender.sendMessage(ChatColor.RED + "Usage: /craftheads give <head_id> [player] [amount]");
+                sender.sendMessage(ChatColor.RED + "Usage: /headsmith give <head_id> [player] [amount]");
                 return true;
             }
 
@@ -205,20 +205,20 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
             return true;
         }
 
-        sender.sendMessage(ChatColor.RED + "Usage: /craftheads [show|search <query>|reload|give <id> [player] [amount]]");
+        sender.sendMessage(ChatColor.RED + "Usage: /headsmith [show|search <query>|reload|give <id> [player] [amount]]");
         return true;
     }
 
     @Override
     public List<String> onTabComplete(CommandSender sender, Command command, String alias, String[] args) {
-        if (!command.getName().equalsIgnoreCase("craftheads")) return List.of();
+        if (!command.getName().equalsIgnoreCase("headsmith")) return List.of();
 
         if (args.length == 1) {
             String partial = args[0].toLowerCase();
             List<String> options = new ArrayList<>();
             options.add("show");
             options.add("search");
-            if (sender.hasPermission("craftheads.admin")) {
+            if (sender.hasPermission("headsmith.admin")) {
                 options.add("reload");
                 options.add("give");
             }
@@ -510,7 +510,7 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
 
     @EventHandler(priority = EventPriority.HIGH)
     public void onInventoryClick(InventoryClickEvent event) {
-        if (!(event.getInventory().getHolder() instanceof CraftHeadsMenuHolder holder)) return;
+        if (!(event.getInventory().getHolder() instanceof HeadSmithMenuHolder holder)) return;
 
         event.setCancelled(true);
         if (!(event.getWhoClicked() instanceof Player player)) return;

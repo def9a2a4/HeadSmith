@@ -1,4 +1,4 @@
-package anon.def9a2a4.craftheads;
+package anon.def9a2a4.headsmith;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -35,7 +35,7 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.function.Function;
 
-import static anon.def9a2a4.craftheads.HeadUtils.textureIdFromSkullBlock;
+import static anon.def9a2a4.headsmith.HeadUtils.textureIdFromSkullBlock;
 
 enum HeadProperty {
     LIGHTABLE,      // Can be lit/unlit by player (candles)
@@ -218,7 +218,7 @@ class HeadPropertiesListener implements Listener {
         if (meta == null) return;
 
         PersistentDataContainer pdc = meta.getPersistentDataContainer();
-        // Get head_id from the item's PDC using the same key pattern as CraftHeadsPlugin
+        // Get head_id from the item's PDC using the same key pattern as HeadSmithPlugin
         NamespacedKey headIdKey = new NamespacedKey(plugin, "head_id");
         String headId = pdc.get(headIdKey, PersistentDataType.STRING);
         if (headId == null) return;

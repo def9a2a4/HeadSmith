@@ -1,4 +1,4 @@
-package anon.def9a2a4.craftheads;
+package anon.def9a2a4.headsmith;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -19,15 +19,15 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.BiFunction;
 
-import static anon.def9a2a4.craftheads.HeadUtils.color;
-import static anon.def9a2a4.craftheads.HeadUtils.giveToInventoryOrDrop;
-import static anon.def9a2a4.craftheads.HeadUtils.getPdcString;
+import static anon.def9a2a4.headsmith.HeadUtils.color;
+import static anon.def9a2a4.headsmith.HeadUtils.giveToInventoryOrDrop;
+import static anon.def9a2a4.headsmith.HeadUtils.getPdcString;
 
 enum MenuType {
     CATALOG, SEARCH_RESULTS, HEAD_DETAIL, STONECUTTER_SELECT, TAG_LIST
 }
 
-abstract class CraftHeadsMenuHolder implements InventoryHolder {
+abstract class HeadSmithMenuHolder implements InventoryHolder {
     protected Inventory inventory;
 
     @Override
@@ -36,7 +36,7 @@ abstract class CraftHeadsMenuHolder implements InventoryHolder {
     abstract MenuType getMenuType();
 }
 
-final class CatalogMenuHolder extends CraftHeadsMenuHolder {
+final class CatalogMenuHolder extends HeadSmithMenuHolder {
     private final int page;
     private final String searchQuery;
     private final String tagFilter;
@@ -63,7 +63,7 @@ final class CatalogMenuHolder extends CraftHeadsMenuHolder {
     }
 }
 
-final class HeadDetailMenuHolder extends CraftHeadsMenuHolder {
+final class HeadDetailMenuHolder extends HeadSmithMenuHolder {
     private final HeadDef headDef;
     private final List<String> navigationStack; // head IDs visited before this one
     private final int catalogReturnPage;
@@ -89,7 +89,7 @@ final class HeadDetailMenuHolder extends CraftHeadsMenuHolder {
     MenuType getMenuType() { return MenuType.HEAD_DETAIL; }
 }
 
-final class StonecutterSelectMenuHolder extends CraftHeadsMenuHolder {
+final class StonecutterSelectMenuHolder extends HeadSmithMenuHolder {
     private final String inputHeadId;
     private final List<HeadStonecutterRecipe> availableRecipes;
     private final int page;
@@ -108,7 +108,7 @@ final class StonecutterSelectMenuHolder extends CraftHeadsMenuHolder {
     MenuType getMenuType() { return MenuType.STONECUTTER_SELECT; }
 }
 
-final class TagListMenuHolder extends CraftHeadsMenuHolder {
+final class TagListMenuHolder extends HeadSmithMenuHolder {
     private final int page;
     private final String parentTag;  // null for root, "alphabet" when viewing subtags
     private final List<String> displayedTags;
@@ -474,7 +474,7 @@ final class HeadMenus {
                 }
             }
             case 8 -> {
-                if (player.hasPermission("craftheads.admin")) {
+                if (player.hasPermission("headsmith.admin")) {
                     ItemStack head = headItemMaker.apply(holder.getHeadDef().id(), 1);
                     giveToInventoryOrDrop(player, head);
                     player.sendMessage(ChatColor.GREEN + "Gave you 1x " +

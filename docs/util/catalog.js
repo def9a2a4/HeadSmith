@@ -663,7 +663,7 @@ async function loadHeadFiles() {
   updateProgress(0, 0);
 
   // Load config.yml to get list of head files
-  const configResponse = await fetch('../craftheads/src/main/resources/config.yml');
+  const configResponse = await fetch('../headsmith/src/main/resources/config.yml');
   if (!configResponse.ok) throw new Error(`Failed to load config.yml: ${configResponse.status}`);
   const configYaml = await configResponse.text();
   const config = jsyaml.load(configYaml);
@@ -675,7 +675,7 @@ async function loadHeadFiles() {
   let parsedCount = 0;
 
   for (const file of headFiles) {
-    const response = await fetch(`../craftheads/src/main/resources/${file}`);
+    const response = await fetch(`../headsmith/src/main/resources/${file}`);
     if (!response.ok) {
       console.warn(`Failed to load ${file}: ${response.status}`);
       continue;
@@ -790,7 +790,7 @@ async function init() {
       //   const file = e.target.dataset.file;
       //   const line = e.target.dataset.line;
       //   // Base path to the resources directory (adjust if your workspace differs)
-      //   const basePath = '~/craftheads/src/main/resources';
+      //   const basePath = '~/headsmith/src/main/resources';
       //   // file already contains 'heads/' prefix from config.yml
       //   const fullPath = `${basePath}/${file}`;
       //   // Open in VS Code

@@ -1,4 +1,4 @@
-# CraftHeads Configuration
+# HeadSmith Configuration
 
 # List of head definition files to load (relative to plugin data folder)
 # Each file should contain a 'heads:' section with head definitions

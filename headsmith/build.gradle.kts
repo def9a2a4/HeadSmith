@@ -36,20 +36,19 @@ tasks {
     }
 
     jar {
-        archiveBaseName.set("CraftHeads")
+        archiveBaseName.set("HeadSmith")
         manifest {
             attributes["paperweight-mappings-namespace"] = "mojang"
         }
     }
 
-    named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
-        archiveBaseName.set("CraftHeads")
+    shadowJar {
+        archiveBaseName.set("HeadSmith")
         archiveClassifier.set("")
         manifest {
             attributes["paperweight-mappings-namespace"] = "mojang"
         }
-        configurations = listOf(project.configurations.runtimeClasspath.get())
-        dependencies { exclude { it.moduleGroup != "org.bstats" } }
-        relocate("org.bstats", project.group.toString())
+        relocate("org.bstats", "${project.group}.bstats")
+        mergeServiceFiles()
     }
 }

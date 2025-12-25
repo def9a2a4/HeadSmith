@@ -1,12 +1,12 @@
 # https://raw.githubusercontent.com/TheLuca98/MinecraftHeads/refs/heads/master/heads.csv
-craftheads/data/*.csv
-craftheads/data/*.txt
-craftheads/data/*_GENERATED.yml
-craftheads/data/*_GENERATED/**
+headsmith/data/*.csv
+headsmith/data/*.txt
+headsmith/data/*_GENERATED.yml
+headsmith/data/*_GENERATED/**
 
-craftheads/build/**
-craftheads/bin/**
-craftheads/.gradle/**
+headsmith/build/**
+headsmith/bin/**
+headsmith/.gradle/**
 
 
 .mypy_cache/

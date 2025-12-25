@@ -1,20 +1,20 @@
-name: CraftHeads
-main: anon.def9a2a4.craftheads.CraftHeadsPlugin
+name: HeadSmith
+main: anon.def9a2a4.headsmith.HeadSmithPlugin
 version: ${version}
 api-version: 1.21
 author: You
 description: Data-driven custom head blocks with crafting, stonecutter recipes, and configurable drops.
 
 commands:
-  craftheads:
-    description: CraftHeads command - browse heads catalog, search, give, reload
-    usage: /craftheads [reload|search <query>|give <head_id> [player] [amount]]
+  headsmith:
+    description: HeadSmith command - browse heads catalog, search, give, reload
+    usage: /headsmith [reload|search <query>|give <head_id> [player] [amount]]
     aliases: [heads, ch]
 
 permissions:
-  craftheads.admin:
+  headsmith.admin:
     description: Allows reloading, giving heads, and administering the plugin
     default: op
-  craftheads.catalog:
+  headsmith.catalog:
     description: Allows opening the heads catalog
     default: true

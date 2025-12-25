@@ -1,4 +1,4 @@
-package anon.def9a2a4.craftheads;
+package anon.def9a2a4.headsmith;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -17,7 +17,7 @@ import java.util.Set;
 import java.util.function.BiFunction;
 import java.util.logging.Logger;
 
-import static anon.def9a2a4.craftheads.HeadUtils.asInt;
+import static anon.def9a2a4.headsmith.HeadUtils.asInt;
 
 record HeadDef(
     String id,
