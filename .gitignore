@@ -9,6 +9,8 @@ headsmith/bin/**
 headsmith/.gradle/**
 
 
+server/
+
 .mypy_cache/
 
 # Compiled class file
