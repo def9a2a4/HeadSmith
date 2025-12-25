@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import sys
 import csv
 import base64
 import json
@@ -16,8 +17,7 @@ def hash_to_base64(texture_hash):
     return base64.b64encode(json_str.encode()).decode()
 
 def main():
-    input_file = 'heads-database.csv'
-    output_file = 'heads-database-with-base64.csv'
+    input_file: str = sys.argv[1]
 
     with open(input_file, 'r', encoding='utf-8') as infile:
         reader = csv.reader(infile)
@@ -36,11 +36,9 @@ def main():
         else:
             row.append('')
 
-    with open(output_file, 'w', encoding='utf-8', newline='') as outfile:
-        writer = csv.writer(outfile)
-        writer.writerows(rows)
-
-    print(f"Wrote {len(rows)-1} rows to {output_file}")
+    # write to stdout
+    writer = csv.writer(sys.stdout)
+    writer.writerows(rows)
 
 if __name__ == '__main__':
     main()

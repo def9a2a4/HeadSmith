@@ -1,14 +1,21 @@
+data/heads-db.csv:
+	curl https://raw.githubusercontent.com/TheLuca98/MinecraftHeads/refs/heads/master/heads.csv -o data/heads-database.csv
+
+data/heads-db-b64.csv: data/heads-db.csv
+	uv run data/add_base64_column.py data/heads-db.csv > data/heads-db-b64.csv
+
+
 .PHONY: generate-mini-blocks
-generate-mini-blocks:
-	cd headsmith/data && uv run generate_mini_blocks.py
-	cp headsmith/data/mini_blocks_GENERATED.yml headsmith/src/main/resources/heads/mini_blocks.yml
+generate-mini-blocks: data/heads-db-b64.csv
+	cd data && uv run generate_mini_blocks.py
+	cp data/mini_blocks_GENERATED.yml headsmith/src/main/resources/heads/mini_blocks.yml
 	rm -rf headsmith/src/main/resources/heads/alphabet
 	mkdir -p headsmith/src/main/resources/heads/alphabet
-	cp headsmith/data/alphabet_GENERATED/*.yml headsmith/src/main/resources/heads/alphabet/
+	cp data/alphabet_GENERATED/*.yml headsmith/src/main/resources/heads/alphabet/
 
 .PHONY: count-heads
 count-heads:
-	uv run headsmith/data/count_heads.py
+	uv run data/count_heads.py
 
 .PHONY: build
 build: generate-mini-blocks count-heads

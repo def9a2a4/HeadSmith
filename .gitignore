@@ -1,8 +1,8 @@
 # https://raw.githubusercontent.com/TheLuca98/MinecraftHeads/refs/heads/master/heads.csv
-headsmith/data/*.csv
-headsmith/data/*.txt
-headsmith/data/*_GENERATED.yml
-headsmith/data/*_GENERATED/**
+data/*.csv
+data/*.txt
+data/*_GENERATED.yml
+data/*_GENERATED/**
 
 headsmith/build/**
 headsmith/bin/**
