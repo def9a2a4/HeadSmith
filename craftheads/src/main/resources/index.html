@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CraftHeads Catalog</title>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="./web/catalog.css">
+</head>
+<body>
+  <h1>CraftHeads Catalog</h1>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search heads...">
+    <button id="refresh-btn" title="Refresh">↻</button>
+    <button id="clear-btn" title="Clear all filters">✕</button>
+  </div>
+  <div class="filter-container">
+    <div class="filter-section" id="categories-section">
+      <span class="filter-label">Categories:</span>
+      <div id="categories-list" class="filter-pills"></div>
+    </div>
+    <div class="filter-section" id="tags-section">
+      <span class="filter-label">Tags:</span>
+      <div id="tags-list" class="filter-pills"></div>
+    </div>
+    <div class="filter-section" id="properties-section">
+      <span class="filter-label">Properties:</span>
+      <div id="properties-list" class="filter-pills"></div>
+    </div>
+  </div>
+  <div id="head-counter" class="head-counter"></div>
+  <div id="loading-container" class="loading-container">
+    <div class="loading-text">Loading heads...</div>
+    <div class="progress-bar">
+      <div class="progress-fill progress-download" id="progress-download"></div>
+      <div class="progress-fill progress-parse" id="progress-parse"></div>
+    </div>
+    <div class="progress-text" id="progress-text">0 / ? heads</div>
+  </div>
+  <div id="error"></div>
+  <div id="heads-container"></div>
+  <script type="module" src="./web/catalog.js"></script>
+</body>
+</html>

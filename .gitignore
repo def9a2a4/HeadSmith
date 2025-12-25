@@ -1,3 +1,11 @@
+# https://raw.githubusercontent.com/TheLuca98/MinecraftHeads/refs/heads/master/heads.csv
+craftheads/data/*.csv
+craftheads/data/*.txt
+craftheads/data/*_GENERATED.yml
+craftheads/data/*_GENERATED/**
+craftheads/build/**
+
+
 # Compiled class file
 *.class
 

@@ -1,0 +1,29 @@
+# CraftHeads Configuration
+
+# List of head definition files to load (relative to plugin data folder)
+# Each file should contain a 'heads:' section with head definitions
+head-files:
+  - heads/barrels.yml
+  - heads/books.yml
+  - heads/bottles.yml
+  - heads/buckets.yml
+  - heads/bundles.yml
+  - heads/candles.yml
+  - heads/chalices.yml
+  - heads/mini_blocks.yml
+  - heads/pumpkins.yml
+  # alphabet files (one per material)
+  - heads/alphabet/oak.yml
+  - heads/alphabet/birch.yml
+  - heads/alphabet/spruce.yml
+  - heads/alphabet/jungle.yml
+  - heads/alphabet/cherry_planks.yml
+  - heads/alphabet/mangrove_planks.yml
+  - heads/alphabet/cobblestone.yml
+  - heads/alphabet/diamond.yml
+  - heads/alphabet/emerald.yml
+  - heads/alphabet/gold.yml
+  - heads/alphabet/iron.yml
+  - heads/alphabet/quartz.yml
+  - heads/alphabet/ice.yml
+  - heads/alphabet/dirt.yml
