@@ -267,7 +267,7 @@ function updateHeadCounter(displayedCount) {
 async function loadTextureLists() {
   try {
     const [octagonData, itemList, blockList, langJson] = await Promise.all([
-      fetch('./web/octagon-textures.json').then(r => r.json()),
+      fetch('./util/octagon-textures.json').then(r => r.json()),
       fetch(`${MC_ASSETS_BASE}/item/_list.json`).then(r => r.json()),
       fetch(`${MC_ASSETS_BASE}/block/_list.json`).then(r => r.json()),
       fetch(MC_LANG_URL).then(r => r.json()).catch(() => ({}))
@@ -651,7 +651,7 @@ function hideLoading() {
 async function loadHeadFiles() {
   // Load head counts JSON
   try {
-    const countResponse = await fetch('./web/head-count.json');
+    const countResponse = await fetch('./util/head-count.json');
     if (countResponse.ok) {
       headCounts = await countResponse.json();
       totalHeads = headCounts.total || 5000;
