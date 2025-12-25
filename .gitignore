@@ -3,8 +3,13 @@ craftheads/data/*.csv
 craftheads/data/*.txt
 craftheads/data/*_GENERATED.yml
 craftheads/data/*_GENERATED/**
-craftheads/build/**
 
+craftheads/build/**
+craftheads/bin/**
+craftheads/.gradle/**
+
+
+.mypy_cache/
 
 # Compiled class file
 *.class

@@ -33,6 +33,7 @@ import org.bukkit.inventory.StonecuttingRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bstats.bukkit.Metrics;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -64,6 +65,9 @@ public final class CraftHeadsPlugin extends JavaPlugin implements Listener, TabC
 
     @Override
     public void onEnable() {
+        int pluginId = 28526;
+        Metrics metrics = new Metrics(this, pluginId);
+
         pdcHeadIdKey = new NamespacedKey(this, "head_id");
         pdcLitKey = new NamespacedKey(this, "lit");
 

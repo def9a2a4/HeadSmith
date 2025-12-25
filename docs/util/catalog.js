@@ -663,7 +663,7 @@ async function loadHeadFiles() {
   updateProgress(0, 0);
 
   // Load config.yml to get list of head files
-  const configResponse = await fetch('./config.yml');
+  const configResponse = await fetch('../craftheads/src/main/resources/config.yml');
   if (!configResponse.ok) throw new Error(`Failed to load config.yml: ${configResponse.status}`);
   const configYaml = await configResponse.text();
   const config = jsyaml.load(configYaml);
@@ -675,7 +675,7 @@ async function loadHeadFiles() {
   let parsedCount = 0;
 
   for (const file of headFiles) {
-    const response = await fetch(`./${file}`);
+    const response = await fetch(`../craftheads/src/main/resources/${file}`);
     if (!response.ok) {
       console.warn(`Failed to load ${file}: ${response.status}`);
       continue;

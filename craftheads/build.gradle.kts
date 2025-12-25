@@ -1,9 +1,10 @@
 plugins {
     `java`
+    id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
 group = "anon.def9a2a4"
-version = "1.0.0"
+version = "0.1.0"
 
 java {
     toolchain {
@@ -21,6 +22,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
+    implementation("org.bstats:bstats-bukkit:3.1.0")
 }
 
 tasks {
@@ -38,5 +40,16 @@ tasks {
         manifest {
             attributes["paperweight-mappings-namespace"] = "mojang"
         }
+    }
+
+    named<com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar>("shadowJar") {
+        archiveBaseName.set("CraftHeads")
+        archiveClassifier.set("")
+        manifest {
+            attributes["paperweight-mappings-namespace"] = "mojang"
+        }
+        configurations = listOf(project.configurations.runtimeClasspath.get())
+        dependencies { exclude { it.moduleGroup != "org.bstats" } }
+        relocate("org.bstats", project.group.toString())
     }
 }

@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+# /// script
+# dependencies = [
+#   "pyyaml",
+# ]
+# ///
 """Count heads per YAML file and save"""
 
 import json
@@ -15,7 +20,7 @@ def main():
     counts = {}
     total = 0
     for head_file in config.get("head-files", []):
-        path = head_file
+        path = resources / head_file
         if path.exists():
             with open(path) as f:
                 data = yaml.safe_load(f)
@@ -26,7 +31,7 @@ def main():
                 print(f"{head_file}: {count} heads")
 
     counts["total"] = total
-    output_path = "docs/head-count.json"
+    output_path = Path(__file__).parent.parent.parent / "docs/util/head-count.json"
     output_path.write_text(json.dumps(counts, indent=2))
     print(f"\nTotal: {total} heads -> {output_path}")
 

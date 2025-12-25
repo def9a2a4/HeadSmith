@@ -1,6 +1,6 @@
 .PHONY: generate-mini-blocks
 generate-mini-blocks:
-	cd craftheads/data && python3 generate_mini_blocks.py
+	cd craftheads/data && uv run generate_mini_blocks.py
 	cp craftheads/data/mini_blocks_GENERATED.yml craftheads/src/main/resources/heads/mini_blocks.yml
 	rm -rf craftheads/src/main/resources/heads/alphabet
 	mkdir -p craftheads/src/main/resources/heads/alphabet
@@ -8,12 +8,12 @@ generate-mini-blocks:
 
 .PHONY: count-heads
 count-heads:
-	python3 craftheads/data/count_heads.py
+	uv run craftheads/data/count_heads.py
 
 .PHONY: build
 build: generate-mini-blocks count-heads
 	cd craftheads && gradle shadowJar
-	cp craftheads/build/libs/Craftheads-*.jar bin
+	cp craftheads/build/libs/CraftHeads.jar bin/
 
 
 .PHONY: server
