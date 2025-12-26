@@ -7,7 +7,7 @@ data/heads-db-b64.csv: data/heads-db.csv
 
 .PHONY: generate-mini-blocks
 generate-mini-blocks: data/heads-db-b64.csv
-	cd data && uv run generate_mini_blocks.py
+	uv run data/generate_mini_blocks.py
 	cp data/mini_blocks_GENERATED.yml headsmith/src/main/resources/heads/mini_blocks.yml
 	rm -rf headsmith/src/main/resources/heads/alphabet
 	mkdir -p headsmith/src/main/resources/heads/alphabet

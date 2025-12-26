@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Generate mini_blocks.yml and alphabet.yml entries from heads-database-with-base64.csv"""
+
 import argparse
 import csv
 import fnmatch
-import re
 import tomllib
 from pathlib import Path
 
@@ -21,17 +21,44 @@ MATERIALS: list[str] = CONFIG["materials"]
 
 # Build ALPHABET_CHARACTERS from config sections
 ALPHABET_CHARACTERS: dict[str, tuple[str, str]] = {}
-for section in ["letters", "numbers", "punctuation", "brackets", "arrows",
-                "accented", "greek", "cyrillic", "zodiac", "gender"]:
+for section in [
+    "letters",
+    "numbers",
+    "punctuation",
+    "brackets",
+    "arrows",
+    "accented",
+    "greek",
+    "cyrillic",
+    "zodiac",
+    "gender",
+]:
     if section in CONFIG.get("alphabet", {}):
-        for search_suffix, (yaml_suffix, display_char) in CONFIG["alphabet"][section].items():
+        for search_suffix, (yaml_suffix, display_char) in CONFIG["alphabet"][
+            section
+        ].items():
             ALPHABET_CHARACTERS[search_suffix] = (yaml_suffix, display_char)
 
 
 # Colors used for material name parsing
-COLORS = ['White', 'Orange', 'Magenta', 'Light Blue', 'Yellow', 'Lime',
-          'Pink', 'Gray', 'Light Gray', 'Cyan', 'Purple', 'Blue',
-          'Brown', 'Green', 'Red', 'Black']
+COLORS = [
+    "White",
+    "Orange",
+    "Magenta",
+    "Light Blue",
+    "Yellow",
+    "Lime",
+    "Pink",
+    "Gray",
+    "Light Gray",
+    "Cyan",
+    "Purple",
+    "Blue",
+    "Brown",
+    "Green",
+    "Red",
+    "Black",
+]
 
 
 def get_material_tags(material: str) -> list[str]:
@@ -58,8 +85,8 @@ def material_to_search_names(material):
     # Handle "Color BlockType" -> "BlockType (color)" pattern
     # e.g. "Orange Concrete" -> "Concrete (orange)"
     for color in COLORS:
-        if base.startswith(color + ' '):
-            rest = base[len(color) + 1:]  # e.g. "Concrete"
+        if base.startswith(color + " "):
+            rest = base[len(color) + 1 :]  # e.g. "Concrete"
             names.append(f"{rest} ({color.lower()})")
             break
 
@@ -85,25 +112,29 @@ def find_best_texture(search_names, rows):
     # Try each search name
     for search_name in search_names:
         # Try blocks category first, then decoration
-        for category in ['blocks', 'decoration']:
-            candidates = [r for r in rows if r[0].lower() == search_name.lower() and r[1] == category]
+        for category in ["blocks", "decoration"]:
+            candidates = [
+                r
+                for r in rows
+                if r[0].lower() == search_name.lower() and r[1] == category
+            ]
 
             # Prefer Vanilla Block with Inner Layer Block
             for c in candidates:
-                tags = c[3] if len(c) > 3 else ''
-                if 'Vanilla Block' in tags and 'Inner Layer Block' in tags:
+                tags = c[3] if len(c) > 3 else ""
+                if "Vanilla Block" in tags and "Inner Layer Block" in tags:
                     return c[4] if len(c) > 4 else None
 
             # Fall back to just Vanilla Block
             for c in candidates:
-                tags = c[3] if len(c) > 3 else ''
-                if 'Vanilla Block' in tags:
+                tags = c[3] if len(c) > 3 else ""
+                if "Vanilla Block" in tags:
                     return c[4] if len(c) > 4 else None
 
             # Fall back to any Inner Layer Block
             for c in candidates:
-                tags = c[3] if len(c) > 3 else ''
-                if 'Inner Layer Block' in tags:
+                tags = c[3] if len(c) > 3 else ""
+                if "Inner Layer Block" in tags:
                     return c[4] if len(c) > 4 else None
 
             # Fall back to first match in this category
@@ -143,10 +174,9 @@ def generate_yaml_entry(material, texture):
 '''
 
 
-
 def yaml_escape(s: str) -> str:
     """Escape a string for use in YAML double-quoted strings."""
-    return s.replace('\\', '\\\\').replace('"', '\\"')
+    return s.replace("\\", "\\\\").replace('"', '\\"')
 
 
 def generate_alphabet_entry(
@@ -159,7 +189,7 @@ def generate_alphabet_entry(
     inherited_properties: list[str],
 ) -> str:
     """Generate a single alphabet YAML entry."""
-    font_id = font_key.lower().replace(' ', '_')
+    font_id = font_key.lower().replace(" ", "_")
     yaml_id = f"{font_id}_{yaml_suffix}"
     display_name = yaml_escape(f"{font_key} {display_char}")
 
@@ -194,13 +224,13 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
       - missing_by_font maps font name to missing chars.
     """
     # Filter to alphabet category
-    alphabet_rows = [r for r in rows if len(r) > 1 and r[1] == 'alphabet']
+    alphabet_rows = [r for r in rows if len(r) > 1 and r[1] == "alphabet"]
 
     entries_by_font: dict[str, list[str]] = {}
     missing_by_font: dict[str, list[str]] = {}
 
     for font_name, mini_block_id in FONT_TO_MINI_BLOCK.items():
-        font_id = font_name.lower().replace(' ', '_')
+        font_id = font_name.lower().replace(" ", "_")
         font_pattern = f"Font ({font_name})"
         missing_chars = []
         font_entries = []
@@ -216,7 +246,7 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
             texture = None
             for row in alphabet_rows:
                 name = row[0]
-                tags = row[3] if len(row) > 3 else ''
+                tags = row[3] if len(row) > 3 else ""
 
                 if font_pattern not in tags:
                     continue
@@ -231,10 +261,17 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
                     break
 
             if texture:
-                font_entries.append(generate_alphabet_entry(
-                    font_name, yaml_suffix, display_char, texture, mini_block_id,
-                    inherited_tags, inherited_properties
-                ))
+                font_entries.append(
+                    generate_alphabet_entry(
+                        font_name,
+                        yaml_suffix,
+                        display_char,
+                        texture,
+                        mini_block_id,
+                        inherited_tags,
+                        inherited_properties,
+                    )
+                )
             else:
                 missing_chars.append(search_suffix)
 
@@ -242,7 +279,7 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
         rune_idx = 0
         for row in alphabet_rows:
             name = row[0]
-            tags = row[3] if len(row) > 3 else ''
+            tags = row[3] if len(row) > 3 else ""
 
             if font_pattern not in tags:
                 continue
@@ -251,10 +288,17 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
             if name.endswith(" Rune") and "Standard Galactic" not in name:
                 texture = row[4] if len(row) > 4 else None
                 if texture:
-                    font_entries.append(generate_alphabet_entry(
-                        font_name, f"rune_{rune_idx}", "Rune", texture, mini_block_id,
-                        inherited_tags, inherited_properties
-                    ))
+                    font_entries.append(
+                        generate_alphabet_entry(
+                            font_name,
+                            f"rune_{rune_idx}",
+                            "Rune",
+                            texture,
+                            mini_block_id,
+                            inherited_tags,
+                            inherited_properties,
+                        )
+                    )
                     rune_idx += 1
 
         entries_by_font[font_id] = font_entries
@@ -265,11 +309,20 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate mini_blocks.yml and alphabet.yml')
-    parser.add_argument('--no-alphabet', action='store_true', help='Skip alphabet generation')
+    parser = argparse.ArgumentParser(
+        description="Generate mini_blocks.yml and alphabet.yml"
+    )
+    parser.add_argument("--input", "-i", type=str, default="data/heads-db-b64.csv")
+    parser.add_argument("--output-dir", "-o", type=str, default="data")
+    parser.add_argument(
+        "--no-alphabet", action="store_true", help="Skip alphabet generation"
+    )
     args = parser.parse_args()
 
-    with open('heads-database-with-base64.csv', 'r', encoding='utf-8') as f:
+    input_file = args.input
+    output_dir: Path = Path(args.output_dir)
+
+    with open(input_file, "r", encoding="utf-8") as f:
         rows = list(csv.reader(f))[1:]
 
     entries = []
@@ -284,7 +337,7 @@ def main():
             missing.append(material)
 
     # Write to file
-    with open('mini_blocks_GENERATED.yml', 'w') as f:
+    with open(output_dir / "mini_blocks_GENERATED.yml", "w") as f:
         f.write("# Generated Mini Blocks\n\nheads:\n")
         for entry in entries:
             f.write(entry)
@@ -305,7 +358,7 @@ def main():
         alpha_entries_by_font, alpha_missing = generate_alphabet(rows)
 
         # Create alphabet output directory
-        alphabet_dir = Path('alphabet_GENERATED')
+        alphabet_dir: Path = output_dir / "alphabet_GENERATED"
         alphabet_dir.mkdir(exist_ok=True)
 
         total_alpha = 0
@@ -314,10 +367,10 @@ def main():
                 continue
 
             # Get display name from font_id (e.g., "cherry_planks" -> "Cherry Planks")
-            display_name = font_id.replace('_', ' ').title()
+            display_name = font_id.replace("_", " ").title()
 
             output_file = alphabet_dir / f"{font_id}.yml"
-            with open(output_file, 'w') as f:
+            with open(output_file, "w") as f:
                 f.write(f"# Generated {display_name} Alphabet Blocks\n\nheads:\n")
                 for entry in font_entries:
                     f.write(entry)
@@ -331,8 +384,10 @@ def main():
                 print(f"  {font}: {', '.join(chars)}")
 
         total_missing = sum(len(chars) for chars in alpha_missing.values())
-        print(f"Alphabet: Generated {total_alpha} entries across {len(alpha_entries_by_font)} files, {total_missing} missing")
+        print(
+            f"Alphabet: Generated {total_alpha} entries across {len(alpha_entries_by_font)} files, {total_missing} missing"
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

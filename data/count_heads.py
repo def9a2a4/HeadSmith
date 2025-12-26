@@ -4,14 +4,23 @@
 #   "pyyaml",
 # ]
 # ///
-"""Count heads per YAML file and save"""
+"""Count heads per YAML file and save to docs."""
 
 import json
 import yaml
 from pathlib import Path
 
-def main():
-    resources = Path(__file__).parent.parent / "src/main/resources"
+
+def count_heads(repo_root: Path) -> dict:
+    """Count heads from all YAML files listed in config.
+
+    Args:
+        repo_root: Path to the repository root
+
+    Returns:
+        Dict with counts per file and total
+    """
+    resources = repo_root / "headsmith/src/main/resources"
     config_path = resources / "config.yml"
 
     with open(config_path) as f:
@@ -28,12 +37,25 @@ def main():
                 count = len(heads)
                 counts[head_file] = count
                 total += count
-                print(f"{head_file}: {count} heads")
 
     counts["total"] = total
-    output_path = Path(__file__).parent.parent.parent / "docs/util/head-count.json"
+    return counts
+
+
+def main():
+    """CLI entry point."""
+    repo_root = Path.cwd()
+    counts = count_heads(repo_root)
+
+    for file, count in counts.items():
+        if file != "total":
+            print(f"{file}: {count} heads")
+    print(f"\nTotal: {counts['total']} heads")
+
+    output_path = repo_root / "docs/util/head-count.json"
     output_path.write_text(json.dumps(counts, indent=2))
-    print(f"\nTotal: {total} heads -> {output_path}")
+    print(f"Written to {output_path}")
+
 
 if __name__ == "__main__":
     main()
