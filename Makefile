@@ -20,6 +20,7 @@ count-heads:
 .PHONY: build
 build: generate-mini-blocks count-heads
 	cd headsmith && gradle shadowJar
+	mkdir -p bin
 	cp headsmith/build/libs/HeadSmith*.jar bin/
 
 
