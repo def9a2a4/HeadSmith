@@ -35,10 +35,16 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bstats.bukkit.Metrics;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -63,6 +69,9 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
     private HeadMenus menus;
     private HeadPropertiesListener propertiesListener;
 
+    private Set<String> excludedTags = new HashSet<>();
+    private Set<String> excludedHeads = new HashSet<>();
+
     @Override
     public void onEnable() {
         int pluginId = 28528;
@@ -72,7 +81,6 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         pdcLitKey = new NamespacedKey(this, "lit");
 
         saveDefaultConfig();
-        saveDefaultHeadsYaml();
         reloadHeads();
 
         menus = new HeadMenus(headsById, headStonecutterRecipes, firstHeadByTag, tagChildren, pdcHeadIdKey, this::makeHeadItem);
@@ -246,27 +254,6 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
 
     // Config loading
 
-    private void saveDefaultHeadsYaml() {
-        File dataDir = getDataFolder();
-        if (!dataDir.exists()) dataDir.mkdirs();
-
-        File headsDir = new File(dataDir, "heads");
-        if (!headsDir.exists()) headsDir.mkdirs();
-
-        // Use head-files from config as the single source of truth
-        List<String> headFiles = getConfig().getStringList("head-files");
-        for (String filePath : headFiles) {
-            File file = new File(dataDir, filePath);
-            if (!file.exists()) {
-                try {
-                    saveResource(filePath, false);
-                } catch (IllegalArgumentException e) {
-                    // Resource doesn't exist in JAR - user added a custom file path
-                }
-            }
-        }
-    }
-
     private void reloadHeads() {
         // Clean up previously registered recipes
         for (NamespacedKey key : registeredRecipeKeys) {
@@ -280,20 +267,38 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         tagChildren.clear();
 
         reloadConfig();
-        List<String> headFiles = getConfig().getStringList("head-files");
-        if (headFiles.isEmpty()) {
-            getLogger().warning("No head files configured in config.yml");
-            return;
-        }
 
-        for (String filePath : headFiles) {
-            File headsFile = new File(getDataFolder(), filePath);
-            if (!headsFile.exists()) {
-                getLogger().warning("Head file not found: " + filePath);
+        // Load exclusion sets from config
+        excludedTags = new HashSet<>(getConfig().getStringList("excluded-tags"));
+        excludedHeads = new HashSet<>(getConfig().getStringList("excluded-heads"));
+
+        // Load bundled heads from JAR
+        List<String> bundledFiles = readHeadsManifest();
+        for (String resourcePath : bundledFiles) {
+            String fileTag = filePathToTag(resourcePath);
+
+            if (isTagExcluded(fileTag)) {
+                getLogger().fine("Skipping excluded tag: " + fileTag);
                 continue;
             }
-            int loaded = loadHeadsFromFile(headsFile, filePath);
-            getLogger().info("Loaded " + loaded + " heads from " + filePath);
+
+            int loaded = loadHeadsFromJarResource(resourcePath, fileTag);
+            if (loaded > 0) {
+                getLogger().info("Loaded " + loaded + " heads from " + resourcePath);
+            }
+        }
+
+        // Load custom head files from data folder
+        List<String> customFiles = getConfig().getStringList("custom-head-files");
+        for (String filePath : customFiles) {
+            File headsFile = new File(getDataFolder(), filePath);
+            if (!headsFile.exists()) {
+                getLogger().warning("Custom head file not found: " + filePath);
+                continue;
+            }
+            String fileTag = "custom/" + filePath.replaceFirst("\\.yml$", "");
+            int loaded = loadHeadsFromFile(headsFile, filePath, fileTag);
+            getLogger().info("Loaded " + loaded + " custom heads from " + filePath);
         }
 
         // Build tag-to-first-head index and tag hierarchy for menu display
@@ -315,33 +320,126 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         registerCraftingRecipes();
     }
 
-    private int loadHeadsFromFile(File headsFile, String filePath) {
+    private List<String> readHeadsManifest() {
+        List<String> files = new ArrayList<>();
+        try (InputStream is = getResource("heads-manifest.txt")) {
+            if (is == null) {
+                getLogger().warning("heads-manifest.txt not found in JAR - using fallback list");
+                return getFallbackHeadFiles();
+            }
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    line = line.trim();
+                    if (!line.isEmpty() && line.endsWith(".yml")) {
+                        files.add(line);
+                    }
+                }
+            }
+        } catch (IOException e) {
+            getLogger().warning("Failed to read heads manifest: " + e.getMessage());
+            return getFallbackHeadFiles();
+        }
+        return files;
+    }
+
+    private List<String> getFallbackHeadFiles() {
+        return List.of(
+            "heads/books.yml",
+            "heads/barrels.yml",
+            "heads/bottles.yml",
+            "heads/buckets.yml",
+            "heads/bundles.yml",
+            "heads/candles.yml",
+            "heads/chalices.yml",
+            "heads/pumpkins.yml",
+            "heads/misc.yml",
+            "heads/mini_blocks.yml",
+            "heads/alphabet/oak.yml",
+            "heads/alphabet/birch.yml",
+            "heads/alphabet/spruce.yml",
+            "heads/alphabet/jungle.yml",
+            "heads/alphabet/cherry_planks.yml",
+            "heads/alphabet/mangrove_planks.yml",
+            "heads/alphabet/cobblestone.yml",
+            "heads/alphabet/diamond.yml",
+            "heads/alphabet/emerald.yml",
+            "heads/alphabet/gold.yml",
+            "heads/alphabet/iron.yml",
+            "heads/alphabet/quartz.yml",
+            "heads/alphabet/ice.yml",
+            "heads/alphabet/dirt.yml"
+        );
+    }
+
+    private String filePathToTag(String filePath) {
+        return filePath
+            .replaceFirst("^heads/", "")
+            .replaceFirst("\\.yml$", "");
+    }
+
+    private boolean isTagExcluded(String fileTag) {
+        if (excludedTags.contains(fileTag)) {
+            return true;
+        }
+        // Check if any parent tag is excluded (e.g., "alphabet" excludes "alphabet/oak")
+        int slashIndex = fileTag.indexOf('/');
+        if (slashIndex > 0) {
+            String parentTag = fileTag.substring(0, slashIndex);
+            if (excludedTags.contains(parentTag)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private int loadHeadsFromJarResource(String resourcePath, String fileTag) {
+        try (InputStream is = getResource(resourcePath)) {
+            if (is == null) {
+                getLogger().warning("Resource not found in JAR: " + resourcePath);
+                return 0;
+            }
+            YamlConfiguration cfg = YamlConfiguration.loadConfiguration(
+                new InputStreamReader(is, StandardCharsets.UTF_8));
+            return processHeadsConfig(cfg, resourcePath, fileTag);
+        } catch (IOException e) {
+            getLogger().warning("Failed to load " + resourcePath + ": " + e.getMessage());
+            return 0;
+        }
+    }
+
+    private int loadHeadsFromFile(File headsFile, String filePath, String fileTag) {
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(headsFile);
+        return processHeadsConfig(cfg, filePath, fileTag);
+    }
+
+    private int processHeadsConfig(YamlConfiguration cfg, String source, String fileTag) {
         ConfigurationSection headsSec = cfg.getConfigurationSection("heads");
         if (headsSec == null) {
-            getLogger().warning(filePath + " missing 'heads:' section");
+            getLogger().warning(source + " missing 'heads:' section");
             return 0;
         }
 
-        // Extract file-source tag from path (e.g., "heads/alphabet/oak.yml" -> "alphabet/oak")
-        String fileTag = filePath
-            .replaceAll("^heads/", "")  // Remove "heads/" prefix
-            .replaceAll("\\.yml$", ""); // Remove .yml extension
-
         int count = 0;
         for (String headId : headsSec.getKeys(false)) {
+            // Check if this specific head ID is excluded
+            if (excludedHeads.contains(headId)) {
+                getLogger().fine("Skipping excluded head: " + headId);
+                continue;
+            }
+
             ConfigurationSection h = headsSec.getConfigurationSection(headId);
             if (h == null) continue;
 
             String base64 = requireString(h, "texture").orElse(null);
             if (base64 == null || base64.isBlank()) {
-                getLogger().warning("Head '" + headId + "' missing texture in " + filePath);
+                getLogger().warning("Head '" + headId + "' missing texture in " + source);
                 continue;
             }
 
             Optional<TextureInfo> texInfoOpt = parseTextureBase64(base64);
             if (texInfoOpt.isEmpty()) {
-                getLogger().warning("Head '" + headId + "' has invalid base64 texture in " + filePath);
+                getLogger().warning("Head '" + headId + "' has invalid base64 texture in " + source);
                 continue;
             }
             TextureInfo texInfo = texInfoOpt.get();
@@ -368,7 +466,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                 name, lore, tags, properties, shaped, shapeless, stonecut, dropRules);
 
             if (headsById.containsKey(headId)) {
-                throw new IllegalStateException("Duplicate head ID '" + headId + "' in " + filePath);
+                throw new IllegalStateException("Duplicate head ID '" + headId + "' in " + source);
             }
             headsById.put(headId, def);
             headIdByTextureId.put(def.textureId(), headId);

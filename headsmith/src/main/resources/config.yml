@@ -1,30 +1,18 @@
 # HeadSmith Configuration
 
-# List of head definition files to load (relative to plugin data folder)
-# Each file should contain a 'heads:' section with head definitions
-head-files:
-  - heads/books.yml
-  - heads/barrels.yml
-  - heads/bottles.yml
-  - heads/buckets.yml
-  - heads/bundles.yml
-  - heads/candles.yml
-  - heads/chalices.yml
-  - heads/pumpkins.yml
-  - heads/misc.yml
-  - heads/mini_blocks.yml
-  # alphabet files (one per material)
-  - heads/alphabet/oak.yml
-  - heads/alphabet/birch.yml
-  - heads/alphabet/spruce.yml
-  - heads/alphabet/jungle.yml
-  - heads/alphabet/cherry_planks.yml
-  - heads/alphabet/mangrove_planks.yml
-  - heads/alphabet/cobblestone.yml
-  - heads/alphabet/diamond.yml
-  - heads/alphabet/emerald.yml
-  - heads/alphabet/gold.yml
-  - heads/alphabet/iron.yml
-  - heads/alphabet/quartz.yml
-  - heads/alphabet/ice.yml
-  - heads/alphabet/dirt.yml
+# Exclude specific tags from loading.
+# Tags are derived from file paths: heads/alphabet/oak.yml -> "alphabet/oak"
+# Excluding a parent tag also excludes children (e.g., "alphabet" excludes all alphabet heads)
+excluded-tags:
+  # - alphabet/oak
+  # - alphabet
+
+# Exclude specific head IDs from loading
+excluded-heads:
+  # - candle
+  # - stack_of_books
+
+# Custom head files to load from the plugin data folder
+# These are user-created files, not bundled in the JAR
+custom-head-files:
+  # - custom/my-heads.yml
