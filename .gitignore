@@ -1,4 +1,3 @@
-# https://raw.githubusercontent.com/TheLuca98/MinecraftHeads/refs/heads/master/heads.csv
 data/*.csv
 data/*.txt
 data/*_GENERATED.yml

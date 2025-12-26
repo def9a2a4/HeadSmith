@@ -1,5 +1,5 @@
 data/heads-db.csv:
-	curl https://raw.githubusercontent.com/TheLuca98/MinecraftHeads/refs/heads/master/heads.csv -o data/heads-database.csv
+	curl https://raw.githubusercontent.com/TheLuca98/MinecraftHeads/refs/heads/master/heads.csv -o data/heads-db.csv
 
 data/heads-db-b64.csv: data/heads-db.csv
 	uv run data/add_base64_column.py data/heads-db.csv > data/heads-db-b64.csv
