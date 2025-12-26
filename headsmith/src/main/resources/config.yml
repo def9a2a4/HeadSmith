@@ -3,15 +3,16 @@
 # List of head definition files to load (relative to plugin data folder)
 # Each file should contain a 'heads:' section with head definitions
 head-files:
-  - heads/barrels.yml
   - heads/books.yml
+  - heads/barrels.yml
   - heads/bottles.yml
   - heads/buckets.yml
   - heads/bundles.yml
   - heads/candles.yml
   - heads/chalices.yml
-  - heads/mini_blocks.yml
   - heads/pumpkins.yml
+  - heads/misc.yml
+  - heads/mini_blocks.yml
   # alphabet files (one per material)
   - heads/alphabet/oak.yml
   - heads/alphabet/birch.yml

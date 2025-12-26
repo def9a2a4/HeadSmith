@@ -1,13 +1,14 @@
 {
-  "heads/barrels.yml": 45,
   "heads/books.yml": 76,
+  "heads/barrels.yml": 45,
   "heads/bottles.yml": 13,
   "heads/buckets.yml": 27,
   "heads/bundles.yml": 33,
   "heads/candles.yml": 85,
   "heads/chalices.yml": 17,
-  "heads/mini_blocks.yml": 356,
   "heads/pumpkins.yml": 24,
+  "heads/misc.yml": 4,
+  "heads/mini_blocks.yml": 356,
   "heads/alphabet/oak.yml": 192,
   "heads/alphabet/birch.yml": 133,
   "heads/alphabet/spruce.yml": 133,
@@ -22,5 +23,5 @@
   "heads/alphabet/quartz.yml": 133,
   "heads/alphabet/ice.yml": 130,
   "heads/alphabet/dirt.yml": 133,
-  "total": 2492
+  "total": 2496
 }

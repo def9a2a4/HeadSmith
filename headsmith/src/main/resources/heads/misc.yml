@@ -15,7 +15,7 @@ heads:
   black_skull_candle:
     texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWU2YTc1NWRmOTVkZDM3MmY1NmMxMmZhZjY5MTA3ZDk1M2VjYzM4YjliY2U2ODIyNjU5MzY3YjU0MWVmZmYxZiJ9fX0="
     name: "&0Black Skull Candle"
-    tags: [color/black]
+    tags: [color/black, candles]
     properties: [lightable]
     recipes:
       craft:
@@ -28,7 +28,7 @@ heads:
   white_skull_candle:
     texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYzU3NTg5Mzc0YmQxZmM4OTcwYjE3ZDhmMTliZGM2ZjE3OTgzMWY5NWY5N2E4MTY1ZTYyNTIwNzk2ZjQ0ZDRlMyJ9fX0="
     name: "&fWhite Skull Candle"
-    tags: [color/white]
+    tags: [color/white, candles]
     properties: [lightable]
     recipes:
       craft:
@@ -41,7 +41,7 @@ heads:
   red_skull_candle:
     texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjhhY2IzMTJkMTk2OWE3ZTFkM2M3NTg0YWNmMWQzZGRjN2RhN2FkZjI1NjExYjA1OTY5YmEzODE1MDcwMWM2ZCJ9fX0="
     name: "&cRed Skull Candle"
-    tags: [color/red]
+    tags: [color/red, candles]
     properties: [lightable]
     recipes:
       craft:

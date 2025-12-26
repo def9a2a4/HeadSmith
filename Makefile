@@ -27,7 +27,7 @@ build: generate-mini-blocks count-heads
 .PHONY: server
 server: build
 	rm -f server/plugins/HeadSmith*.jar
-	rm -rf server/plugins/headsmith/
+	rm -rf server/plugins/HeadSmith/
 	cp headsmith/build/libs/*.jar server/plugins/
 	cd server && java -Xmx2G -Xms2G -jar paper-1.21.10-105.jar nogui
 
