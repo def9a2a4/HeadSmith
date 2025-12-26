@@ -519,7 +519,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         if (slot < 0 || slot >= event.getInventory().getSize()) return;
 
         switch (holder.getMenuType()) {
-            case CATALOG, SEARCH_RESULTS -> menus.handleCatalogClick(player, (CatalogMenuHolder) holder, slot);
+            case CATALOG, SEARCH_RESULTS -> menus.handleCatalogClick(player, (CatalogMenuHolder) holder, slot, event.getClick());
             case HEAD_DETAIL -> menus.handleDetailClick(player, (HeadDetailMenuHolder) holder, slot);
             case STONECUTTER_SELECT -> menus.handleStonecutterSelectClick(player, (StonecutterSelectMenuHolder) holder, slot);
             case TAG_LIST -> menus.handleTagListClick(player, (TagListMenuHolder) holder, slot);

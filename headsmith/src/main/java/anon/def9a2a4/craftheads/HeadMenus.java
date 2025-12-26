@@ -10,6 +10,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.event.inventory.ClickType;
 import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
@@ -434,7 +435,7 @@ final class HeadMenus {
         return result;
     }
 
-    void handleCatalogClick(Player player, CatalogMenuHolder holder, int slot) {
+    void handleCatalogClick(Player player, CatalogMenuHolder holder, int slot, ClickType clickType) {
         Pagination pag = Pagination.of(holder.getPage(), holder.getTotalHeads(), HEADS_PER_PAGE);
 
         switch (slot) {
@@ -447,7 +448,15 @@ final class HeadMenus {
                     int index = slot - 9;
                     List<HeadDef> displayed = holder.getDisplayedHeads();
                     if (index < displayed.size()) {
-                        openHeadDetailMenu(player, displayed.get(index), holder.getPage(), holder.getSearchQuery());
+                        HeadDef head = displayed.get(index);
+                        if (clickType.isRightClick() && player.hasPermission("headsmith.admin")) {
+                            ItemStack item = headItemMaker.apply(head.id(), 1);
+                            giveToInventoryOrDrop(player, item);
+                            player.sendMessage(ChatColor.GREEN + "Gave you 1x " +
+                                ChatColor.stripColor(color(head.name())));
+                        } else {
+                            openHeadDetailMenu(player, head, holder.getPage(), holder.getSearchQuery());
+                        }
                     }
                 }
             }
