@@ -1,40 +1,33 @@
 # HeadSmith
 
-A Minecraft Paper plugin that adds a comprehensive system for custom decorative head blocks with crafting recipes, stonecutter integration, and special interactive properties.
+A Minecraft Paper plugin adding a variety of survival-friendly decorative and functional heads.
+
+- Download on Modrinth: **Coming Soon!**
+- Head Catalog: [def9a2a4.github.io/HeadSmith](https://def9a2a4.github.io/HeadSmith/)
+
+![](docs/assets/header.png)
+
 
 ## Features
 
-- **Head Catalog** - Browse hundreds of custom textured heads through an in-game menu
-- **Search** - Find heads by name or tags
-- **Crafting Recipes** - Define shaped and shapeless recipes for heads
-- **Stonecutter Recipes** - Transform materials into heads via stonecutter
-- **Configurable Drops** - Control what drops when heads are broken (silk touch support)
+- **Head Catalog** - Browse hundreds of custom textured heads through an in-game menu: `/headsmith show`
+- **Search** - Find heads by name or tags `/headsmith search <query>` or [def9a2a4.github.io/HeadSmith](https://def9a2a4.github.io/HeadSmith/)
+- **Crafting** - Depending on the head, craft using shaped/shapeless recipes or stonecutter recipes.
+- **Drops** - Control what drops when heads are broken (silk touch support). For example, a [bottle of redstone]() when broken will just drop redstone dust unless broken with silk touch.
 - **Special Properties**:
-  - Lightable candles with particle effects
-  - Glowing heads (pumpkins)
+  - Lightable [candles]() with particle effects
+  - Glowing pumpkins and glowstone
   - Functional blocks that open crafting tables, anvils, enchanting tables, looms, and more
 
-## Requirements
-
-- Java 21
-- Paper 1.21+
-
-## Installation
-
-1. Download the latest `HeadSmith-*.jar` from releases
-2. Place the JAR in your server's `plugins/` folder
-3. Start the server to generate the default configuration
-4. Configure head definitions in `plugins/HeadSmith/config.yml`
-5. Restart the server or use `/headsmith reload`
 
 ## Commands
 
-| Command | Description | Permission |
-|---------|-------------|------------|
-| `/headsmith show` | Open the head catalog menu | `headsmith.catalog` |
-| `/headsmith search <query>` | Search for heads by name or tag | `headsmith.catalog` |
-| `/headsmith reload` | Reload configuration and head definitions | `headsmith.admin` |
-| `/headsmith give <head_id> [player] [amount]` | Give a head to a player | `headsmith.admin` |
+| Command                                       | Description                               | Permission          |
+| --------------------------------------------- | ----------------------------------------- | ------------------- |
+| `/headsmith show`                             | Open the head catalog menu                | `headsmith.catalog` |
+| `/headsmith search <query>`                   | Search for heads by name or tag           | `headsmith.catalog` |
+| `/headsmith reload`                           | Reload configuration and head definitions | `headsmith.admin`   |
+| `/headsmith give <head_id> [player] [amount]` | Give a head to a player                   | `headsmith.admin`   |
 
 ## Configuration
 
@@ -49,25 +42,3 @@ Heads are defined in YAML files and loaded via `config.yml`. Each head can have:
 - Drop rules with silk touch conditions
 
 See the `headsmith/src/main/resources/heads/` directory for examples.
-
-## Building from Source
-
-```bash
-# Full build (generates configs, counts heads, builds JAR)
-make build
-
-# Output JAR will be in bin/
-
-# Run a local test server
-make server
-```
-
-### Prerequisites
-
-- Java 21
-- Gradle
-- Python 3 with `uv` (for data generation scripts)
-
-## License
-
-MIT
