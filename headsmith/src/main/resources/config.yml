@@ -16,3 +16,11 @@ excluded-heads:
 # These are user-created files, not bundled in the JAR
 custom-head-files:
   # - custom/my-heads.yml
+
+# Control tag display order in the menu
+# Tags are sorted alphabetically by default, with these exceptions:
+tag-order:
+  first:
+    # - favorites
+  last:
+    - alphabet

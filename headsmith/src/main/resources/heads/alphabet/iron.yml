@@ -6,6 +6,7 @@ heads:
     name: "&7Iron 1"
     tags:
       - alphabet/iron
+      - character/number_1
       - natural/ore_block
     recipes:
       stonecutter:
@@ -16,6 +17,7 @@ heads:
     name: "&7Iron 2"
     tags:
       - alphabet/iron
+      - character/number_2
       - natural/ore_block
     recipes:
       stonecutter:
@@ -26,6 +28,7 @@ heads:
     name: "&7Iron 3"
     tags:
       - alphabet/iron
+      - character/number_3
       - natural/ore_block
     recipes:
       stonecutter:
@@ -36,6 +39,7 @@ heads:
     name: "&7Iron 4"
     tags:
       - alphabet/iron
+      - character/number_4
       - natural/ore_block
     recipes:
       stonecutter:
@@ -46,6 +50,7 @@ heads:
     name: "&7Iron 5"
     tags:
       - alphabet/iron
+      - character/number_5
       - natural/ore_block
     recipes:
       stonecutter:
@@ -56,6 +61,7 @@ heads:
     name: "&7Iron 6"
     tags:
       - alphabet/iron
+      - character/number_6
       - natural/ore_block
     recipes:
       stonecutter:
@@ -66,6 +72,7 @@ heads:
     name: "&7Iron 8"
     tags:
       - alphabet/iron
+      - character/number_8
       - natural/ore_block
     recipes:
       stonecutter:
@@ -76,6 +83,7 @@ heads:
     name: "&7Iron 9"
     tags:
       - alphabet/iron
+      - character/number_9
       - natural/ore_block
     recipes:
       stonecutter:
@@ -86,6 +94,7 @@ heads:
     name: "&7Iron 10"
     tags:
       - alphabet/iron
+      - character/number_10
       - natural/ore_block
     recipes:
       stonecutter:
@@ -96,6 +105,7 @@ heads:
     name: "&7Iron 11"
     tags:
       - alphabet/iron
+      - character/number_11
       - natural/ore_block
     recipes:
       stonecutter:
@@ -106,6 +116,7 @@ heads:
     name: "&7Iron 12"
     tags:
       - alphabet/iron
+      - character/number_12
       - natural/ore_block
     recipes:
       stonecutter:
@@ -116,6 +127,7 @@ heads:
     name: "&7Iron 13"
     tags:
       - alphabet/iron
+      - character/number_13
       - natural/ore_block
     recipes:
       stonecutter:
@@ -126,6 +138,7 @@ heads:
     name: "&7Iron 14"
     tags:
       - alphabet/iron
+      - character/number_14
       - natural/ore_block
     recipes:
       stonecutter:
@@ -136,6 +149,7 @@ heads:
     name: "&7Iron 15"
     tags:
       - alphabet/iron
+      - character/number_15
       - natural/ore_block
     recipes:
       stonecutter:
@@ -146,6 +160,7 @@ heads:
     name: "&7Iron 16"
     tags:
       - alphabet/iron
+      - character/number_16
       - natural/ore_block
     recipes:
       stonecutter:
@@ -156,6 +171,7 @@ heads:
     name: "&7Iron 17"
     tags:
       - alphabet/iron
+      - character/number_17
       - natural/ore_block
     recipes:
       stonecutter:
@@ -166,6 +182,7 @@ heads:
     name: "&7Iron 18"
     tags:
       - alphabet/iron
+      - character/number_18
       - natural/ore_block
     recipes:
       stonecutter:
@@ -176,6 +193,7 @@ heads:
     name: "&7Iron 19"
     tags:
       - alphabet/iron
+      - character/number_19
       - natural/ore_block
     recipes:
       stonecutter:
@@ -186,6 +204,7 @@ heads:
     name: "&7Iron 20"
     tags:
       - alphabet/iron
+      - character/number_20
       - natural/ore_block
     recipes:
       stonecutter:
@@ -196,6 +215,7 @@ heads:
     name: "&7Iron 21"
     tags:
       - alphabet/iron
+      - character/number_21
       - natural/ore_block
     recipes:
       stonecutter:
@@ -206,6 +226,7 @@ heads:
     name: "&7Iron 22"
     tags:
       - alphabet/iron
+      - character/number_22
       - natural/ore_block
     recipes:
       stonecutter:
@@ -216,6 +237,7 @@ heads:
     name: "&7Iron 23"
     tags:
       - alphabet/iron
+      - character/number_23
       - natural/ore_block
     recipes:
       stonecutter:
@@ -226,6 +248,7 @@ heads:
     name: "&7Iron 24"
     tags:
       - alphabet/iron
+      - character/number_24
       - natural/ore_block
     recipes:
       stonecutter:
@@ -236,6 +259,7 @@ heads:
     name: "&7Iron 25"
     tags:
       - alphabet/iron
+      - character/number_25
       - natural/ore_block
     recipes:
       stonecutter:

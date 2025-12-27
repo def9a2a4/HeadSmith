@@ -6,6 +6,7 @@ heads:
     name: "&7Oak A"
     tags:
       - alphabet/oak
+      - character/letter_a
       - wood
     recipes:
       stonecutter:
@@ -16,6 +17,7 @@ heads:
     name: "&7Oak B"
     tags:
       - alphabet/oak
+      - character/letter_b
       - wood
     recipes:
       stonecutter:
@@ -26,6 +28,7 @@ heads:
     name: "&7Oak C"
     tags:
       - alphabet/oak
+      - character/letter_c
       - wood
     recipes:
       stonecutter:
@@ -36,6 +39,7 @@ heads:
     name: "&7Oak D"
     tags:
       - alphabet/oak
+      - character/letter_d
       - wood
     recipes:
       stonecutter:
@@ -46,6 +50,7 @@ heads:
     name: "&7Oak E"
     tags:
       - alphabet/oak
+      - character/letter_e
       - wood
     recipes:
       stonecutter:
@@ -56,6 +61,7 @@ heads:
     name: "&7Oak F"
     tags:
       - alphabet/oak
+      - character/letter_f
       - wood
     recipes:
       stonecutter:
@@ -66,6 +72,7 @@ heads:
     name: "&7Oak G"
     tags:
       - alphabet/oak
+      - character/letter_g
       - wood
     recipes:
       stonecutter:
@@ -76,6 +83,7 @@ heads:
     name: "&7Oak H"
     tags:
       - alphabet/oak
+      - character/letter_h
       - wood
     recipes:
       stonecutter:
@@ -86,6 +94,7 @@ heads:
     name: "&7Oak I"
     tags:
       - alphabet/oak
+      - character/letter_i
       - wood
     recipes:
       stonecutter:
@@ -96,6 +105,7 @@ heads:
     name: "&7Oak J"
     tags:
       - alphabet/oak
+      - character/letter_j
       - wood
     recipes:
       stonecutter:
@@ -106,6 +116,7 @@ heads:
     name: "&7Oak K"
     tags:
       - alphabet/oak
+      - character/letter_k
       - wood
     recipes:
       stonecutter:
@@ -116,6 +127,7 @@ heads:
     name: "&7Oak L"
     tags:
       - alphabet/oak
+      - character/letter_l
       - wood
     recipes:
       stonecutter:
@@ -126,6 +138,7 @@ heads:
     name: "&7Oak M"
     tags:
       - alphabet/oak
+      - character/letter_m
       - wood
     recipes:
       stonecutter:
@@ -136,6 +149,7 @@ heads:
     name: "&7Oak N"
     tags:
       - alphabet/oak
+      - character/letter_n
       - wood
     recipes:
       stonecutter:
@@ -146,6 +160,7 @@ heads:
     name: "&7Oak O"
     tags:
       - alphabet/oak
+      - character/letter_o
       - wood
     recipes:
       stonecutter:
@@ -156,6 +171,7 @@ heads:
     name: "&7Oak P"
     tags:
       - alphabet/oak
+      - character/letter_p
       - wood
     recipes:
       stonecutter:
@@ -166,6 +182,7 @@ heads:
     name: "&7Oak Q"
     tags:
       - alphabet/oak
+      - character/letter_q
       - wood
     recipes:
       stonecutter:
@@ -176,6 +193,7 @@ heads:
     name: "&7Oak R"
     tags:
       - alphabet/oak
+      - character/letter_r
       - wood
     recipes:
       stonecutter:
@@ -186,6 +204,7 @@ heads:
     name: "&7Oak S"
     tags:
       - alphabet/oak
+      - character/letter_s
       - wood
     recipes:
       stonecutter:
@@ -196,6 +215,7 @@ heads:
     name: "&7Oak T"
     tags:
       - alphabet/oak
+      - character/letter_t
       - wood
     recipes:
       stonecutter:
@@ -206,6 +226,7 @@ heads:
     name: "&7Oak U"
     tags:
       - alphabet/oak
+      - character/letter_u
       - wood
     recipes:
       stonecutter:
@@ -216,6 +237,7 @@ heads:
     name: "&7Oak V"
     tags:
       - alphabet/oak
+      - character/letter_v
       - wood
     recipes:
       stonecutter:
@@ -226,6 +248,7 @@ heads:
     name: "&7Oak W"
     tags:
       - alphabet/oak
+      - character/letter_w
       - wood
     recipes:
       stonecutter:
@@ -236,6 +259,7 @@ heads:
     name: "&7Oak X"
     tags:
       - alphabet/oak
+      - character/letter_x
       - wood
     recipes:
       stonecutter:
@@ -246,6 +270,7 @@ heads:
     name: "&7Oak Y"
     tags:
       - alphabet/oak
+      - character/letter_y
       - wood
     recipes:
       stonecutter:
@@ -256,6 +281,7 @@ heads:
     name: "&7Oak Z"
     tags:
       - alphabet/oak
+      - character/letter_z
       - wood
     recipes:
       stonecutter:
@@ -266,6 +292,7 @@ heads:
     name: "&7Oak 0"
     tags:
       - alphabet/oak
+      - character/number_0
       - wood
     recipes:
       stonecutter:
@@ -276,6 +303,7 @@ heads:
     name: "&7Oak 1"
     tags:
       - alphabet/oak
+      - character/number_1
       - wood
     recipes:
       stonecutter:
@@ -286,6 +314,7 @@ heads:
     name: "&7Oak 2"
     tags:
       - alphabet/oak
+      - character/number_2
       - wood
     recipes:
       stonecutter:
@@ -296,6 +325,7 @@ heads:
     name: "&7Oak 3"
     tags:
       - alphabet/oak
+      - character/number_3
       - wood
     recipes:
       stonecutter:
@@ -306,6 +336,7 @@ heads:
     name: "&7Oak 4"
     tags:
       - alphabet/oak
+      - character/number_4
       - wood
     recipes:
       stonecutter:
@@ -316,6 +347,7 @@ heads:
     name: "&7Oak 5"
     tags:
       - alphabet/oak
+      - character/number_5
       - wood
     recipes:
       stonecutter:
@@ -326,6 +358,7 @@ heads:
     name: "&7Oak 6"
     tags:
       - alphabet/oak
+      - character/number_6
       - wood
     recipes:
       stonecutter:
@@ -336,6 +369,7 @@ heads:
     name: "&7Oak 7"
     tags:
       - alphabet/oak
+      - character/number_7
       - wood
     recipes:
       stonecutter:
@@ -346,6 +380,7 @@ heads:
     name: "&7Oak 8"
     tags:
       - alphabet/oak
+      - character/number_8
       - wood
     recipes:
       stonecutter:
@@ -356,6 +391,7 @@ heads:
     name: "&7Oak 9"
     tags:
       - alphabet/oak
+      - character/number_9
       - wood
     recipes:
       stonecutter:
@@ -366,6 +402,7 @@ heads:
     name: "&7Oak 00"
     tags:
       - alphabet/oak
+      - character/number_00
       - wood
     recipes:
       stonecutter:
@@ -376,6 +413,7 @@ heads:
     name: "&7Oak 01"
     tags:
       - alphabet/oak
+      - character/number_01
       - wood
     recipes:
       stonecutter:
@@ -386,6 +424,7 @@ heads:
     name: "&7Oak 02"
     tags:
       - alphabet/oak
+      - character/number_02
       - wood
     recipes:
       stonecutter:
@@ -396,6 +435,7 @@ heads:
     name: "&7Oak 03"
     tags:
       - alphabet/oak
+      - character/number_03
       - wood
     recipes:
       stonecutter:
@@ -406,6 +446,7 @@ heads:
     name: "&7Oak 04"
     tags:
       - alphabet/oak
+      - character/number_04
       - wood
     recipes:
       stonecutter:
@@ -416,6 +457,7 @@ heads:
     name: "&7Oak 05"
     tags:
       - alphabet/oak
+      - character/number_05
       - wood
     recipes:
       stonecutter:
@@ -426,6 +468,7 @@ heads:
     name: "&7Oak 06"
     tags:
       - alphabet/oak
+      - character/number_06
       - wood
     recipes:
       stonecutter:
@@ -436,6 +479,7 @@ heads:
     name: "&7Oak 07"
     tags:
       - alphabet/oak
+      - character/number_07
       - wood
     recipes:
       stonecutter:
@@ -446,6 +490,7 @@ heads:
     name: "&7Oak 08"
     tags:
       - alphabet/oak
+      - character/number_08
       - wood
     recipes:
       stonecutter:
@@ -456,6 +501,7 @@ heads:
     name: "&7Oak 09"
     tags:
       - alphabet/oak
+      - character/number_09
       - wood
     recipes:
       stonecutter:
@@ -466,6 +512,7 @@ heads:
     name: "&7Oak 10"
     tags:
       - alphabet/oak
+      - character/number_10
       - wood
     recipes:
       stonecutter:
@@ -476,6 +523,7 @@ heads:
     name: "&7Oak 11"
     tags:
       - alphabet/oak
+      - character/number_11
       - wood
     recipes:
       stonecutter:
@@ -486,6 +534,7 @@ heads:
     name: "&7Oak 12"
     tags:
       - alphabet/oak
+      - character/number_12
       - wood
     recipes:
       stonecutter:
@@ -496,6 +545,7 @@ heads:
     name: "&7Oak 13"
     tags:
       - alphabet/oak
+      - character/number_13
       - wood
     recipes:
       stonecutter:
@@ -506,6 +556,7 @@ heads:
     name: "&7Oak 14"
     tags:
       - alphabet/oak
+      - character/number_14
       - wood
     recipes:
       stonecutter:
@@ -516,6 +567,7 @@ heads:
     name: "&7Oak 15"
     tags:
       - alphabet/oak
+      - character/number_15
       - wood
     recipes:
       stonecutter:
@@ -526,6 +578,7 @@ heads:
     name: "&7Oak 16"
     tags:
       - alphabet/oak
+      - character/number_16
       - wood
     recipes:
       stonecutter:
@@ -536,6 +589,7 @@ heads:
     name: "&7Oak 17"
     tags:
       - alphabet/oak
+      - character/number_17
       - wood
     recipes:
       stonecutter:
@@ -546,6 +600,7 @@ heads:
     name: "&7Oak 18"
     tags:
       - alphabet/oak
+      - character/number_18
       - wood
     recipes:
       stonecutter:
@@ -556,6 +611,7 @@ heads:
     name: "&7Oak 19"
     tags:
       - alphabet/oak
+      - character/number_19
       - wood
     recipes:
       stonecutter:
@@ -566,6 +622,7 @@ heads:
     name: "&7Oak 20"
     tags:
       - alphabet/oak
+      - character/number_20
       - wood
     recipes:
       stonecutter:
@@ -576,6 +633,7 @@ heads:
     name: "&7Oak 21"
     tags:
       - alphabet/oak
+      - character/number_21
       - wood
     recipes:
       stonecutter:
@@ -586,6 +644,7 @@ heads:
     name: "&7Oak 22"
     tags:
       - alphabet/oak
+      - character/number_22
       - wood
     recipes:
       stonecutter:
@@ -596,6 +655,7 @@ heads:
     name: "&7Oak 23"
     tags:
       - alphabet/oak
+      - character/number_23
       - wood
     recipes:
       stonecutter:
@@ -606,6 +666,7 @@ heads:
     name: "&7Oak 24"
     tags:
       - alphabet/oak
+      - character/number_24
       - wood
     recipes:
       stonecutter:
@@ -616,6 +677,7 @@ heads:
     name: "&7Oak 25"
     tags:
       - alphabet/oak
+      - character/number_25
       - wood
     recipes:
       stonecutter:
@@ -626,6 +688,7 @@ heads:
     name: "&7Oak 26"
     tags:
       - alphabet/oak
+      - character/number_26
       - wood
     recipes:
       stonecutter:
@@ -636,6 +699,7 @@ heads:
     name: "&7Oak 27"
     tags:
       - alphabet/oak
+      - character/number_27
       - wood
     recipes:
       stonecutter:
@@ -646,6 +710,7 @@ heads:
     name: "&7Oak 28"
     tags:
       - alphabet/oak
+      - character/number_28
       - wood
     recipes:
       stonecutter:
@@ -656,6 +721,7 @@ heads:
     name: "&7Oak 29"
     tags:
       - alphabet/oak
+      - character/number_29
       - wood
     recipes:
       stonecutter:
@@ -666,6 +732,7 @@ heads:
     name: "&7Oak 30"
     tags:
       - alphabet/oak
+      - character/number_30
       - wood
     recipes:
       stonecutter:
@@ -676,6 +743,7 @@ heads:
     name: "&7Oak 31"
     tags:
       - alphabet/oak
+      - character/number_31
       - wood
     recipes:
       stonecutter:
@@ -686,6 +754,7 @@ heads:
     name: "&7Oak 32"
     tags:
       - alphabet/oak
+      - character/number_32
       - wood
     recipes:
       stonecutter:
@@ -696,6 +765,7 @@ heads:
     name: "&7Oak 33"
     tags:
       - alphabet/oak
+      - character/number_33
       - wood
     recipes:
       stonecutter:
@@ -706,6 +776,7 @@ heads:
     name: "&7Oak 34"
     tags:
       - alphabet/oak
+      - character/number_34
       - wood
     recipes:
       stonecutter:
@@ -716,6 +787,7 @@ heads:
     name: "&7Oak 35"
     tags:
       - alphabet/oak
+      - character/number_35
       - wood
     recipes:
       stonecutter:
@@ -726,6 +798,7 @@ heads:
     name: "&7Oak 36"
     tags:
       - alphabet/oak
+      - character/number_36
       - wood
     recipes:
       stonecutter:
@@ -736,6 +809,7 @@ heads:
     name: "&7Oak 37"
     tags:
       - alphabet/oak
+      - character/number_37
       - wood
     recipes:
       stonecutter:
@@ -746,6 +820,7 @@ heads:
     name: "&7Oak 38"
     tags:
       - alphabet/oak
+      - character/number_38
       - wood
     recipes:
       stonecutter:
@@ -756,6 +831,7 @@ heads:
     name: "&7Oak 100"
     tags:
       - alphabet/oak
+      - character/number_100
       - wood
     recipes:
       stonecutter:
@@ -766,6 +842,7 @@ heads:
     name: "&7Oak !"
     tags:
       - alphabet/oak
+      - character/exclamation
       - wood
     recipes:
       stonecutter:
@@ -776,6 +853,7 @@ heads:
     name: "&7Oak ¡"
     tags:
       - alphabet/oak
+      - character/reverse_exclamation
       - wood
     recipes:
       stonecutter:
@@ -786,6 +864,7 @@ heads:
     name: "&7Oak ?"
     tags:
       - alphabet/oak
+      - character/question
       - wood
     recipes:
       stonecutter:
@@ -796,6 +875,7 @@ heads:
     name: "&7Oak ¿"
     tags:
       - alphabet/oak
+      - character/reverse_question
       - wood
     recipes:
       stonecutter:
@@ -806,6 +886,7 @@ heads:
     name: "&7Oak ."
     tags:
       - alphabet/oak
+      - character/period
       - wood
     recipes:
       stonecutter:
@@ -816,6 +897,7 @@ heads:
     name: "&7Oak ,"
     tags:
       - alphabet/oak
+      - character/comma
       - wood
     recipes:
       stonecutter:
@@ -826,6 +908,7 @@ heads:
     name: "&7Oak :"
     tags:
       - alphabet/oak
+      - character/colon
       - wood
     recipes:
       stonecutter:
@@ -836,6 +919,7 @@ heads:
     name: "&7Oak ;"
     tags:
       - alphabet/oak
+      - character/semicolon
       - wood
     recipes:
       stonecutter:
@@ -846,6 +930,7 @@ heads:
     name: "&7Oak '"
     tags:
       - alphabet/oak
+      - character/apostrophe
       - wood
     recipes:
       stonecutter:
@@ -856,6 +941,7 @@ heads:
     name: "&7Oak \""
     tags:
       - alphabet/oak
+      - character/quote
       - wood
     recipes:
       stonecutter:
@@ -866,6 +952,7 @@ heads:
     name: "&7Oak ..."
     tags:
       - alphabet/oak
+      - character/ellipses
       - wood
     recipes:
       stonecutter:
@@ -876,6 +963,7 @@ heads:
     name: "&7Oak &"
     tags:
       - alphabet/oak
+      - character/ampersand
       - wood
     recipes:
       stonecutter:
@@ -886,6 +974,7 @@ heads:
     name: "&7Oak @"
     tags:
       - alphabet/oak
+      - character/at
       - wood
     recipes:
       stonecutter:
@@ -896,6 +985,7 @@ heads:
     name: "&7Oak #"
     tags:
       - alphabet/oak
+      - character/hash
       - wood
     recipes:
       stonecutter:
@@ -906,6 +996,7 @@ heads:
     name: "&7Oak $"
     tags:
       - alphabet/oak
+      - character/dollar
       - wood
     recipes:
       stonecutter:
@@ -916,6 +1007,7 @@ heads:
     name: "&7Oak €"
     tags:
       - alphabet/oak
+      - character/euro
       - wood
     recipes:
       stonecutter:
@@ -926,6 +1018,7 @@ heads:
     name: "&7Oak £"
     tags:
       - alphabet/oak
+      - character/pound
       - wood
     recipes:
       stonecutter:
@@ -936,6 +1029,7 @@ heads:
     name: "&7Oak ¥"
     tags:
       - alphabet/oak
+      - character/yen
       - wood
     recipes:
       stonecutter:
@@ -946,6 +1040,7 @@ heads:
     name: "&7Oak %"
     tags:
       - alphabet/oak
+      - character/percent
       - wood
     recipes:
       stonecutter:
@@ -956,6 +1051,7 @@ heads:
     name: "&7Oak +"
     tags:
       - alphabet/oak
+      - character/plus
       - wood
     recipes:
       stonecutter:
@@ -966,6 +1062,7 @@ heads:
     name: "&7Oak -"
     tags:
       - alphabet/oak
+      - character/minus
       - wood
     recipes:
       stonecutter:
@@ -976,6 +1073,7 @@ heads:
     name: "&7Oak ="
     tags:
       - alphabet/oak
+      - character/equals
       - wood
     recipes:
       stonecutter:
@@ -986,6 +1084,7 @@ heads:
     name: "&7Oak /"
     tags:
       - alphabet/oak
+      - character/slash
       - wood
     recipes:
       stonecutter:
@@ -996,6 +1095,7 @@ heads:
     name: "&7Oak \\"
     tags:
       - alphabet/oak
+      - character/backslash
       - wood
     recipes:
       stonecutter:
@@ -1006,6 +1106,7 @@ heads:
     name: "&7Oak _"
     tags:
       - alphabet/oak
+      - character/underscore
       - wood
     recipes:
       stonecutter:
@@ -1016,6 +1117,7 @@ heads:
     name: "&7Oak *"
     tags:
       - alphabet/oak
+      - character/star
       - wood
     recipes:
       stonecutter:
@@ -1026,6 +1128,7 @@ heads:
     name: "&7Oak ♥"
     tags:
       - alphabet/oak
+      - character/heart
       - wood
     recipes:
       stonecutter:
@@ -1036,6 +1139,7 @@ heads:
     name: "&7Oak  "
     tags:
       - alphabet/oak
+      - character/blank
       - wood
     recipes:
       stonecutter:
@@ -1046,6 +1150,7 @@ heads:
     name: "&7Oak °"
     tags:
       - alphabet/oak
+      - character/degree
       - wood
     recipes:
       stonecutter:
@@ -1056,6 +1161,7 @@ heads:
     name: "&7Oak ✓"
     tags:
       - alphabet/oak
+      - character/checkmark
       - wood
     recipes:
       stonecutter:
@@ -1066,6 +1172,7 @@ heads:
     name: "&7Oak ⏸"
     tags:
       - alphabet/oak
+      - character/pause
       - wood
     recipes:
       stonecutter:
@@ -1076,6 +1183,7 @@ heads:
     name: "&7Oak ♪"
     tags:
       - alphabet/oak
+      - character/note
       - wood
     recipes:
       stonecutter:
@@ -1086,6 +1194,7 @@ heads:
     name: "&7Oak ("
     tags:
       - alphabet/oak
+      - character/paren_open
       - wood
     recipes:
       stonecutter:
@@ -1096,6 +1205,7 @@ heads:
     name: "&7Oak )"
     tags:
       - alphabet/oak
+      - character/paren_close
       - wood
     recipes:
       stonecutter:
@@ -1106,6 +1216,7 @@ heads:
     name: "&7Oak ["
     tags:
       - alphabet/oak
+      - character/bracket_open
       - wood
     recipes:
       stonecutter:
@@ -1116,6 +1227,7 @@ heads:
     name: "&7Oak ]"
     tags:
       - alphabet/oak
+      - character/bracket_close
       - wood
     recipes:
       stonecutter:
@@ -1126,6 +1238,7 @@ heads:
     name: "&7Oak {"
     tags:
       - alphabet/oak
+      - character/brace_open
       - wood
     recipes:
       stonecutter:
@@ -1136,6 +1249,7 @@ heads:
     name: "&7Oak }"
     tags:
       - alphabet/oak
+      - character/brace_close
       - wood
     recipes:
       stonecutter:
@@ -1146,6 +1260,7 @@ heads:
     name: "&7Oak ↑"
     tags:
       - alphabet/oak
+      - character/arrow_up
       - wood
     recipes:
       stonecutter:
@@ -1156,6 +1271,7 @@ heads:
     name: "&7Oak ↓"
     tags:
       - alphabet/oak
+      - character/arrow_down
       - wood
     recipes:
       stonecutter:
@@ -1166,6 +1282,7 @@ heads:
     name: "&7Oak ←"
     tags:
       - alphabet/oak
+      - character/arrow_left
       - wood
     recipes:
       stonecutter:
@@ -1176,6 +1293,7 @@ heads:
     name: "&7Oak →"
     tags:
       - alphabet/oak
+      - character/arrow_right
       - wood
     recipes:
       stonecutter:
@@ -1186,6 +1304,7 @@ heads:
     name: "&7Oak ↖"
     tags:
       - alphabet/oak
+      - character/arrow_left_up
       - wood
     recipes:
       stonecutter:
@@ -1196,6 +1315,7 @@ heads:
     name: "&7Oak ↗"
     tags:
       - alphabet/oak
+      - character/arrow_right_up
       - wood
     recipes:
       stonecutter:
@@ -1206,6 +1326,7 @@ heads:
     name: "&7Oak ↙"
     tags:
       - alphabet/oak
+      - character/arrow_left_down
       - wood
     recipes:
       stonecutter:
@@ -1216,6 +1337,7 @@ heads:
     name: "&7Oak ↘"
     tags:
       - alphabet/oak
+      - character/arrow_right_down
       - wood
     recipes:
       stonecutter:
@@ -1226,6 +1348,7 @@ heads:
     name: "&7Oak ⇄"
     tags:
       - alphabet/oak
+      - character/arrows
       - wood
     recipes:
       stonecutter:
@@ -1236,6 +1359,7 @@ heads:
     name: "&7Oak ⏩"
     tags:
       - alphabet/oak
+      - character/forward
       - wood
     recipes:
       stonecutter:
@@ -1246,6 +1370,7 @@ heads:
     name: "&7Oak ⏭"
     tags:
       - alphabet/oak
+      - character/forward_ii
       - wood
     recipes:
       stonecutter:
@@ -1256,6 +1381,7 @@ heads:
     name: "&7Oak ⏪"
     tags:
       - alphabet/oak
+      - character/backward
       - wood
     recipes:
       stonecutter:
@@ -1266,6 +1392,7 @@ heads:
     name: "&7Oak ⏮"
     tags:
       - alphabet/oak
+      - character/backward_ii
       - wood
     recipes:
       stonecutter:
@@ -1276,6 +1403,7 @@ heads:
     name: "&7Oak ↻"
     tags:
       - alphabet/oak
+      - character/refresh
       - wood
     recipes:
       stonecutter:
@@ -1286,6 +1414,7 @@ heads:
     name: "&7Oak Á"
     tags:
       - alphabet/oak
+      - character/letter_a_acute
       - wood
     recipes:
       stonecutter:
@@ -1296,6 +1425,7 @@ heads:
     name: "&7Oak Ä"
     tags:
       - alphabet/oak
+      - character/letter_a_umlaut
       - wood
     recipes:
       stonecutter:
@@ -1306,6 +1436,7 @@ heads:
     name: "&7Oak Ç"
     tags:
       - alphabet/oak
+      - character/letter_c_cedilla
       - wood
     recipes:
       stonecutter:
@@ -1316,6 +1447,7 @@ heads:
     name: "&7Oak É"
     tags:
       - alphabet/oak
+      - character/letter_e_acute
       - wood
     recipes:
       stonecutter:
@@ -1326,6 +1458,7 @@ heads:
     name: "&7Oak Í"
     tags:
       - alphabet/oak
+      - character/letter_i_acute
       - wood
     recipes:
       stonecutter:
@@ -1336,6 +1469,7 @@ heads:
     name: "&7Oak Ñ"
     tags:
       - alphabet/oak
+      - character/letter_n_tilde
       - wood
     recipes:
       stonecutter:
@@ -1346,6 +1480,7 @@ heads:
     name: "&7Oak Ó"
     tags:
       - alphabet/oak
+      - character/letter_o_acute
       - wood
     recipes:
       stonecutter:
@@ -1356,6 +1491,7 @@ heads:
     name: "&7Oak Ö"
     tags:
       - alphabet/oak
+      - character/letter_o_umlaut
       - wood
     recipes:
       stonecutter:
@@ -1366,6 +1502,7 @@ heads:
     name: "&7Oak Ú"
     tags:
       - alphabet/oak
+      - character/letter_u_acute
       - wood
     recipes:
       stonecutter:
@@ -1376,6 +1513,7 @@ heads:
     name: "&7Oak Ü"
     tags:
       - alphabet/oak
+      - character/letter_u_umlaut
       - wood
     recipes:
       stonecutter:
@@ -1386,6 +1524,7 @@ heads:
     name: "&7Oak α"
     tags:
       - alphabet/oak
+      - character/greek_alpha
       - wood
     recipes:
       stonecutter:
@@ -1396,6 +1535,7 @@ heads:
     name: "&7Oak λ"
     tags:
       - alphabet/oak
+      - character/greek_lambda
       - wood
     recipes:
       stonecutter:
@@ -1406,6 +1546,7 @@ heads:
     name: "&7Oak π"
     tags:
       - alphabet/oak
+      - character/greek_pi
       - wood
     recipes:
       stonecutter:
@@ -1416,6 +1557,7 @@ heads:
     name: "&7Oak Ω"
     tags:
       - alphabet/oak
+      - character/greek_omega
       - wood
     recipes:
       stonecutter:
@@ -1426,6 +1568,7 @@ heads:
     name: "&7Oak ∑"
     tags:
       - alphabet/oak
+      - character/greek_sigma
       - wood
     recipes:
       stonecutter:
@@ -1436,6 +1579,7 @@ heads:
     name: "&7Oak Ё"
     tags:
       - alphabet/oak
+      - character/cyrillic_yo
       - wood
     recipes:
       stonecutter:
@@ -1446,6 +1590,7 @@ heads:
     name: "&7Oak Б"
     tags:
       - alphabet/oak
+      - character/cyrillic_be
       - wood
     recipes:
       stonecutter:
@@ -1456,6 +1601,7 @@ heads:
     name: "&7Oak Г"
     tags:
       - alphabet/oak
+      - character/cyrillic_ge
       - wood
     recipes:
       stonecutter:
@@ -1466,6 +1612,7 @@ heads:
     name: "&7Oak Д"
     tags:
       - alphabet/oak
+      - character/cyrillic_de
       - wood
     recipes:
       stonecutter:
@@ -1476,6 +1623,7 @@ heads:
     name: "&7Oak Ж"
     tags:
       - alphabet/oak
+      - character/cyrillic_zhe
       - wood
     recipes:
       stonecutter:
@@ -1486,6 +1634,7 @@ heads:
     name: "&7Oak З"
     tags:
       - alphabet/oak
+      - character/cyrillic_ze
       - wood
     recipes:
       stonecutter:
@@ -1496,6 +1645,7 @@ heads:
     name: "&7Oak И"
     tags:
       - alphabet/oak
+      - character/cyrillic_i
       - wood
     recipes:
       stonecutter:
@@ -1506,6 +1656,7 @@ heads:
     name: "&7Oak Й"
     tags:
       - alphabet/oak
+      - character/cyrillic_short_i
       - wood
     recipes:
       stonecutter:
@@ -1516,6 +1667,7 @@ heads:
     name: "&7Oak Л"
     tags:
       - alphabet/oak
+      - character/cyrillic_el
       - wood
     recipes:
       stonecutter:
@@ -1526,6 +1678,7 @@ heads:
     name: "&7Oak П"
     tags:
       - alphabet/oak
+      - character/cyrillic_pe
       - wood
     recipes:
       stonecutter:
@@ -1536,6 +1689,7 @@ heads:
     name: "&7Oak У"
     tags:
       - alphabet/oak
+      - character/cyrillic_u
       - wood
     recipes:
       stonecutter:
@@ -1546,6 +1700,7 @@ heads:
     name: "&7Oak Ф"
     tags:
       - alphabet/oak
+      - character/cyrillic_ef
       - wood
     recipes:
       stonecutter:
@@ -1556,6 +1711,7 @@ heads:
     name: "&7Oak Ц"
     tags:
       - alphabet/oak
+      - character/cyrillic_tse
       - wood
     recipes:
       stonecutter:
@@ -1566,6 +1722,7 @@ heads:
     name: "&7Oak Ч"
     tags:
       - alphabet/oak
+      - character/cyrillic_che
       - wood
     recipes:
       stonecutter:
@@ -1576,6 +1733,7 @@ heads:
     name: "&7Oak Ш"
     tags:
       - alphabet/oak
+      - character/cyrillic_sha
       - wood
     recipes:
       stonecutter:
@@ -1586,6 +1744,7 @@ heads:
     name: "&7Oak Щ"
     tags:
       - alphabet/oak
+      - character/cyrillic_shcha
       - wood
     recipes:
       stonecutter:
@@ -1596,6 +1755,7 @@ heads:
     name: "&7Oak Ъ"
     tags:
       - alphabet/oak
+      - character/cyrillic_hard
       - wood
     recipes:
       stonecutter:
@@ -1606,6 +1766,7 @@ heads:
     name: "&7Oak Ы"
     tags:
       - alphabet/oak
+      - character/cyrillic_yeru
       - wood
     recipes:
       stonecutter:
@@ -1616,6 +1777,7 @@ heads:
     name: "&7Oak Ь"
     tags:
       - alphabet/oak
+      - character/cyrillic_soft
       - wood
     recipes:
       stonecutter:
@@ -1626,6 +1788,7 @@ heads:
     name: "&7Oak Э"
     tags:
       - alphabet/oak
+      - character/cyrillic_e
       - wood
     recipes:
       stonecutter:
@@ -1636,6 +1799,7 @@ heads:
     name: "&7Oak Ю"
     tags:
       - alphabet/oak
+      - character/cyrillic_yu
       - wood
     recipes:
       stonecutter:
@@ -1646,6 +1810,7 @@ heads:
     name: "&7Oak Я"
     tags:
       - alphabet/oak
+      - character/cyrillic_ya
       - wood
     recipes:
       stonecutter:
@@ -1656,6 +1821,7 @@ heads:
     name: "&7Oak ♒"
     tags:
       - alphabet/oak
+      - character/zodiac_aquarius
       - wood
     recipes:
       stonecutter:
@@ -1666,6 +1832,7 @@ heads:
     name: "&7Oak ♈"
     tags:
       - alphabet/oak
+      - character/zodiac_aries
       - wood
     recipes:
       stonecutter:
@@ -1676,6 +1843,7 @@ heads:
     name: "&7Oak ♋"
     tags:
       - alphabet/oak
+      - character/zodiac_cancer
       - wood
     recipes:
       stonecutter:
@@ -1686,6 +1854,7 @@ heads:
     name: "&7Oak ♑"
     tags:
       - alphabet/oak
+      - character/zodiac_capricorn
       - wood
     recipes:
       stonecutter:
@@ -1696,6 +1865,7 @@ heads:
     name: "&7Oak ♊"
     tags:
       - alphabet/oak
+      - character/zodiac_gemini
       - wood
     recipes:
       stonecutter:
@@ -1706,6 +1876,7 @@ heads:
     name: "&7Oak ♌"
     tags:
       - alphabet/oak
+      - character/zodiac_leo
       - wood
     recipes:
       stonecutter:
@@ -1716,6 +1887,7 @@ heads:
     name: "&7Oak ♎"
     tags:
       - alphabet/oak
+      - character/zodiac_libra
       - wood
     recipes:
       stonecutter:
@@ -1726,6 +1898,7 @@ heads:
     name: "&7Oak ⛎"
     tags:
       - alphabet/oak
+      - character/zodiac_ophiuchus
       - wood
     recipes:
       stonecutter:
@@ -1736,6 +1909,7 @@ heads:
     name: "&7Oak ♓"
     tags:
       - alphabet/oak
+      - character/zodiac_pisces
       - wood
     recipes:
       stonecutter:
@@ -1746,6 +1920,7 @@ heads:
     name: "&7Oak ♐"
     tags:
       - alphabet/oak
+      - character/zodiac_sagittarius
       - wood
     recipes:
       stonecutter:
@@ -1756,6 +1931,7 @@ heads:
     name: "&7Oak ♏"
     tags:
       - alphabet/oak
+      - character/zodiac_scorpio
       - wood
     recipes:
       stonecutter:
@@ -1766,6 +1942,7 @@ heads:
     name: "&7Oak ♉"
     tags:
       - alphabet/oak
+      - character/zodiac_taurus
       - wood
     recipes:
       stonecutter:
@@ -1776,6 +1953,7 @@ heads:
     name: "&7Oak ♍"
     tags:
       - alphabet/oak
+      - character/zodiac_virgo
       - wood
     recipes:
       stonecutter:
@@ -1786,6 +1964,7 @@ heads:
     name: "&7Oak ♀"
     tags:
       - alphabet/oak
+      - character/female
       - wood
     recipes:
       stonecutter:
@@ -1796,6 +1975,7 @@ heads:
     name: "&7Oak ♂"
     tags:
       - alphabet/oak
+      - character/male
       - wood
     recipes:
       stonecutter:
@@ -1806,6 +1986,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_0
       - wood
     recipes:
       stonecutter:
@@ -1816,6 +1997,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_1
       - wood
     recipes:
       stonecutter:
@@ -1826,6 +2008,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_2
       - wood
     recipes:
       stonecutter:
@@ -1836,6 +2019,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_3
       - wood
     recipes:
       stonecutter:
@@ -1846,6 +2030,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_4
       - wood
     recipes:
       stonecutter:
@@ -1856,6 +2041,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_5
       - wood
     recipes:
       stonecutter:
@@ -1866,6 +2052,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_6
       - wood
     recipes:
       stonecutter:
@@ -1876,6 +2063,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_7
       - wood
     recipes:
       stonecutter:
@@ -1886,6 +2074,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_8
       - wood
     recipes:
       stonecutter:
@@ -1896,6 +2085,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_9
       - wood
     recipes:
       stonecutter:
@@ -1906,6 +2096,7 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_10
       - wood
     recipes:
       stonecutter:
@@ -1916,8 +2107,295 @@ heads:
     name: "&7Oak Rune"
     tags:
       - alphabet/oak
+      - character/rune_11
       - wood
     recipes:
       stonecutter:
         - id: "oak_rune_11"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_a:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWM1ZGE5Yjk2MGM1Yzg5YTczNTAxYzAwNzc1ZWYxMDViMDg1OGZjZDRhNzIwYTMwNTA3YTA5YWE0MzY3ZTM1ZSJ9fX0="
+    name: "&7Oak Galactic A"
+    tags:
+      - alphabet/oak
+      - character/galactic_a
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_a"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_b:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTkzZWI3MTQwYjUwMjY1NDA5OTIwZDU0ZjdhOWY2Y2M5OGRjZmU2NjcwZDAxZTc2NzViZTU2NDVmMmMzODc2In19fQ=="
+    name: "&7Oak Galactic B"
+    tags:
+      - alphabet/oak
+      - character/galactic_b
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_b"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_c:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGEwMzNmZjU1YmVmMGI2Njc2OGVhZGZhM2MxMWY3NjA1ZWFkMGNkZTg0NWNmNzM0OWJkYjVjOTMwZGQ4YzUyNiJ9fX0="
+    name: "&7Oak Galactic C"
+    tags:
+      - alphabet/oak
+      - character/galactic_c
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_c"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_d:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTk2MjcwNjE2NjFhMWUwODQwNWE2ZWQ3NGIxMjJlZDQ3MmFjMjlmMGRkNWIzMWYzZDVlMmViMjdjZWZkNjFiOCJ9fX0="
+    name: "&7Oak Galactic D"
+    tags:
+      - alphabet/oak
+      - character/galactic_d
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_d"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_e:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTVlZjZiOTQwNTU1MzkxYmFiOGZjYjAyMzEyYTM0MjM3OTFmMzY1OTVkODJkNjY2NmEwMTA4YjI3MDkzYjVkOCJ9fX0="
+    name: "&7Oak Galactic E"
+    tags:
+      - alphabet/oak
+      - character/galactic_e
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_e"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_f:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjI4NzlmZDZmNDhiYTRlMDI3YWMxYTNmZGQ0MWU2M2FlNjMyYzk4MzI0YjNkNzkzMTRmZTgyMGQzMTlmMTNkMSJ9fX0="
+    name: "&7Oak Galactic F"
+    tags:
+      - alphabet/oak
+      - character/galactic_f
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_f"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_g:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDM2NzhjMjNiZjI4YWQ1YmE1YzNhYjM3NGYzMjNmNTViNjIyYTM5ZjdiMGE2MzE3NDQ4MjNiMDc1MTNkODIyNCJ9fX0="
+    name: "&7Oak Galactic G"
+    tags:
+      - alphabet/oak
+      - character/galactic_g
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_g"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_h:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjAxY2M0NjNlMzI4MjM2MjQ2OGY4MWE3ZjI1YzUyMGFjYjAwOTU0YmY2ZDk3NWQ3MzE2NTEwZmY1ZWQ3NDY4In19fQ=="
+    name: "&7Oak Galactic H"
+    tags:
+      - alphabet/oak
+      - character/galactic_h
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_h"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_i:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGE2ZDVhY2RiYTMzMmFmYzFjYWQ2NWJhYWRjM2QzMGQ5YzQ5NjExNzk5M2VhOTk0YzI1ZGIzNWEzNDJjNDM4OSJ9fX0="
+    name: "&7Oak Galactic I"
+    tags:
+      - alphabet/oak
+      - character/galactic_i
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_i"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_j:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZWUwYmVjNmZkMjA0NzA4ZGQ2ZDcwODIyNmIzMGU2N2Y4M2I1ZTJkZjY1ZTZkNWFlYzU5ZTExMTExYjRhMGM2NiJ9fX0="
+    name: "&7Oak Galactic J"
+    tags:
+      - alphabet/oak
+      - character/galactic_j
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_j"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_k:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjM0NTExMDE4ZTM1NmJjZjIyODZmYjg3NTA5MmFhODY2MmQ1ODUwZmE4NTliZmU3ZTcwNjQ2MDIwMzU4NTU2YyJ9fX0="
+    name: "&7Oak Galactic K"
+    tags:
+      - alphabet/oak
+      - character/galactic_k
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_k"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_l:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDU0YmNlZjMwMzJiNjRmYzMyZTkzNjQzNmY0ZTM3Nzc5ZGEwMmYyNjE2ODg0N2YzMGI1YTllNzZmZDFiNTY1YyJ9fX0="
+    name: "&7Oak Galactic L"
+    tags:
+      - alphabet/oak
+      - character/galactic_l
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_l"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_m:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZGNjMWI5MGJmOWMxYWQyNTEwNTdhYThlZjRiNGU3YTg2OGNiZDg2N2MyZmYxZGExMGE1ZDdjMDcyMGNhNmJhNSJ9fX0="
+    name: "&7Oak Galactic M"
+    tags:
+      - alphabet/oak
+      - character/galactic_m
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_m"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_n:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2M2YzE0MTI3NjZjYjI2NzE3ZWJhMDFhNDg1NDNjNmIwYjExYmRiYzA4ZmZkOWMxYTEyNGQ0MjgxYTQ5MTJhZiJ9fX0="
+    name: "&7Oak Galactic N"
+    tags:
+      - alphabet/oak
+      - character/galactic_n
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_n"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_o:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjVmMmZjYmJkMTQ3ZjliOWE0ZmUxNzE5NjhlZmFhMDM5OGRjNTZhYzhhN2ZlNjYzMmJiYThkNzQ5MGRkMDY3ZiJ9fX0="
+    name: "&7Oak Galactic O"
+    tags:
+      - alphabet/oak
+      - character/galactic_o
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_o"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_p:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYjhmNzNjNTUxNmI1YjAwZTNhYzE0M2IxZDU4MTE0MmFiMWM5NzE1NTQxNTQ0NGU3NmIxMTg2YzBjMjU2N2MifX19"
+    name: "&7Oak Galactic P"
+    tags:
+      - alphabet/oak
+      - character/galactic_p
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_p"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_q:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNzA5MDFhOWIzNWE3N2RkZTQyYzQ5MzhlMDlmNWM3Y2U3YTlmYWFmY2E5NDI5MTU5NjkxOTY1NTFhNTE2MTBhNCJ9fX0="
+    name: "&7Oak Galactic Q"
+    tags:
+      - alphabet/oak
+      - character/galactic_q
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_q"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_r:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvN2NjZDQ1OWFlYjdlMTBhMjJhMDJjMDIyZDA0YTM2YmVlN2UyMTM2OTM5MmZmMTg5OTY5OWE3MjY4ODE3ZjU5MiJ9fX0="
+    name: "&7Oak Galactic R"
+    tags:
+      - alphabet/oak
+      - character/galactic_r
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_r"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_s:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjVkODRjN2NmZWIxMjZkOWUyMTM3MjYzOTI1NWQ2Y2U1MjAyYzUyNTk2MWQ4NzZlNjI2NzFkMmY2NmYxNTlhMSJ9fX0="
+    name: "&7Oak Galactic S"
+    tags:
+      - alphabet/oak
+      - character/galactic_s
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_s"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_t:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTM4Y2FjNWVmYTcwZGU0YzFlZTg5YTJiYWFiMTNiYWUwNTg5NGE2ZTJmMDcwY2MxYjY4NWZlY2YwMzcxNmI4MSJ9fX0="
+    name: "&7Oak Galactic T"
+    tags:
+      - alphabet/oak
+      - character/galactic_t
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_t"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_u:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYTY2NmNiZTJiMjE1YTY2OTEzNGQ5ZTA4ODFjOWMxNDcwMWEwMGVkZDQzOGYxYmE5NWI0NDI0MjdjMWM5NDFhNCJ9fX0="
+    name: "&7Oak Galactic U"
+    tags:
+      - alphabet/oak
+      - character/galactic_u
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_u"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_v:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvODExZmM5ZWYyNmYxYzE4MThiNzc4NTAzMTNmNzgxYTgzZjgwOWY0NTYzOWMxNjJkYjA3MDAwNzk4MjkzYWU4In19fQ=="
+    name: "&7Oak Galactic V"
+    tags:
+      - alphabet/oak
+      - character/galactic_v
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_v"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_w:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzE1NmI1YmQ0NTgwMTNhMDkzMWRkMjYzZWQ5OTc3YTFlODczOWVkNWYyMWQ1N2YwODc3MzdlYTQyMzMyMzJmNyJ9fX0="
+    name: "&7Oak Galactic W"
+    tags:
+      - alphabet/oak
+      - character/galactic_w
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_w"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_x:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDkxYmNjNzg0NGY0NDViYzBlOTAxMWZiZjMzNGJmYTk0Y2ZmZGFjODdhNDMwMGVhOTZlMWY5MDM2NzEwODY2MSJ9fX0="
+    name: "&7Oak Galactic X"
+    tags:
+      - alphabet/oak
+      - character/galactic_x
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_x"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_y:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZTBhMThmZjIzMmE0YjU0MTJmZWYxODU5OTdlNDJlMGI0NDg5MWZiYTk3NzE0NDU1MDM1Y2U4NDY3ZDk2ZWM5NiJ9fX0="
+    name: "&7Oak Galactic Y"
+    tags:
+      - alphabet/oak
+      - character/galactic_y
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_y"
+          input: { head: "mini_oak_planks" }
+  oak_galactic_z:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMTJiNTViODE4Yjc1ZGViYjFjOWRjZjJhZTBkMjY4MDgzNzhkMzZlZGFlZDY0ZGE2Y2Y2MDRkNGNiZGViMjgzYiJ9fX0="
+    name: "&7Oak Galactic Z"
+    tags:
+      - alphabet/oak
+      - character/galactic_z
+      - wood
+    recipes:
+      stonecutter:
+        - id: "oak_galactic_z"
           input: { head: "mini_oak_planks" }

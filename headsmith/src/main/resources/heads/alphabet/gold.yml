@@ -6,6 +6,7 @@ heads:
     name: "&7Gold A"
     tags:
       - alphabet/gold
+      - character/letter_a
       - natural/ore_block
     recipes:
       stonecutter:
@@ -16,6 +17,7 @@ heads:
     name: "&7Gold B"
     tags:
       - alphabet/gold
+      - character/letter_b
       - natural/ore_block
     recipes:
       stonecutter:
@@ -26,6 +28,7 @@ heads:
     name: "&7Gold C"
     tags:
       - alphabet/gold
+      - character/letter_c
       - natural/ore_block
     recipes:
       stonecutter:
@@ -36,6 +39,7 @@ heads:
     name: "&7Gold D"
     tags:
       - alphabet/gold
+      - character/letter_d
       - natural/ore_block
     recipes:
       stonecutter:
@@ -46,6 +50,7 @@ heads:
     name: "&7Gold E"
     tags:
       - alphabet/gold
+      - character/letter_e
       - natural/ore_block
     recipes:
       stonecutter:
@@ -56,6 +61,7 @@ heads:
     name: "&7Gold F"
     tags:
       - alphabet/gold
+      - character/letter_f
       - natural/ore_block
     recipes:
       stonecutter:
@@ -66,6 +72,7 @@ heads:
     name: "&7Gold G"
     tags:
       - alphabet/gold
+      - character/letter_g
       - natural/ore_block
     recipes:
       stonecutter:
@@ -76,6 +83,7 @@ heads:
     name: "&7Gold H"
     tags:
       - alphabet/gold
+      - character/letter_h
       - natural/ore_block
     recipes:
       stonecutter:
@@ -86,6 +94,7 @@ heads:
     name: "&7Gold I"
     tags:
       - alphabet/gold
+      - character/letter_i
       - natural/ore_block
     recipes:
       stonecutter:
@@ -96,6 +105,7 @@ heads:
     name: "&7Gold J"
     tags:
       - alphabet/gold
+      - character/letter_j
       - natural/ore_block
     recipes:
       stonecutter:
@@ -106,6 +116,7 @@ heads:
     name: "&7Gold K"
     tags:
       - alphabet/gold
+      - character/letter_k
       - natural/ore_block
     recipes:
       stonecutter:
@@ -116,6 +127,7 @@ heads:
     name: "&7Gold L"
     tags:
       - alphabet/gold
+      - character/letter_l
       - natural/ore_block
     recipes:
       stonecutter:
@@ -126,6 +138,7 @@ heads:
     name: "&7Gold M"
     tags:
       - alphabet/gold
+      - character/letter_m
       - natural/ore_block
     recipes:
       stonecutter:
@@ -136,6 +149,7 @@ heads:
     name: "&7Gold N"
     tags:
       - alphabet/gold
+      - character/letter_n
       - natural/ore_block
     recipes:
       stonecutter:
@@ -146,6 +160,7 @@ heads:
     name: "&7Gold O"
     tags:
       - alphabet/gold
+      - character/letter_o
       - natural/ore_block
     recipes:
       stonecutter:
@@ -156,6 +171,7 @@ heads:
     name: "&7Gold P"
     tags:
       - alphabet/gold
+      - character/letter_p
       - natural/ore_block
     recipes:
       stonecutter:
@@ -166,6 +182,7 @@ heads:
     name: "&7Gold Q"
     tags:
       - alphabet/gold
+      - character/letter_q
       - natural/ore_block
     recipes:
       stonecutter:
@@ -176,6 +193,7 @@ heads:
     name: "&7Gold R"
     tags:
       - alphabet/gold
+      - character/letter_r
       - natural/ore_block
     recipes:
       stonecutter:
@@ -186,6 +204,7 @@ heads:
     name: "&7Gold S"
     tags:
       - alphabet/gold
+      - character/letter_s
       - natural/ore_block
     recipes:
       stonecutter:
@@ -196,6 +215,7 @@ heads:
     name: "&7Gold T"
     tags:
       - alphabet/gold
+      - character/letter_t
       - natural/ore_block
     recipes:
       stonecutter:
@@ -206,6 +226,7 @@ heads:
     name: "&7Gold U"
     tags:
       - alphabet/gold
+      - character/letter_u
       - natural/ore_block
     recipes:
       stonecutter:
@@ -216,6 +237,7 @@ heads:
     name: "&7Gold V"
     tags:
       - alphabet/gold
+      - character/letter_v
       - natural/ore_block
     recipes:
       stonecutter:
@@ -226,6 +248,7 @@ heads:
     name: "&7Gold W"
     tags:
       - alphabet/gold
+      - character/letter_w
       - natural/ore_block
     recipes:
       stonecutter:
@@ -236,6 +259,7 @@ heads:
     name: "&7Gold X"
     tags:
       - alphabet/gold
+      - character/letter_x
       - natural/ore_block
     recipes:
       stonecutter:
@@ -246,6 +270,7 @@ heads:
     name: "&7Gold Y"
     tags:
       - alphabet/gold
+      - character/letter_y
       - natural/ore_block
     recipes:
       stonecutter:
@@ -256,6 +281,7 @@ heads:
     name: "&7Gold Z"
     tags:
       - alphabet/gold
+      - character/letter_z
       - natural/ore_block
     recipes:
       stonecutter:
@@ -266,6 +292,7 @@ heads:
     name: "&7Gold 0"
     tags:
       - alphabet/gold
+      - character/number_0
       - natural/ore_block
     recipes:
       stonecutter:
@@ -276,6 +303,7 @@ heads:
     name: "&7Gold 1"
     tags:
       - alphabet/gold
+      - character/number_1
       - natural/ore_block
     recipes:
       stonecutter:
@@ -286,6 +314,7 @@ heads:
     name: "&7Gold 2"
     tags:
       - alphabet/gold
+      - character/number_2
       - natural/ore_block
     recipes:
       stonecutter:
@@ -296,6 +325,7 @@ heads:
     name: "&7Gold 3"
     tags:
       - alphabet/gold
+      - character/number_3
       - natural/ore_block
     recipes:
       stonecutter:
@@ -306,6 +336,7 @@ heads:
     name: "&7Gold 4"
     tags:
       - alphabet/gold
+      - character/number_4
       - natural/ore_block
     recipes:
       stonecutter:
@@ -316,6 +347,7 @@ heads:
     name: "&7Gold 5"
     tags:
       - alphabet/gold
+      - character/number_5
       - natural/ore_block
     recipes:
       stonecutter:
@@ -326,6 +358,7 @@ heads:
     name: "&7Gold 6"
     tags:
       - alphabet/gold
+      - character/number_6
       - natural/ore_block
     recipes:
       stonecutter:
@@ -336,6 +369,7 @@ heads:
     name: "&7Gold 7"
     tags:
       - alphabet/gold
+      - character/number_7
       - natural/ore_block
     recipes:
       stonecutter:
@@ -346,6 +380,7 @@ heads:
     name: "&7Gold 8"
     tags:
       - alphabet/gold
+      - character/number_8
       - natural/ore_block
     recipes:
       stonecutter:
@@ -356,6 +391,7 @@ heads:
     name: "&7Gold 9"
     tags:
       - alphabet/gold
+      - character/number_9
       - natural/ore_block
     recipes:
       stonecutter:
@@ -366,6 +402,7 @@ heads:
     name: "&7Gold 10"
     tags:
       - alphabet/gold
+      - character/number_10
       - natural/ore_block
     recipes:
       stonecutter:
@@ -376,6 +413,7 @@ heads:
     name: "&7Gold 11"
     tags:
       - alphabet/gold
+      - character/number_11
       - natural/ore_block
     recipes:
       stonecutter:
@@ -386,6 +424,7 @@ heads:
     name: "&7Gold 12"
     tags:
       - alphabet/gold
+      - character/number_12
       - natural/ore_block
     recipes:
       stonecutter:
@@ -396,6 +435,7 @@ heads:
     name: "&7Gold 13"
     tags:
       - alphabet/gold
+      - character/number_13
       - natural/ore_block
     recipes:
       stonecutter:
@@ -406,6 +446,7 @@ heads:
     name: "&7Gold 14"
     tags:
       - alphabet/gold
+      - character/number_14
       - natural/ore_block
     recipes:
       stonecutter:
@@ -416,6 +457,7 @@ heads:
     name: "&7Gold 15"
     tags:
       - alphabet/gold
+      - character/number_15
       - natural/ore_block
     recipes:
       stonecutter:
@@ -426,6 +468,7 @@ heads:
     name: "&7Gold 16"
     tags:
       - alphabet/gold
+      - character/number_16
       - natural/ore_block
     recipes:
       stonecutter:
@@ -436,6 +479,7 @@ heads:
     name: "&7Gold 17"
     tags:
       - alphabet/gold
+      - character/number_17
       - natural/ore_block
     recipes:
       stonecutter:
@@ -446,6 +490,7 @@ heads:
     name: "&7Gold 18"
     tags:
       - alphabet/gold
+      - character/number_18
       - natural/ore_block
     recipes:
       stonecutter:
@@ -456,6 +501,7 @@ heads:
     name: "&7Gold 19"
     tags:
       - alphabet/gold
+      - character/number_19
       - natural/ore_block
     recipes:
       stonecutter:
@@ -466,6 +512,7 @@ heads:
     name: "&7Gold 20"
     tags:
       - alphabet/gold
+      - character/number_20
       - natural/ore_block
     recipes:
       stonecutter:
@@ -476,6 +523,7 @@ heads:
     name: "&7Gold 21"
     tags:
       - alphabet/gold
+      - character/number_21
       - natural/ore_block
     recipes:
       stonecutter:
@@ -486,6 +534,7 @@ heads:
     name: "&7Gold 22"
     tags:
       - alphabet/gold
+      - character/number_22
       - natural/ore_block
     recipes:
       stonecutter:
@@ -496,6 +545,7 @@ heads:
     name: "&7Gold 23"
     tags:
       - alphabet/gold
+      - character/number_23
       - natural/ore_block
     recipes:
       stonecutter:
@@ -506,6 +556,7 @@ heads:
     name: "&7Gold 24"
     tags:
       - alphabet/gold
+      - character/number_24
       - natural/ore_block
     recipes:
       stonecutter:
@@ -516,6 +567,7 @@ heads:
     name: "&7Gold 25"
     tags:
       - alphabet/gold
+      - character/number_25
       - natural/ore_block
     recipes:
       stonecutter:
@@ -526,6 +578,7 @@ heads:
     name: "&7Gold !"
     tags:
       - alphabet/gold
+      - character/exclamation
       - natural/ore_block
     recipes:
       stonecutter:
@@ -536,6 +589,7 @@ heads:
     name: "&7Gold ¡"
     tags:
       - alphabet/gold
+      - character/reverse_exclamation
       - natural/ore_block
     recipes:
       stonecutter:
@@ -546,6 +600,7 @@ heads:
     name: "&7Gold ?"
     tags:
       - alphabet/gold
+      - character/question
       - natural/ore_block
     recipes:
       stonecutter:
@@ -556,6 +611,7 @@ heads:
     name: "&7Gold ¿"
     tags:
       - alphabet/gold
+      - character/reverse_question
       - natural/ore_block
     recipes:
       stonecutter:
@@ -566,6 +622,7 @@ heads:
     name: "&7Gold ."
     tags:
       - alphabet/gold
+      - character/period
       - natural/ore_block
     recipes:
       stonecutter:
@@ -576,6 +633,7 @@ heads:
     name: "&7Gold ,"
     tags:
       - alphabet/gold
+      - character/comma
       - natural/ore_block
     recipes:
       stonecutter:
@@ -586,6 +644,7 @@ heads:
     name: "&7Gold :"
     tags:
       - alphabet/gold
+      - character/colon
       - natural/ore_block
     recipes:
       stonecutter:
@@ -596,6 +655,7 @@ heads:
     name: "&7Gold ;"
     tags:
       - alphabet/gold
+      - character/semicolon
       - natural/ore_block
     recipes:
       stonecutter:
@@ -606,6 +666,7 @@ heads:
     name: "&7Gold '"
     tags:
       - alphabet/gold
+      - character/apostrophe
       - natural/ore_block
     recipes:
       stonecutter:
@@ -616,6 +677,7 @@ heads:
     name: "&7Gold \""
     tags:
       - alphabet/gold
+      - character/quote
       - natural/ore_block
     recipes:
       stonecutter:
@@ -626,6 +688,7 @@ heads:
     name: "&7Gold &"
     tags:
       - alphabet/gold
+      - character/ampersand
       - natural/ore_block
     recipes:
       stonecutter:
@@ -636,6 +699,7 @@ heads:
     name: "&7Gold #"
     tags:
       - alphabet/gold
+      - character/hash
       - natural/ore_block
     recipes:
       stonecutter:
@@ -646,6 +710,7 @@ heads:
     name: "&7Gold $"
     tags:
       - alphabet/gold
+      - character/dollar
       - natural/ore_block
     recipes:
       stonecutter:
@@ -656,6 +721,7 @@ heads:
     name: "&7Gold €"
     tags:
       - alphabet/gold
+      - character/euro
       - natural/ore_block
     recipes:
       stonecutter:
@@ -666,6 +732,7 @@ heads:
     name: "&7Gold %"
     tags:
       - alphabet/gold
+      - character/percent
       - natural/ore_block
     recipes:
       stonecutter:
@@ -676,6 +743,7 @@ heads:
     name: "&7Gold +"
     tags:
       - alphabet/gold
+      - character/plus
       - natural/ore_block
     recipes:
       stonecutter:
@@ -686,6 +754,7 @@ heads:
     name: "&7Gold -"
     tags:
       - alphabet/gold
+      - character/minus
       - natural/ore_block
     recipes:
       stonecutter:
@@ -696,6 +765,7 @@ heads:
     name: "&7Gold ="
     tags:
       - alphabet/gold
+      - character/equals
       - natural/ore_block
     recipes:
       stonecutter:
@@ -706,6 +776,7 @@ heads:
     name: "&7Gold /"
     tags:
       - alphabet/gold
+      - character/slash
       - natural/ore_block
     recipes:
       stonecutter:
@@ -716,6 +787,7 @@ heads:
     name: "&7Gold \\"
     tags:
       - alphabet/gold
+      - character/backslash
       - natural/ore_block
     recipes:
       stonecutter:
@@ -726,6 +798,7 @@ heads:
     name: "&7Gold _"
     tags:
       - alphabet/gold
+      - character/underscore
       - natural/ore_block
     recipes:
       stonecutter:
@@ -736,6 +809,7 @@ heads:
     name: "&7Gold ♥"
     tags:
       - alphabet/gold
+      - character/heart
       - natural/ore_block
     recipes:
       stonecutter:
@@ -746,6 +820,7 @@ heads:
     name: "&7Gold  "
     tags:
       - alphabet/gold
+      - character/blank
       - natural/ore_block
     recipes:
       stonecutter:
@@ -756,6 +831,7 @@ heads:
     name: "&7Gold ✓"
     tags:
       - alphabet/gold
+      - character/checkmark
       - natural/ore_block
     recipes:
       stonecutter:
@@ -766,6 +842,7 @@ heads:
     name: "&7Gold ♪"
     tags:
       - alphabet/gold
+      - character/note
       - natural/ore_block
     recipes:
       stonecutter:
@@ -776,6 +853,7 @@ heads:
     name: "&7Gold ("
     tags:
       - alphabet/gold
+      - character/paren_open
       - natural/ore_block
     recipes:
       stonecutter:
@@ -786,6 +864,7 @@ heads:
     name: "&7Gold )"
     tags:
       - alphabet/gold
+      - character/paren_close
       - natural/ore_block
     recipes:
       stonecutter:
@@ -796,6 +875,7 @@ heads:
     name: "&7Gold ["
     tags:
       - alphabet/gold
+      - character/bracket_open
       - natural/ore_block
     recipes:
       stonecutter:
@@ -806,6 +886,7 @@ heads:
     name: "&7Gold ]"
     tags:
       - alphabet/gold
+      - character/bracket_close
       - natural/ore_block
     recipes:
       stonecutter:
@@ -816,6 +897,7 @@ heads:
     name: "&7Gold {"
     tags:
       - alphabet/gold
+      - character/brace_open
       - natural/ore_block
     recipes:
       stonecutter:
@@ -826,6 +908,7 @@ heads:
     name: "&7Gold }"
     tags:
       - alphabet/gold
+      - character/brace_close
       - natural/ore_block
     recipes:
       stonecutter:
@@ -836,6 +919,7 @@ heads:
     name: "&7Gold ↑"
     tags:
       - alphabet/gold
+      - character/arrow_up
       - natural/ore_block
     recipes:
       stonecutter:
@@ -846,6 +930,7 @@ heads:
     name: "&7Gold ↓"
     tags:
       - alphabet/gold
+      - character/arrow_down
       - natural/ore_block
     recipes:
       stonecutter:
@@ -856,6 +941,7 @@ heads:
     name: "&7Gold ←"
     tags:
       - alphabet/gold
+      - character/arrow_left
       - natural/ore_block
     recipes:
       stonecutter:
@@ -866,6 +952,7 @@ heads:
     name: "&7Gold →"
     tags:
       - alphabet/gold
+      - character/arrow_right
       - natural/ore_block
     recipes:
       stonecutter:
@@ -876,6 +963,7 @@ heads:
     name: "&7Gold ↖"
     tags:
       - alphabet/gold
+      - character/arrow_left_up
       - natural/ore_block
     recipes:
       stonecutter:
@@ -886,6 +974,7 @@ heads:
     name: "&7Gold ↗"
     tags:
       - alphabet/gold
+      - character/arrow_right_up
       - natural/ore_block
     recipes:
       stonecutter:
@@ -896,6 +985,7 @@ heads:
     name: "&7Gold ↙"
     tags:
       - alphabet/gold
+      - character/arrow_left_down
       - natural/ore_block
     recipes:
       stonecutter:
@@ -906,6 +996,7 @@ heads:
     name: "&7Gold ↘"
     tags:
       - alphabet/gold
+      - character/arrow_right_down
       - natural/ore_block
     recipes:
       stonecutter:
@@ -916,6 +1007,7 @@ heads:
     name: "&7Gold ⏩"
     tags:
       - alphabet/gold
+      - character/forward
       - natural/ore_block
     recipes:
       stonecutter:
@@ -926,6 +1018,7 @@ heads:
     name: "&7Gold ⏭"
     tags:
       - alphabet/gold
+      - character/forward_ii
       - natural/ore_block
     recipes:
       stonecutter:
@@ -936,6 +1029,7 @@ heads:
     name: "&7Gold ⏪"
     tags:
       - alphabet/gold
+      - character/backward
       - natural/ore_block
     recipes:
       stonecutter:
@@ -946,6 +1040,7 @@ heads:
     name: "&7Gold ⏮"
     tags:
       - alphabet/gold
+      - character/backward_ii
       - natural/ore_block
     recipes:
       stonecutter:
@@ -956,6 +1051,7 @@ heads:
     name: "&7Gold Á"
     tags:
       - alphabet/gold
+      - character/letter_a_acute
       - natural/ore_block
     recipes:
       stonecutter:
@@ -966,6 +1062,7 @@ heads:
     name: "&7Gold Ä"
     tags:
       - alphabet/gold
+      - character/letter_a_umlaut
       - natural/ore_block
     recipes:
       stonecutter:
@@ -976,6 +1073,7 @@ heads:
     name: "&7Gold Ç"
     tags:
       - alphabet/gold
+      - character/letter_c_cedilla
       - natural/ore_block
     recipes:
       stonecutter:
@@ -986,6 +1084,7 @@ heads:
     name: "&7Gold Í"
     tags:
       - alphabet/gold
+      - character/letter_i_acute
       - natural/ore_block
     recipes:
       stonecutter:
@@ -996,6 +1095,7 @@ heads:
     name: "&7Gold Ñ"
     tags:
       - alphabet/gold
+      - character/letter_n_tilde
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1006,6 +1106,7 @@ heads:
     name: "&7Gold Ó"
     tags:
       - alphabet/gold
+      - character/letter_o_acute
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1016,6 +1117,7 @@ heads:
     name: "&7Gold Ö"
     tags:
       - alphabet/gold
+      - character/letter_o_umlaut
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1026,6 +1128,7 @@ heads:
     name: "&7Gold Ú"
     tags:
       - alphabet/gold
+      - character/letter_u_acute
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1036,6 +1139,7 @@ heads:
     name: "&7Gold Ü"
     tags:
       - alphabet/gold
+      - character/letter_u_umlaut
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1046,6 +1150,7 @@ heads:
     name: "&7Gold Ё"
     tags:
       - alphabet/gold
+      - character/cyrillic_yo
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1056,6 +1161,7 @@ heads:
     name: "&7Gold Б"
     tags:
       - alphabet/gold
+      - character/cyrillic_be
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1066,6 +1172,7 @@ heads:
     name: "&7Gold Г"
     tags:
       - alphabet/gold
+      - character/cyrillic_ge
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1076,6 +1183,7 @@ heads:
     name: "&7Gold Д"
     tags:
       - alphabet/gold
+      - character/cyrillic_de
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1086,6 +1194,7 @@ heads:
     name: "&7Gold Ж"
     tags:
       - alphabet/gold
+      - character/cyrillic_zhe
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1096,6 +1205,7 @@ heads:
     name: "&7Gold З"
     tags:
       - alphabet/gold
+      - character/cyrillic_ze
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1106,6 +1216,7 @@ heads:
     name: "&7Gold И"
     tags:
       - alphabet/gold
+      - character/cyrillic_i
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1116,6 +1227,7 @@ heads:
     name: "&7Gold Й"
     tags:
       - alphabet/gold
+      - character/cyrillic_short_i
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1126,6 +1238,7 @@ heads:
     name: "&7Gold Л"
     tags:
       - alphabet/gold
+      - character/cyrillic_el
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1136,6 +1249,7 @@ heads:
     name: "&7Gold П"
     tags:
       - alphabet/gold
+      - character/cyrillic_pe
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1146,6 +1260,7 @@ heads:
     name: "&7Gold У"
     tags:
       - alphabet/gold
+      - character/cyrillic_u
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1156,6 +1271,7 @@ heads:
     name: "&7Gold Ф"
     tags:
       - alphabet/gold
+      - character/cyrillic_ef
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1166,6 +1282,7 @@ heads:
     name: "&7Gold Ц"
     tags:
       - alphabet/gold
+      - character/cyrillic_tse
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1176,6 +1293,7 @@ heads:
     name: "&7Gold Ч"
     tags:
       - alphabet/gold
+      - character/cyrillic_che
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1186,6 +1304,7 @@ heads:
     name: "&7Gold Ш"
     tags:
       - alphabet/gold
+      - character/cyrillic_sha
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1196,6 +1315,7 @@ heads:
     name: "&7Gold Щ"
     tags:
       - alphabet/gold
+      - character/cyrillic_shcha
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1206,6 +1326,7 @@ heads:
     name: "&7Gold Ъ"
     tags:
       - alphabet/gold
+      - character/cyrillic_hard
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1216,6 +1337,7 @@ heads:
     name: "&7Gold Ы"
     tags:
       - alphabet/gold
+      - character/cyrillic_yeru
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1226,6 +1348,7 @@ heads:
     name: "&7Gold Ь"
     tags:
       - alphabet/gold
+      - character/cyrillic_soft
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1236,6 +1359,7 @@ heads:
     name: "&7Gold Э"
     tags:
       - alphabet/gold
+      - character/cyrillic_e
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1246,6 +1370,7 @@ heads:
     name: "&7Gold Ю"
     tags:
       - alphabet/gold
+      - character/cyrillic_yu
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1256,6 +1381,7 @@ heads:
     name: "&7Gold Я"
     tags:
       - alphabet/gold
+      - character/cyrillic_ya
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1266,6 +1392,7 @@ heads:
     name: "&7Gold ♒"
     tags:
       - alphabet/gold
+      - character/zodiac_aquarius
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1276,6 +1403,7 @@ heads:
     name: "&7Gold ♈"
     tags:
       - alphabet/gold
+      - character/zodiac_aries
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1286,6 +1414,7 @@ heads:
     name: "&7Gold ♋"
     tags:
       - alphabet/gold
+      - character/zodiac_cancer
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1296,6 +1425,7 @@ heads:
     name: "&7Gold ♑"
     tags:
       - alphabet/gold
+      - character/zodiac_capricorn
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1306,6 +1436,7 @@ heads:
     name: "&7Gold ♊"
     tags:
       - alphabet/gold
+      - character/zodiac_gemini
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1316,6 +1447,7 @@ heads:
     name: "&7Gold ♌"
     tags:
       - alphabet/gold
+      - character/zodiac_leo
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1326,6 +1458,7 @@ heads:
     name: "&7Gold ♎"
     tags:
       - alphabet/gold
+      - character/zodiac_libra
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1336,6 +1469,7 @@ heads:
     name: "&7Gold ⛎"
     tags:
       - alphabet/gold
+      - character/zodiac_ophiuchus
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1346,6 +1480,7 @@ heads:
     name: "&7Gold ♓"
     tags:
       - alphabet/gold
+      - character/zodiac_pisces
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1356,6 +1491,7 @@ heads:
     name: "&7Gold ♐"
     tags:
       - alphabet/gold
+      - character/zodiac_sagittarius
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1366,6 +1502,7 @@ heads:
     name: "&7Gold ♏"
     tags:
       - alphabet/gold
+      - character/zodiac_scorpio
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1376,6 +1513,7 @@ heads:
     name: "&7Gold ♉"
     tags:
       - alphabet/gold
+      - character/zodiac_taurus
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1386,6 +1524,7 @@ heads:
     name: "&7Gold ♍"
     tags:
       - alphabet/gold
+      - character/zodiac_virgo
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1396,6 +1535,7 @@ heads:
     name: "&7Gold ♀"
     tags:
       - alphabet/gold
+      - character/female
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1406,6 +1546,7 @@ heads:
     name: "&7Gold ♂"
     tags:
       - alphabet/gold
+      - character/male
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1416,6 +1557,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_0
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1426,6 +1568,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_1
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1436,6 +1579,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_2
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1446,6 +1590,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_3
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1456,6 +1601,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_4
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1466,6 +1612,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_5
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1476,6 +1623,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_6
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1486,6 +1634,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_7
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1496,6 +1645,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_8
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1506,6 +1656,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_9
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1516,6 +1667,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_10
       - natural/ore_block
     recipes:
       stonecutter:
@@ -1526,6 +1678,7 @@ heads:
     name: "&7Gold Rune"
     tags:
       - alphabet/gold
+      - character/rune_11
       - natural/ore_block
     recipes:
       stonecutter:

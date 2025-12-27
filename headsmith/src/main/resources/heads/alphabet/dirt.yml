@@ -6,6 +6,7 @@ heads:
     name: "&7Dirt A"
     tags:
       - alphabet/dirt
+      - character/letter_a
       - natural/dirt
     recipes:
       stonecutter:
@@ -16,6 +17,7 @@ heads:
     name: "&7Dirt B"
     tags:
       - alphabet/dirt
+      - character/letter_b
       - natural/dirt
     recipes:
       stonecutter:
@@ -26,6 +28,7 @@ heads:
     name: "&7Dirt C"
     tags:
       - alphabet/dirt
+      - character/letter_c
       - natural/dirt
     recipes:
       stonecutter:
@@ -36,6 +39,7 @@ heads:
     name: "&7Dirt D"
     tags:
       - alphabet/dirt
+      - character/letter_d
       - natural/dirt
     recipes:
       stonecutter:
@@ -46,6 +50,7 @@ heads:
     name: "&7Dirt E"
     tags:
       - alphabet/dirt
+      - character/letter_e
       - natural/dirt
     recipes:
       stonecutter:
@@ -56,6 +61,7 @@ heads:
     name: "&7Dirt F"
     tags:
       - alphabet/dirt
+      - character/letter_f
       - natural/dirt
     recipes:
       stonecutter:
@@ -66,6 +72,7 @@ heads:
     name: "&7Dirt G"
     tags:
       - alphabet/dirt
+      - character/letter_g
       - natural/dirt
     recipes:
       stonecutter:
@@ -76,6 +83,7 @@ heads:
     name: "&7Dirt H"
     tags:
       - alphabet/dirt
+      - character/letter_h
       - natural/dirt
     recipes:
       stonecutter:
@@ -86,6 +94,7 @@ heads:
     name: "&7Dirt I"
     tags:
       - alphabet/dirt
+      - character/letter_i
       - natural/dirt
     recipes:
       stonecutter:
@@ -96,6 +105,7 @@ heads:
     name: "&7Dirt J"
     tags:
       - alphabet/dirt
+      - character/letter_j
       - natural/dirt
     recipes:
       stonecutter:
@@ -106,6 +116,7 @@ heads:
     name: "&7Dirt K"
     tags:
       - alphabet/dirt
+      - character/letter_k
       - natural/dirt
     recipes:
       stonecutter:
@@ -116,6 +127,7 @@ heads:
     name: "&7Dirt L"
     tags:
       - alphabet/dirt
+      - character/letter_l
       - natural/dirt
     recipes:
       stonecutter:
@@ -126,6 +138,7 @@ heads:
     name: "&7Dirt M"
     tags:
       - alphabet/dirt
+      - character/letter_m
       - natural/dirt
     recipes:
       stonecutter:
@@ -136,6 +149,7 @@ heads:
     name: "&7Dirt N"
     tags:
       - alphabet/dirt
+      - character/letter_n
       - natural/dirt
     recipes:
       stonecutter:
@@ -146,6 +160,7 @@ heads:
     name: "&7Dirt O"
     tags:
       - alphabet/dirt
+      - character/letter_o
       - natural/dirt
     recipes:
       stonecutter:
@@ -156,6 +171,7 @@ heads:
     name: "&7Dirt P"
     tags:
       - alphabet/dirt
+      - character/letter_p
       - natural/dirt
     recipes:
       stonecutter:
@@ -166,6 +182,7 @@ heads:
     name: "&7Dirt Q"
     tags:
       - alphabet/dirt
+      - character/letter_q
       - natural/dirt
     recipes:
       stonecutter:
@@ -176,6 +193,7 @@ heads:
     name: "&7Dirt R"
     tags:
       - alphabet/dirt
+      - character/letter_r
       - natural/dirt
     recipes:
       stonecutter:
@@ -186,6 +204,7 @@ heads:
     name: "&7Dirt S"
     tags:
       - alphabet/dirt
+      - character/letter_s
       - natural/dirt
     recipes:
       stonecutter:
@@ -196,6 +215,7 @@ heads:
     name: "&7Dirt T"
     tags:
       - alphabet/dirt
+      - character/letter_t
       - natural/dirt
     recipes:
       stonecutter:
@@ -206,6 +226,7 @@ heads:
     name: "&7Dirt U"
     tags:
       - alphabet/dirt
+      - character/letter_u
       - natural/dirt
     recipes:
       stonecutter:
@@ -216,6 +237,7 @@ heads:
     name: "&7Dirt V"
     tags:
       - alphabet/dirt
+      - character/letter_v
       - natural/dirt
     recipes:
       stonecutter:
@@ -226,6 +248,7 @@ heads:
     name: "&7Dirt W"
     tags:
       - alphabet/dirt
+      - character/letter_w
       - natural/dirt
     recipes:
       stonecutter:
@@ -236,6 +259,7 @@ heads:
     name: "&7Dirt X"
     tags:
       - alphabet/dirt
+      - character/letter_x
       - natural/dirt
     recipes:
       stonecutter:
@@ -246,6 +270,7 @@ heads:
     name: "&7Dirt Y"
     tags:
       - alphabet/dirt
+      - character/letter_y
       - natural/dirt
     recipes:
       stonecutter:
@@ -256,6 +281,7 @@ heads:
     name: "&7Dirt Z"
     tags:
       - alphabet/dirt
+      - character/letter_z
       - natural/dirt
     recipes:
       stonecutter:
@@ -266,6 +292,7 @@ heads:
     name: "&7Dirt 0"
     tags:
       - alphabet/dirt
+      - character/number_0
       - natural/dirt
     recipes:
       stonecutter:
@@ -276,6 +303,7 @@ heads:
     name: "&7Dirt 1"
     tags:
       - alphabet/dirt
+      - character/number_1
       - natural/dirt
     recipes:
       stonecutter:
@@ -286,6 +314,7 @@ heads:
     name: "&7Dirt 2"
     tags:
       - alphabet/dirt
+      - character/number_2
       - natural/dirt
     recipes:
       stonecutter:
@@ -296,6 +325,7 @@ heads:
     name: "&7Dirt 3"
     tags:
       - alphabet/dirt
+      - character/number_3
       - natural/dirt
     recipes:
       stonecutter:
@@ -306,6 +336,7 @@ heads:
     name: "&7Dirt 4"
     tags:
       - alphabet/dirt
+      - character/number_4
       - natural/dirt
     recipes:
       stonecutter:
@@ -316,6 +347,7 @@ heads:
     name: "&7Dirt 5"
     tags:
       - alphabet/dirt
+      - character/number_5
       - natural/dirt
     recipes:
       stonecutter:
@@ -326,6 +358,7 @@ heads:
     name: "&7Dirt 6"
     tags:
       - alphabet/dirt
+      - character/number_6
       - natural/dirt
     recipes:
       stonecutter:
@@ -336,6 +369,7 @@ heads:
     name: "&7Dirt 7"
     tags:
       - alphabet/dirt
+      - character/number_7
       - natural/dirt
     recipes:
       stonecutter:
@@ -346,6 +380,7 @@ heads:
     name: "&7Dirt 8"
     tags:
       - alphabet/dirt
+      - character/number_8
       - natural/dirt
     recipes:
       stonecutter:
@@ -356,6 +391,7 @@ heads:
     name: "&7Dirt 9"
     tags:
       - alphabet/dirt
+      - character/number_9
       - natural/dirt
     recipes:
       stonecutter:
@@ -366,6 +402,7 @@ heads:
     name: "&7Dirt 10"
     tags:
       - alphabet/dirt
+      - character/number_10
       - natural/dirt
     recipes:
       stonecutter:
@@ -376,6 +413,7 @@ heads:
     name: "&7Dirt 11"
     tags:
       - alphabet/dirt
+      - character/number_11
       - natural/dirt
     recipes:
       stonecutter:
@@ -386,6 +424,7 @@ heads:
     name: "&7Dirt 12"
     tags:
       - alphabet/dirt
+      - character/number_12
       - natural/dirt
     recipes:
       stonecutter:
@@ -396,6 +435,7 @@ heads:
     name: "&7Dirt 13"
     tags:
       - alphabet/dirt
+      - character/number_13
       - natural/dirt
     recipes:
       stonecutter:
@@ -406,6 +446,7 @@ heads:
     name: "&7Dirt 14"
     tags:
       - alphabet/dirt
+      - character/number_14
       - natural/dirt
     recipes:
       stonecutter:
@@ -416,6 +457,7 @@ heads:
     name: "&7Dirt 15"
     tags:
       - alphabet/dirt
+      - character/number_15
       - natural/dirt
     recipes:
       stonecutter:
@@ -426,6 +468,7 @@ heads:
     name: "&7Dirt 16"
     tags:
       - alphabet/dirt
+      - character/number_16
       - natural/dirt
     recipes:
       stonecutter:
@@ -436,6 +479,7 @@ heads:
     name: "&7Dirt 17"
     tags:
       - alphabet/dirt
+      - character/number_17
       - natural/dirt
     recipes:
       stonecutter:
@@ -446,6 +490,7 @@ heads:
     name: "&7Dirt 18"
     tags:
       - alphabet/dirt
+      - character/number_18
       - natural/dirt
     recipes:
       stonecutter:
@@ -456,6 +501,7 @@ heads:
     name: "&7Dirt 19"
     tags:
       - alphabet/dirt
+      - character/number_19
       - natural/dirt
     recipes:
       stonecutter:
@@ -466,6 +512,7 @@ heads:
     name: "&7Dirt 20"
     tags:
       - alphabet/dirt
+      - character/number_20
       - natural/dirt
     recipes:
       stonecutter:
@@ -476,6 +523,7 @@ heads:
     name: "&7Dirt 21"
     tags:
       - alphabet/dirt
+      - character/number_21
       - natural/dirt
     recipes:
       stonecutter:
@@ -486,6 +534,7 @@ heads:
     name: "&7Dirt 22"
     tags:
       - alphabet/dirt
+      - character/number_22
       - natural/dirt
     recipes:
       stonecutter:
@@ -496,6 +545,7 @@ heads:
     name: "&7Dirt 23"
     tags:
       - alphabet/dirt
+      - character/number_23
       - natural/dirt
     recipes:
       stonecutter:
@@ -506,6 +556,7 @@ heads:
     name: "&7Dirt 24"
     tags:
       - alphabet/dirt
+      - character/number_24
       - natural/dirt
     recipes:
       stonecutter:
@@ -516,6 +567,7 @@ heads:
     name: "&7Dirt 25"
     tags:
       - alphabet/dirt
+      - character/number_25
       - natural/dirt
     recipes:
       stonecutter:
@@ -526,6 +578,7 @@ heads:
     name: "&7Dirt !"
     tags:
       - alphabet/dirt
+      - character/exclamation
       - natural/dirt
     recipes:
       stonecutter:
@@ -536,6 +589,7 @@ heads:
     name: "&7Dirt ¡"
     tags:
       - alphabet/dirt
+      - character/reverse_exclamation
       - natural/dirt
     recipes:
       stonecutter:
@@ -546,6 +600,7 @@ heads:
     name: "&7Dirt ?"
     tags:
       - alphabet/dirt
+      - character/question
       - natural/dirt
     recipes:
       stonecutter:
@@ -556,6 +611,7 @@ heads:
     name: "&7Dirt ¿"
     tags:
       - alphabet/dirt
+      - character/reverse_question
       - natural/dirt
     recipes:
       stonecutter:
@@ -566,6 +622,7 @@ heads:
     name: "&7Dirt ."
     tags:
       - alphabet/dirt
+      - character/period
       - natural/dirt
     recipes:
       stonecutter:
@@ -576,6 +633,7 @@ heads:
     name: "&7Dirt ,"
     tags:
       - alphabet/dirt
+      - character/comma
       - natural/dirt
     recipes:
       stonecutter:
@@ -586,6 +644,7 @@ heads:
     name: "&7Dirt :"
     tags:
       - alphabet/dirt
+      - character/colon
       - natural/dirt
     recipes:
       stonecutter:
@@ -596,6 +655,7 @@ heads:
     name: "&7Dirt ;"
     tags:
       - alphabet/dirt
+      - character/semicolon
       - natural/dirt
     recipes:
       stonecutter:
@@ -606,6 +666,7 @@ heads:
     name: "&7Dirt '"
     tags:
       - alphabet/dirt
+      - character/apostrophe
       - natural/dirt
     recipes:
       stonecutter:
@@ -616,6 +677,7 @@ heads:
     name: "&7Dirt \""
     tags:
       - alphabet/dirt
+      - character/quote
       - natural/dirt
     recipes:
       stonecutter:
@@ -626,6 +688,7 @@ heads:
     name: "&7Dirt &"
     tags:
       - alphabet/dirt
+      - character/ampersand
       - natural/dirt
     recipes:
       stonecutter:
@@ -636,6 +699,7 @@ heads:
     name: "&7Dirt #"
     tags:
       - alphabet/dirt
+      - character/hash
       - natural/dirt
     recipes:
       stonecutter:
@@ -646,6 +710,7 @@ heads:
     name: "&7Dirt $"
     tags:
       - alphabet/dirt
+      - character/dollar
       - natural/dirt
     recipes:
       stonecutter:
@@ -656,6 +721,7 @@ heads:
     name: "&7Dirt +"
     tags:
       - alphabet/dirt
+      - character/plus
       - natural/dirt
     recipes:
       stonecutter:
@@ -666,6 +732,7 @@ heads:
     name: "&7Dirt -"
     tags:
       - alphabet/dirt
+      - character/minus
       - natural/dirt
     recipes:
       stonecutter:
@@ -676,6 +743,7 @@ heads:
     name: "&7Dirt ="
     tags:
       - alphabet/dirt
+      - character/equals
       - natural/dirt
     recipes:
       stonecutter:
@@ -686,6 +754,7 @@ heads:
     name: "&7Dirt /"
     tags:
       - alphabet/dirt
+      - character/slash
       - natural/dirt
     recipes:
       stonecutter:
@@ -696,6 +765,7 @@ heads:
     name: "&7Dirt \\"
     tags:
       - alphabet/dirt
+      - character/backslash
       - natural/dirt
     recipes:
       stonecutter:
@@ -706,6 +776,7 @@ heads:
     name: "&7Dirt _"
     tags:
       - alphabet/dirt
+      - character/underscore
       - natural/dirt
     recipes:
       stonecutter:
@@ -716,6 +787,7 @@ heads:
     name: "&7Dirt ♥"
     tags:
       - alphabet/dirt
+      - character/heart
       - natural/dirt
     recipes:
       stonecutter:
@@ -726,6 +798,7 @@ heads:
     name: "&7Dirt  "
     tags:
       - alphabet/dirt
+      - character/blank
       - natural/dirt
     recipes:
       stonecutter:
@@ -736,6 +809,7 @@ heads:
     name: "&7Dirt ✓"
     tags:
       - alphabet/dirt
+      - character/checkmark
       - natural/dirt
     recipes:
       stonecutter:
@@ -746,6 +820,7 @@ heads:
     name: "&7Dirt ♪"
     tags:
       - alphabet/dirt
+      - character/note
       - natural/dirt
     recipes:
       stonecutter:
@@ -756,6 +831,7 @@ heads:
     name: "&7Dirt ("
     tags:
       - alphabet/dirt
+      - character/paren_open
       - natural/dirt
     recipes:
       stonecutter:
@@ -766,6 +842,7 @@ heads:
     name: "&7Dirt )"
     tags:
       - alphabet/dirt
+      - character/paren_close
       - natural/dirt
     recipes:
       stonecutter:
@@ -776,6 +853,7 @@ heads:
     name: "&7Dirt ["
     tags:
       - alphabet/dirt
+      - character/bracket_open
       - natural/dirt
     recipes:
       stonecutter:
@@ -786,6 +864,7 @@ heads:
     name: "&7Dirt ]"
     tags:
       - alphabet/dirt
+      - character/bracket_close
       - natural/dirt
     recipes:
       stonecutter:
@@ -796,6 +875,7 @@ heads:
     name: "&7Dirt {"
     tags:
       - alphabet/dirt
+      - character/brace_open
       - natural/dirt
     recipes:
       stonecutter:
@@ -806,6 +886,7 @@ heads:
     name: "&7Dirt }"
     tags:
       - alphabet/dirt
+      - character/brace_close
       - natural/dirt
     recipes:
       stonecutter:
@@ -816,6 +897,7 @@ heads:
     name: "&7Dirt ↑"
     tags:
       - alphabet/dirt
+      - character/arrow_up
       - natural/dirt
     recipes:
       stonecutter:
@@ -826,6 +908,7 @@ heads:
     name: "&7Dirt ↓"
     tags:
       - alphabet/dirt
+      - character/arrow_down
       - natural/dirt
     recipes:
       stonecutter:
@@ -836,6 +919,7 @@ heads:
     name: "&7Dirt ←"
     tags:
       - alphabet/dirt
+      - character/arrow_left
       - natural/dirt
     recipes:
       stonecutter:
@@ -846,6 +930,7 @@ heads:
     name: "&7Dirt →"
     tags:
       - alphabet/dirt
+      - character/arrow_right
       - natural/dirt
     recipes:
       stonecutter:
@@ -856,6 +941,7 @@ heads:
     name: "&7Dirt ↖"
     tags:
       - alphabet/dirt
+      - character/arrow_left_up
       - natural/dirt
     recipes:
       stonecutter:
@@ -866,6 +952,7 @@ heads:
     name: "&7Dirt ↗"
     tags:
       - alphabet/dirt
+      - character/arrow_right_up
       - natural/dirt
     recipes:
       stonecutter:
@@ -876,6 +963,7 @@ heads:
     name: "&7Dirt ↙"
     tags:
       - alphabet/dirt
+      - character/arrow_left_down
       - natural/dirt
     recipes:
       stonecutter:
@@ -886,6 +974,7 @@ heads:
     name: "&7Dirt ↘"
     tags:
       - alphabet/dirt
+      - character/arrow_right_down
       - natural/dirt
     recipes:
       stonecutter:
@@ -896,6 +985,7 @@ heads:
     name: "&7Dirt ⏩"
     tags:
       - alphabet/dirt
+      - character/forward
       - natural/dirt
     recipes:
       stonecutter:
@@ -906,6 +996,7 @@ heads:
     name: "&7Dirt ⏭"
     tags:
       - alphabet/dirt
+      - character/forward_ii
       - natural/dirt
     recipes:
       stonecutter:
@@ -916,6 +1007,7 @@ heads:
     name: "&7Dirt ⏪"
     tags:
       - alphabet/dirt
+      - character/backward
       - natural/dirt
     recipes:
       stonecutter:
@@ -926,6 +1018,7 @@ heads:
     name: "&7Dirt ⏮"
     tags:
       - alphabet/dirt
+      - character/backward_ii
       - natural/dirt
     recipes:
       stonecutter:
@@ -936,6 +1029,7 @@ heads:
     name: "&7Dirt Ä"
     tags:
       - alphabet/dirt
+      - character/letter_a_umlaut
       - natural/dirt
     recipes:
       stonecutter:
@@ -946,6 +1040,7 @@ heads:
     name: "&7Dirt Ñ"
     tags:
       - alphabet/dirt
+      - character/letter_n_tilde
       - natural/dirt
     recipes:
       stonecutter:
@@ -956,6 +1051,7 @@ heads:
     name: "&7Dirt Ö"
     tags:
       - alphabet/dirt
+      - character/letter_o_umlaut
       - natural/dirt
     recipes:
       stonecutter:
@@ -966,6 +1062,7 @@ heads:
     name: "&7Dirt Ü"
     tags:
       - alphabet/dirt
+      - character/letter_u_umlaut
       - natural/dirt
     recipes:
       stonecutter:
@@ -976,6 +1073,7 @@ heads:
     name: "&7Dirt Ё"
     tags:
       - alphabet/dirt
+      - character/cyrillic_yo
       - natural/dirt
     recipes:
       stonecutter:
@@ -986,6 +1084,7 @@ heads:
     name: "&7Dirt Б"
     tags:
       - alphabet/dirt
+      - character/cyrillic_be
       - natural/dirt
     recipes:
       stonecutter:
@@ -996,6 +1095,7 @@ heads:
     name: "&7Dirt Г"
     tags:
       - alphabet/dirt
+      - character/cyrillic_ge
       - natural/dirt
     recipes:
       stonecutter:
@@ -1006,6 +1106,7 @@ heads:
     name: "&7Dirt Д"
     tags:
       - alphabet/dirt
+      - character/cyrillic_de
       - natural/dirt
     recipes:
       stonecutter:
@@ -1016,6 +1117,7 @@ heads:
     name: "&7Dirt Ж"
     tags:
       - alphabet/dirt
+      - character/cyrillic_zhe
       - natural/dirt
     recipes:
       stonecutter:
@@ -1026,6 +1128,7 @@ heads:
     name: "&7Dirt З"
     tags:
       - alphabet/dirt
+      - character/cyrillic_ze
       - natural/dirt
     recipes:
       stonecutter:
@@ -1036,6 +1139,7 @@ heads:
     name: "&7Dirt И"
     tags:
       - alphabet/dirt
+      - character/cyrillic_i
       - natural/dirt
     recipes:
       stonecutter:
@@ -1046,6 +1150,7 @@ heads:
     name: "&7Dirt Й"
     tags:
       - alphabet/dirt
+      - character/cyrillic_short_i
       - natural/dirt
     recipes:
       stonecutter:
@@ -1056,6 +1161,7 @@ heads:
     name: "&7Dirt Л"
     tags:
       - alphabet/dirt
+      - character/cyrillic_el
       - natural/dirt
     recipes:
       stonecutter:
@@ -1066,6 +1172,7 @@ heads:
     name: "&7Dirt П"
     tags:
       - alphabet/dirt
+      - character/cyrillic_pe
       - natural/dirt
     recipes:
       stonecutter:
@@ -1076,6 +1183,7 @@ heads:
     name: "&7Dirt У"
     tags:
       - alphabet/dirt
+      - character/cyrillic_u
       - natural/dirt
     recipes:
       stonecutter:
@@ -1086,6 +1194,7 @@ heads:
     name: "&7Dirt Ф"
     tags:
       - alphabet/dirt
+      - character/cyrillic_ef
       - natural/dirt
     recipes:
       stonecutter:
@@ -1096,6 +1205,7 @@ heads:
     name: "&7Dirt Ц"
     tags:
       - alphabet/dirt
+      - character/cyrillic_tse
       - natural/dirt
     recipes:
       stonecutter:
@@ -1106,6 +1216,7 @@ heads:
     name: "&7Dirt Ч"
     tags:
       - alphabet/dirt
+      - character/cyrillic_che
       - natural/dirt
     recipes:
       stonecutter:
@@ -1116,6 +1227,7 @@ heads:
     name: "&7Dirt Ш"
     tags:
       - alphabet/dirt
+      - character/cyrillic_sha
       - natural/dirt
     recipes:
       stonecutter:
@@ -1126,6 +1238,7 @@ heads:
     name: "&7Dirt Щ"
     tags:
       - alphabet/dirt
+      - character/cyrillic_shcha
       - natural/dirt
     recipes:
       stonecutter:
@@ -1136,6 +1249,7 @@ heads:
     name: "&7Dirt Ъ"
     tags:
       - alphabet/dirt
+      - character/cyrillic_hard
       - natural/dirt
     recipes:
       stonecutter:
@@ -1146,6 +1260,7 @@ heads:
     name: "&7Dirt Ы"
     tags:
       - alphabet/dirt
+      - character/cyrillic_yeru
       - natural/dirt
     recipes:
       stonecutter:
@@ -1156,6 +1271,7 @@ heads:
     name: "&7Dirt Ь"
     tags:
       - alphabet/dirt
+      - character/cyrillic_soft
       - natural/dirt
     recipes:
       stonecutter:
@@ -1166,6 +1282,7 @@ heads:
     name: "&7Dirt Э"
     tags:
       - alphabet/dirt
+      - character/cyrillic_e
       - natural/dirt
     recipes:
       stonecutter:
@@ -1176,6 +1293,7 @@ heads:
     name: "&7Dirt Ю"
     tags:
       - alphabet/dirt
+      - character/cyrillic_yu
       - natural/dirt
     recipes:
       stonecutter:
@@ -1186,6 +1304,7 @@ heads:
     name: "&7Dirt Я"
     tags:
       - alphabet/dirt
+      - character/cyrillic_ya
       - natural/dirt
     recipes:
       stonecutter:
@@ -1196,6 +1315,7 @@ heads:
     name: "&7Dirt ♒"
     tags:
       - alphabet/dirt
+      - character/zodiac_aquarius
       - natural/dirt
     recipes:
       stonecutter:
@@ -1206,6 +1326,7 @@ heads:
     name: "&7Dirt ♈"
     tags:
       - alphabet/dirt
+      - character/zodiac_aries
       - natural/dirt
     recipes:
       stonecutter:
@@ -1216,6 +1337,7 @@ heads:
     name: "&7Dirt ♋"
     tags:
       - alphabet/dirt
+      - character/zodiac_cancer
       - natural/dirt
     recipes:
       stonecutter:
@@ -1226,6 +1348,7 @@ heads:
     name: "&7Dirt ♑"
     tags:
       - alphabet/dirt
+      - character/zodiac_capricorn
       - natural/dirt
     recipes:
       stonecutter:
@@ -1236,6 +1359,7 @@ heads:
     name: "&7Dirt ♊"
     tags:
       - alphabet/dirt
+      - character/zodiac_gemini
       - natural/dirt
     recipes:
       stonecutter:
@@ -1246,6 +1370,7 @@ heads:
     name: "&7Dirt ♌"
     tags:
       - alphabet/dirt
+      - character/zodiac_leo
       - natural/dirt
     recipes:
       stonecutter:
@@ -1256,6 +1381,7 @@ heads:
     name: "&7Dirt ♎"
     tags:
       - alphabet/dirt
+      - character/zodiac_libra
       - natural/dirt
     recipes:
       stonecutter:
@@ -1266,6 +1392,7 @@ heads:
     name: "&7Dirt ♓"
     tags:
       - alphabet/dirt
+      - character/zodiac_pisces
       - natural/dirt
     recipes:
       stonecutter:
@@ -1276,6 +1403,7 @@ heads:
     name: "&7Dirt ♐"
     tags:
       - alphabet/dirt
+      - character/zodiac_sagittarius
       - natural/dirt
     recipes:
       stonecutter:
@@ -1286,6 +1414,7 @@ heads:
     name: "&7Dirt ♏"
     tags:
       - alphabet/dirt
+      - character/zodiac_scorpio
       - natural/dirt
     recipes:
       stonecutter:
@@ -1296,6 +1425,7 @@ heads:
     name: "&7Dirt ♉"
     tags:
       - alphabet/dirt
+      - character/zodiac_taurus
       - natural/dirt
     recipes:
       stonecutter:
@@ -1306,6 +1436,7 @@ heads:
     name: "&7Dirt ♍"
     tags:
       - alphabet/dirt
+      - character/zodiac_virgo
       - natural/dirt
     recipes:
       stonecutter:
@@ -1316,6 +1447,7 @@ heads:
     name: "&7Dirt ♀"
     tags:
       - alphabet/dirt
+      - character/female
       - natural/dirt
     recipes:
       stonecutter:
@@ -1326,6 +1458,7 @@ heads:
     name: "&7Dirt ♂"
     tags:
       - alphabet/dirt
+      - character/male
       - natural/dirt
     recipes:
       stonecutter:
