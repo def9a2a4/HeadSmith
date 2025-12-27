@@ -35,7 +35,6 @@ import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bstats.bukkit.Metrics;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -71,6 +70,8 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
 
     private Set<String> excludedTags = new HashSet<>();
     private Set<String> excludedHeads = new HashSet<>();
+    private List<String> tagOrderFirst = List.of();
+    private List<String> tagOrderLast = List.of();
 
     @Override
     public void onEnable() {
@@ -83,7 +84,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         saveDefaultConfig();
         reloadHeads();
 
-        menus = new HeadMenus(headsById, headStonecutterRecipes, firstHeadByTag, tagChildren, pdcHeadIdKey, this::makeHeadItem);
+        menus = new HeadMenus(headsById, headStonecutterRecipes, firstHeadByTag, tagChildren, pdcHeadIdKey, this::makeHeadItem, tagOrderFirst, tagOrderLast);
         propertiesListener = new HeadPropertiesListener(this, pdcLitKey, headsById::get, headIdByTextureId::get);
 
         getServer().getPluginManager().registerEvents(this, this);
@@ -119,7 +120,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                 sender.sendMessage(ChatColor.RED + "This command can only be used by players.");
                 return true;
             }
-            menus.openCatalogMenu(player, 0, null);
+            menus.openTagListMenu(player, 0);
             return true;
         }
 
@@ -129,7 +130,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                 return true;
             }
             reloadHeads();
-            menus = new HeadMenus(headsById, headStonecutterRecipes, firstHeadByTag, tagChildren, pdcHeadIdKey, this::makeHeadItem);
+            menus = new HeadMenus(headsById, headStonecutterRecipes, firstHeadByTag, tagChildren, pdcHeadIdKey, this::makeHeadItem, tagOrderFirst, tagOrderLast);
             sender.sendMessage(ChatColor.GREEN + "HeadSmith reloaded: " + headsById.size() + " heads.");
             return true;
         }
@@ -272,6 +273,10 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         excludedTags = new HashSet<>(getConfig().getStringList("excluded-tags"));
         excludedHeads = new HashSet<>(getConfig().getStringList("excluded-heads"));
 
+        // Load tag ordering preferences
+        tagOrderFirst = getConfig().getStringList("tag-order.first");
+        tagOrderLast = getConfig().getStringList("tag-order.last");
+
         // Load bundled heads from JAR
         List<String> bundledFiles = readHeadsManifest();
         for (String resourcePath : bundledFiles) {
@@ -322,22 +327,20 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
 
     private List<String> readHeadsManifest() {
         List<String> files = new ArrayList<>();
-        try (InputStream is = getResource("heads-manifest.txt")) {
+        try (InputStream is = getResource("head-count.json")) {
             if (is == null) {
-                getLogger().warning("heads-manifest.txt not found in JAR - using fallback list");
+                getLogger().warning("head-count.json not found in JAR - using fallback list");
                 return getFallbackHeadFiles();
             }
-            try (BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8))) {
-                String line;
-                while ((line = reader.readLine()) != null) {
-                    line = line.trim();
-                    if (!line.isEmpty() && line.endsWith(".yml")) {
-                        files.add(line);
-                    }
+            String json = new String(is.readAllBytes(), StandardCharsets.UTF_8);
+            com.google.gson.JsonObject obj = com.google.gson.JsonParser.parseString(json).getAsJsonObject();
+            for (String key : obj.keySet()) {
+                if (key.endsWith(".yml")) {
+                    files.add(key);
                 }
             }
         } catch (IOException e) {
-            getLogger().warning("Failed to read heads manifest: " + e.getMessage());
+            getLogger().warning("Failed to read head-count.json: " + e.getMessage());
             return getFallbackHeadFiles();
         }
         return files;

@@ -29,6 +29,10 @@ let langData = {};
 // Global heads data for filtering
 let headsData = {};
 
+// Tag ordering from config.yml
+let tagOrderFirst = [];
+let tagOrderLast = [];
+
 // Render ID to prevent race conditions in async renderHeads()
 let currentRenderId = 0;
 
@@ -106,6 +110,46 @@ function debounce(fn, delay) {
   };
 }
 
+// Load tag ordering config from config.yml
+async function loadTagOrderConfig() {
+  try {
+    const response = await fetch('../headsmith/src/main/resources/config.yml');
+    if (!response.ok) return;
+    const yaml = await response.text();
+    const config = jsyaml.load(yaml);
+    tagOrderFirst = config['tag-order']?.first?.filter(t => t) || [];
+    tagOrderLast = config['tag-order']?.last?.filter(t => t) || [];
+  } catch (e) {
+    console.warn('Failed to load tag order config:', e);
+  }
+}
+
+// Sort tags with first/last pins (modifies array in place)
+function sortTagsWithPins(tags) {
+  // Sort alphabetically first
+  tags.sort((a, b) => a.tag.localeCompare(b.tag));
+
+  // Move "first" tags to beginning (reverse order so first in config = first in list)
+  for (let i = tagOrderFirst.length - 1; i >= 0; i--) {
+    const idx = tags.findIndex(t => t.tag === tagOrderFirst[i]);
+    if (idx > -1) {
+      const [removed] = tags.splice(idx, 1);
+      tags.unshift(removed);
+    }
+  }
+
+  // Move "last" tags to end
+  for (const tag of tagOrderLast) {
+    const idx = tags.findIndex(t => t.tag === tag);
+    if (idx > -1) {
+      const [removed] = tags.splice(idx, 1);
+      tags.push(removed);
+    }
+  }
+
+  return tags;
+}
+
 // Build hierarchical tag tree from flat tags
 // Returns { tagTree: { parent: { child: count } }, flatTags: [[tag, count]] }
 function buildTagTree() {
@@ -145,9 +189,9 @@ function getTagsAtLevel(tree, flatTags) {
     for (const [tag, count] of Object.entries(flatTags)) {
       result.push({ tag, count, hasChildren: false });
     }
-    return result.sort((a, b) => a.tag.localeCompare(b.tag));
+    return sortTagsWithPins(result);
   } else {
-    // Drill-down level: show children of current parent
+    // Drill-down level: show children of current parent (alphabetical only, no pins)
     const parentKey = activeTagPath[0];
     const children = tree[parentKey] || {};
     return Object.entries(children)
@@ -179,10 +223,10 @@ function renderFilterPills() {
   const propsSection = document.getElementById('properties-section');
 
   // Categories section: hierarchical parent tags (alphabet, color, etc.)
-  const categories = Object.entries(tagTree).map(([parent, children]) => ({
+  const categories = sortTagsWithPins(Object.entries(tagTree).map(([parent, children]) => ({
     tag: parent,
     count: Object.values(children).reduce((a, b) => a + b, 0)
-  })).sort((a, b) => a.tag.localeCompare(b.tag));
+  })));
 
   if (categories.length === 0) {
     categoriesSection.style.display = 'none';
@@ -662,12 +706,8 @@ async function loadHeadFiles() {
   }
   updateProgress(0, 0);
 
-  // Load config.yml to get list of head files
-  const configResponse = await fetch('../headsmith/src/main/resources/config.yml');
-  if (!configResponse.ok) throw new Error(`Failed to load config.yml: ${configResponse.status}`);
-  const configYaml = await configResponse.text();
-  const config = jsyaml.load(configYaml);
-  const headFiles = config['head-files'] || ['heads.yml'];
+  // Derive head files list from the JSON keys
+  const headFiles = Object.keys(headCounts).filter(k => k.endsWith('.yml'));
 
   // Load and merge all head files, tracking source file and line
   const allHeads = {};
@@ -704,7 +744,7 @@ async function loadHeadFiles() {
 async function init() {
   try {
     setupTextureObserver();
-    await loadTextureLists();
+    await Promise.all([loadTextureLists(), loadTagOrderConfig()]);
     headsData = await loadHeadFiles();
     renderFilterPills();
     renderHeads();

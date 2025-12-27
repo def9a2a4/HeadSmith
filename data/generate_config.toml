@@ -544,6 +544,15 @@ Quartz = "mini_quartz_block"
 Ice = "mini_ice"
 Dirt = "mini_dirt"
 Obsidian = "mini_obsidian"
+Netherite = "mini_netherite_block"
+"Gilded Blackstone" = "mini_gilded_blackstone"
+Dripstone = "mini_dripstone_block"
+"Chiseled Sandstone" = "mini_chiseled_sandstone"
+"Red Chiseled Sandstone" = "mini_chiseled_red_sandstone"
+"Smooth Sandstone" = "mini_smooth_sandstone"
+"Redstone Block" = "mini_redstone_block"
+Pumpkin = "mini_pumpkin"
+"Oak Log" = "mini_oak_log"
 # Characters to generate for alphabet blocks
 # Format: search_suffix = [yaml_id_suffix, display_char]
 [alphabet.letters]

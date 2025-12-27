@@ -15,6 +15,7 @@ import org.bukkit.persistence.PersistentDataType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -154,16 +155,21 @@ final class HeadMenus {
     private final Map<String, Set<String>> tagChildren;  // parent tag -> child tags
     private final NamespacedKey pdcHeadIdKey;
     private final BiFunction<String, Integer, ItemStack> headItemMaker;
+    private final List<String> tagOrderFirst;
+    private final List<String> tagOrderLast;
 
     HeadMenus(Map<String, HeadDef> headsById, List<HeadStonecutterRecipe> headStonecutterRecipes,
               Map<String, String> firstHeadByTag, Map<String, Set<String>> tagChildren,
-              NamespacedKey pdcHeadIdKey, BiFunction<String, Integer, ItemStack> headItemMaker) {
+              NamespacedKey pdcHeadIdKey, BiFunction<String, Integer, ItemStack> headItemMaker,
+              List<String> tagOrderFirst, List<String> tagOrderLast) {
         this.headsById = headsById;
         this.headStonecutterRecipes = headStonecutterRecipes;
         this.firstHeadByTag = firstHeadByTag;
         this.tagChildren = tagChildren;
         this.pdcHeadIdKey = pdcHeadIdKey;
         this.headItemMaker = headItemMaker;
+        this.tagOrderFirst = tagOrderFirst;
+        this.tagOrderLast = tagOrderLast;
     }
 
     void openCatalogMenu(Player player, int page, String searchQuery) {
@@ -424,14 +430,35 @@ final class HeadMenus {
      * For flat tags like "storage", returns "storage".
      */
     private List<String> getTopLevelTags() {
+        Set<String> seen = new HashSet<>();
         List<String> result = new ArrayList<>();
+
         for (String tag : firstHeadByTag.keySet()) {
             int slashIndex = tag.indexOf('/');
             String topLevel = slashIndex > 0 ? tag.substring(0, slashIndex) : tag;
-            if (!result.contains(topLevel)) {
+            if (seen.add(topLevel)) {
                 result.add(topLevel);
             }
         }
+
+        // Sort alphabetically
+        result.sort(String::compareToIgnoreCase);
+
+        // Move "first" tags to beginning (in reverse order so first in config = first in list)
+        for (int i = tagOrderFirst.size() - 1; i >= 0; i--) {
+            String tag = tagOrderFirst.get(i);
+            if (result.remove(tag)) {
+                result.add(0, tag);
+            }
+        }
+
+        // Move "last" tags to end
+        for (String tag : tagOrderLast) {
+            if (result.remove(tag)) {
+                result.add(tag);
+            }
+        }
+
         return result;
     }
 

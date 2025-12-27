@@ -25,35 +25,8 @@ dependencies {
     implementation("org.bstats:bstats-bukkit:3.1.0")
 }
 
-// Generate manifest of bundled head files for runtime discovery
-val generateHeadsManifest by tasks.registering {
-    val headsDir = file("src/main/resources/heads")
-    val manifestFile = layout.buildDirectory.file("generated-resources/heads-manifest.txt")
-    inputs.dir(headsDir)
-    outputs.file(manifestFile)
-    doLast {
-        val outFile = manifestFile.get().asFile
-        outFile.parentFile.mkdirs()
-        val headFiles = fileTree(headsDir)
-            .matching { include("**/*.yml") }
-            .files
-            .map { it.relativeTo(file("src/main/resources")).path.replace("\\", "/") }
-            .sorted()
-        outFile.writeText(headFiles.joinToString("\n"))
-    }
-}
-
-sourceSets {
-    main {
-        resources {
-            srcDir(layout.buildDirectory.dir("generated-resources"))
-        }
-    }
-}
-
 tasks {
     processResources {
-        dependsOn(generateHeadsManifest)
         val props = mapOf("version" to version)
         inputs.properties(props)
         filteringCharset = "UTF-8"

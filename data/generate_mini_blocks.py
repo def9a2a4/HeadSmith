@@ -193,8 +193,8 @@ def generate_alphabet_entry(
     yaml_id = f"{font_id}_{yaml_suffix}"
     display_name = yaml_escape(f"{font_key} {display_char}")
 
-    # Create hierarchical alphabet tag + inherited tags
-    all_tags = [f"alphabet/{font_id}"] + inherited_tags
+    # Create hierarchical alphabet tag + character tag + inherited tags
+    all_tags = [f"alphabet/{font_id}", f"character/{yaml_suffix}"] + inherited_tags
 
     tags_section = "    tags:\n"
     for tag in all_tags:
@@ -300,6 +300,32 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
                         )
                     )
                     rune_idx += 1
+
+        # Collect Standard Galactic alphabet entries (A-Z only)
+        for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ":
+            for row in alphabet_rows:
+                name = row[0]
+                tags = row[3] if len(row) > 3 else ""
+
+                if font_pattern not in tags:
+                    continue
+
+                # Match "Cherry Plank Standard Galactic Alphabet A" pattern
+                if name.endswith(f" Standard Galactic Alphabet {letter}"):
+                    texture = row[4] if len(row) > 4 else None
+                    if texture:
+                        font_entries.append(
+                            generate_alphabet_entry(
+                                font_name,
+                                f"galactic_{letter.lower()}",
+                                f"Galactic {letter}",
+                                texture,
+                                mini_block_id,
+                                inherited_tags,
+                                inherited_properties,
+                            )
+                        )
+                    break
 
         entries_by_font[font_id] = font_entries
         if missing_chars:
