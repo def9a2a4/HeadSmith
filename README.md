@@ -15,9 +15,9 @@ A Minecraft Paper plugin adding 3300+ survival-friendly decorative and functiona
 - **Crafting** - Depending on the head, craft using shaped/shapeless recipes or stonecutter recipes.
 - **Drops** - Control what drops when heads are broken (silk touch support). For example, a [bottle of redstone]() when broken will just drop redstone dust unless broken with silk touch.
 - **Special Properties**:
-  - Lightable [candles]() with particle effects
-  - Glowing pumpkins and glowstone
-  - Functional blocks that open crafting tables, anvils, enchanting tables, looms, and more
+  - Lightable [candles](https://def9a2a4.github.io/HeadSmith/?q=candle) with particle effects
+  - [Glowing pumpkins, glowstone, and other blocks](https://def9a2a4.github.io/HeadSmith/?prop=glowing)
+  - Functional blocks that open [crafting tables](https://def9a2a4.github.io/HeadSmith/?prop=workbench), [anvils](https://def9a2a4.github.io/HeadSmith/?prop=anvil), enchanting tables, looms, and more
 
 | Description                                                                                            | Preview                                          |
 | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
