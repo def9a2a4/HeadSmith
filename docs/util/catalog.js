@@ -59,6 +59,59 @@ let activeTags = new Set();  // Multiple flat tags allowed
 let activeTagPath = [];      // Hierarchical tag path, e.g., ["alphabet", "oak"]
 let activeProperty = null;
 
+// URL state management
+function saveStateToURL() {
+  const params = new URLSearchParams();
+  const searchInput = document.getElementById('search-input');
+
+  if (searchInput?.value) {
+    params.set('q', searchInput.value);
+  }
+  if (activeTagPath.length > 0) {
+    params.set('path', activeTagPath.join(','));
+  }
+  if (activeTags.size > 0) {
+    params.set('tags', [...activeTags].join(','));
+  }
+  if (activeProperty) {
+    params.set('prop', activeProperty);
+  }
+
+  const newUrl = params.toString()
+    ? `${window.location.pathname}?${params.toString()}`
+    : window.location.pathname;
+  history.replaceState(null, '', newUrl);
+}
+
+function loadStateFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const searchInput = document.getElementById('search-input');
+
+  // Restore search query
+  const query = params.get('q');
+  if (query && searchInput) {
+    searchInput.value = query;
+  }
+
+  // Restore hierarchical tag path
+  const path = params.get('path');
+  if (path) {
+    activeTagPath = path.split(',').filter(s => s);
+  }
+
+  // Restore flat tags
+  const tags = params.get('tags');
+  if (tags) {
+    activeTags = new Set(tags.split(',').filter(s => s));
+  }
+
+  // Restore property filter
+  const prop = params.get('prop');
+  if (prop) {
+    activeProperty = prop;
+  }
+}
+
 // Strip Minecraft color codes for search matching
 function stripColorCodes(text) {
   if (!text) return '';
@@ -113,7 +166,7 @@ function debounce(fn, delay) {
 // Load tag ordering config from config.yml
 async function loadTagOrderConfig() {
   try {
-    const response = await fetch('../headsmith/src/main/resources/config.yml');
+    const response = await fetch('./data/config.yml');
     if (!response.ok) return;
     const yaml = await response.text();
     const config = jsyaml.load(yaml);
@@ -715,7 +768,7 @@ async function loadHeadFiles() {
   let parsedCount = 0;
 
   for (const file of headFiles) {
-    const response = await fetch(`../headsmith/src/main/resources/${file}`);
+    const response = await fetch(`./data/${file}`);
     if (!response.ok) {
       console.warn(`Failed to load ${file}: ${response.status}`);
       continue;
@@ -746,14 +799,22 @@ async function init() {
     setupTextureObserver();
     await Promise.all([loadTextureLists(), loadTagOrderConfig()]);
     headsData = await loadHeadFiles();
+
+    // Restore state from URL before initial render
+    loadStateFromURL();
+
     renderFilterPills();
-    renderHeads();
 
     // Set up search
     const searchInput = document.getElementById('search-input');
+
+    // Apply filters from URL state
+    const filteredIds = filterHeads(searchInput.value);
+    renderHeads(filteredIds);
     const handleSearch = debounce(async () => {
       const filteredIds = filterHeads(searchInput.value);
       renderHeads(filteredIds);
+      saveStateToURL();
     }, 200);
     searchInput.addEventListener('input', handleSearch);
 
@@ -784,6 +845,7 @@ async function init() {
             renderHeads(filterHeads(searchInput.value));
           }
         }
+        saveStateToURL();
         return;
       }
 
@@ -815,6 +877,7 @@ async function init() {
           updateActiveFilters();
           renderHeads(filterHeads(searchInput.value));
         }
+        saveStateToURL();
         return;
       }
 
@@ -823,6 +886,7 @@ async function init() {
         activeProperty = activeProperty === prop ? null : prop;
         updateActiveFilters();
         renderHeads(filterHeads(searchInput.value));
+        saveStateToURL();
       }
       // Handle head ID link clicks to open in VS Code
       // if (e.target.matches('.head-id-link')) {
@@ -852,6 +916,7 @@ async function init() {
       renderFilterPills();
       updateActiveFilters();
       renderHeads();
+      saveStateToURL();
     });
   } catch (e) {
     showError(e.message);

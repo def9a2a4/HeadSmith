@@ -1,6 +1,6 @@
 # HeadSmith
 
-A Minecraft Paper plugin adding a variety of survival-friendly decorative and functional heads.
+A Minecraft Paper plugin adding 3300+ survival-friendly decorative and functional heads with crafting recipes.
 
 - Download on Modrinth: **Coming Soon!**
 - Head Catalog: [def9a2a4.github.io/HeadSmith](https://def9a2a4.github.io/HeadSmith/)
@@ -18,6 +18,14 @@ A Minecraft Paper plugin adding a variety of survival-friendly decorative and fu
   - Lightable [candles]() with particle effects
   - Glowing pumpkins and glowstone
   - Functional blocks that open crafting tables, anvils, enchanting tables, looms, and more
+
+| Description                                                                                            | Preview                                          |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------ |
+| Browse the catalogue of heads via `/headsmith show`                                                    | ![](docs/assets/show-tags.png)                   |
+| Head catalog showing how to craft a stack of books                                                     | ![](docs/assets/hs-show-stack-of-books.png)      |
+| Mini block heads collection                                                                            | ![](docs/assets/mini-blocks.png)                 |
+| Most blocks can be crafted into mini blocks (and sometimes other decorative items) via the stonecutter | ![](docs/assets/stonecutter-gold.png)            |
+| Put a mini block in a stonecutter to craft mini blocks with symbols                                    | ![](docs/assets/stonecutter-mini-oak-planks.png) |
 
 
 ## Commands

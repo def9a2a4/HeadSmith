@@ -31,6 +31,12 @@ server: build
 	cp headsmith/build/libs/*.jar server/plugins/
 	cd server && java -Xmx2G -Xms2G -jar paper-1.21.10-105.jar nogui
 
+.PHONY: docs
+docs: count-heads
+	mkdir -p docs/data/heads
+	cp headsmith/src/main/resources/config.yml docs/data/
+	cp -r headsmith/src/main/resources/heads/* docs/data/heads/
+
 .PHONY: clean
 clean:
 	gradle clean
