@@ -56,6 +56,8 @@ import static anon.def9a2a4.headsmith.HeadUtils.*;
 
 public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCompleter {
 
+    private record LoadResult(int loaded, int excluded) {}
+
     private final Map<String, HeadDef> headsById = new LinkedHashMap<>();
     private final Map<String, String> headIdByTextureId = new HashMap<>();
     private final Map<String, String> firstHeadByTag = new LinkedHashMap<>();
@@ -279,6 +281,10 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
 
         // Load bundled heads from JAR
         List<String> bundledFiles = readHeadsManifest();
+        int jarHeadCount = 0;
+        int jarFileCount = 0;
+        int totalExcluded = 0;
+
         for (String resourcePath : bundledFiles) {
             String fileTag = filePathToTag(resourcePath);
 
@@ -287,14 +293,20 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                 continue;
             }
 
-            int loaded = loadHeadsFromJarResource(resourcePath, fileTag);
-            if (loaded > 0) {
-                getLogger().info("Loaded " + loaded + " heads from " + resourcePath);
+            LoadResult result = loadHeadsFromJarResource(resourcePath, fileTag);
+            jarHeadCount += result.loaded();
+            totalExcluded += result.excluded();
+            if (result.loaded() > 0) {
+                jarFileCount++;
             }
         }
 
+        getLogger().info("Loaded " + jarHeadCount + " heads from " + jarFileCount + " bundled files");
+
         // Load custom head files from data folder
         List<String> customFiles = getConfig().getStringList("custom-head-files");
+        int customHeadCount = 0;
+
         for (String filePath : customFiles) {
             File headsFile = new File(getDataFolder(), filePath);
             if (!headsFile.exists()) {
@@ -302,9 +314,14 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                 continue;
             }
             String fileTag = "custom/" + filePath.replaceFirst("\\.yml$", "");
-            int loaded = loadHeadsFromFile(headsFile, filePath, fileTag);
-            getLogger().info("Loaded " + loaded + " custom heads from " + filePath);
+            LoadResult result = loadHeadsFromFile(headsFile, filePath, fileTag);
+            customHeadCount += result.loaded();
+            totalExcluded += result.excluded();
+            getLogger().info("Loaded " + result.loaded() + " custom heads from " + filePath);
         }
+
+        int totalFound = jarHeadCount + customHeadCount + totalExcluded;
+        getLogger().info("Total: " + totalFound + " heads found, " + totalExcluded + " excluded, " + headsById.size() + " enabled");
 
         // Build tag-to-first-head index and tag hierarchy for menu display
         for (HeadDef head : headsById.values()) {
@@ -396,38 +413,40 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         return false;
     }
 
-    private int loadHeadsFromJarResource(String resourcePath, String fileTag) {
+    private LoadResult loadHeadsFromJarResource(String resourcePath, String fileTag) {
         try (InputStream is = getResource(resourcePath)) {
             if (is == null) {
                 getLogger().warning("Resource not found in JAR: " + resourcePath);
-                return 0;
+                return new LoadResult(0, 0);
             }
             YamlConfiguration cfg = YamlConfiguration.loadConfiguration(
                 new InputStreamReader(is, StandardCharsets.UTF_8));
             return processHeadsConfig(cfg, resourcePath, fileTag);
         } catch (IOException e) {
             getLogger().warning("Failed to load " + resourcePath + ": " + e.getMessage());
-            return 0;
+            return new LoadResult(0, 0);
         }
     }
 
-    private int loadHeadsFromFile(File headsFile, String filePath, String fileTag) {
+    private LoadResult loadHeadsFromFile(File headsFile, String filePath, String fileTag) {
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(headsFile);
         return processHeadsConfig(cfg, filePath, fileTag);
     }
 
-    private int processHeadsConfig(YamlConfiguration cfg, String source, String fileTag) {
+    private LoadResult processHeadsConfig(YamlConfiguration cfg, String source, String fileTag) {
         ConfigurationSection headsSec = cfg.getConfigurationSection("heads");
         if (headsSec == null) {
             getLogger().warning(source + " missing 'heads:' section");
-            return 0;
+            return new LoadResult(0, 0);
         }
 
-        int count = 0;
+        int loaded = 0;
+        int excluded = 0;
         for (String headId : headsSec.getKeys(false)) {
             // Check if this specific head ID is excluded
             if (excludedHeads.contains(headId)) {
                 getLogger().fine("Skipping excluded head: " + headId);
+                excluded++;
                 continue;
             }
 
@@ -473,9 +492,9 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
             }
             headsById.put(headId, def);
             headIdByTextureId.put(def.textureId(), headId);
-            count++;
+            loaded++;
         }
-        return count;
+        return new LoadResult(loaded, excluded);
     }
 
     private void registerStonecutterRecipes() {
