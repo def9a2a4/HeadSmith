@@ -25,12 +25,12 @@
   "heads/barrels.yml": 45,
   "heads/books.yml": 76,
   "heads/bottles.yml": 13,
-  "heads/buckets.yml": 27,
+  "heads/buckets.yml": 28,
   "heads/bundles.yml": 33,
   "heads/candles.yml": 85,
   "heads/chalices.yml": 17,
   "heads/mini_blocks.yml": 356,
   "heads/misc.yml": 4,
   "heads/pumpkins.yml": 24,
-  "total": 3306
+  "total": 3307
 }

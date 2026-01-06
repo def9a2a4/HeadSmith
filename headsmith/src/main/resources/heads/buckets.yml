@@ -612,3 +612,31 @@ heads:
         - when: { silk_touch: true }
           drops:
             - { head: "dye_bucket_pink" }
+
+  # ============================================
+  # FOOD BUCKETS (Shapeless recipes)
+  # ============================================
+
+  bucket_of_beans:
+    texture: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHBzOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlL2VkM2I3N2I4ZGFhNzY3YzMxMzQ4MWRiYWM0Y2Q4NWUzYjhlM2QzNDdhODdmMzNhOTFlN2ExNGJlNTc3Yjc2OTEifX19"
+    name: "&6Bucket of Beans"
+    tags: [storage]
+    lore:
+      - "&7A bucket of beans."
+      - "&7Silk touch to keep the bucket."
+    recipes:
+      craft:
+        shapeless:
+          - id: "bucket_of_beans"
+            ingredients:
+              - { material: "BUCKET" }
+              - { material: "COCOA_BEANS" }
+    drops:
+      on_break:
+        - when: { silk_touch: false }
+          drops:
+            - { material: "BUCKET" }
+            - { material: "COCOA_BEANS" }
+        - when: { silk_touch: true }
+          drops:
+            - { head: "bucket_of_beans" }
