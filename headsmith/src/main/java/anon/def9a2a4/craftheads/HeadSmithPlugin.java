@@ -32,7 +32,9 @@ import org.bukkit.inventory.StonecutterInventory;
 import org.bukkit.inventory.StonecuttingRecipe;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.inventory.Recipe;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scheduler.BukkitRunnable;
 import org.bstats.bukkit.Metrics;
 
 import java.io.File;
@@ -64,6 +66,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
     private final Map<String, Set<String>> tagChildren = new LinkedHashMap<>(); // parent tag -> child tags
     private final List<HeadStonecutterRecipe> headStonecutterRecipes = new ArrayList<>();
     private final List<NamespacedKey> registeredRecipeKeys = new ArrayList<>();
+    private final List<Recipe> pendingRecipes = new ArrayList<>();
 
     private NamespacedKey pdcHeadIdKey;
     private NamespacedKey pdcLitKey;
@@ -84,7 +87,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         pdcLitKey = new NamespacedKey(this, "lit");
 
         saveDefaultConfig();
-        reloadHeads();
+        reloadHeadsSync();
 
         menus = new HeadMenus(headsById, headStonecutterRecipes, firstHeadByTag, tagChildren, pdcHeadIdKey, this::makeHeadItem, tagOrderFirst, tagOrderLast);
         propertiesListener = new HeadPropertiesListener(this, pdcLitKey, headsById::get, headIdByTextureId::get);
@@ -106,12 +109,40 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         tagChildren.clear();
     }
 
+    private void sendHelp(CommandSender sender) {
+        String version = getDescription().getVersion();
+        String bar = ChatColor.GOLD + "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━";
+
+        sender.sendMessage(bar);
+        sender.sendMessage(ChatColor.GOLD + "  HeadSmith " + ChatColor.GRAY + "v" + version);
+        sender.sendMessage(ChatColor.GRAY + "  Aliases: " + ChatColor.WHITE + "/headsmith, /hs");
+        sender.sendMessage(bar);
+
+        if (sender.hasPermission("headsmith.catalog")) {
+            sender.sendMessage(ChatColor.YELLOW + "  /headsmith show");
+            sender.sendMessage(ChatColor.GRAY + "    Open the head catalog menu");
+            sender.sendMessage(ChatColor.YELLOW + "  /headsmith search <query>");
+            sender.sendMessage(ChatColor.GRAY + "    Search for heads by name or tag");
+        }
+
+        if (sender.hasPermission("headsmith.admin")) {
+            sender.sendMessage(ChatColor.YELLOW + "  /headsmith reload");
+            sender.sendMessage(ChatColor.GRAY + "    Reload configuration and heads");
+            sender.sendMessage(ChatColor.YELLOW + "  /headsmith give <id> [player] [amount]");
+            sender.sendMessage(ChatColor.GRAY + "    Give a head to a player");
+        }
+
+        sender.sendMessage(ChatColor.YELLOW + "  /headsmith help");
+        sender.sendMessage(ChatColor.GRAY + "    Show this help message");
+        sender.sendMessage(bar);
+    }
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (!command.getName().equalsIgnoreCase("headsmith")) return false;
 
         if (args.length == 0) {
-            sender.sendMessage(ChatColor.RED + "Usage: /headsmith [show|search <query>|reload|give <id> [player] [amount]]");
+            sendHelp(sender);
             return true;
         }
 
@@ -131,9 +162,15 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                 sender.sendMessage(ChatColor.RED + "You don't have permission to do that.");
                 return true;
             }
-            reloadHeads();
+            if (args.length < 2 || !args[1].equalsIgnoreCase("confirm")) {
+                sender.sendMessage(ChatColor.YELLOW + "[HeadSmith] " + ChatColor.WHITE + "Reloading will re-register all recipes.");
+                sender.sendMessage(ChatColor.YELLOW + "[HeadSmith] " + ChatColor.WHITE + "This may take 30-60 seconds with ~3000 heads.");
+                sender.sendMessage(ChatColor.YELLOW + "[HeadSmith] " + ChatColor.RED + "The server will be laggy during the reload.");
+                sender.sendMessage(ChatColor.YELLOW + "[HeadSmith] " + ChatColor.WHITE + "Run " + ChatColor.AQUA + "/headsmith reload confirm" + ChatColor.WHITE + " to proceed.");
+                return true;
+            }
+            reloadHeadsAsync(sender);
             menus = new HeadMenus(headsById, headStonecutterRecipes, firstHeadByTag, tagChildren, pdcHeadIdKey, this::makeHeadItem, tagOrderFirst, tagOrderLast);
-            sender.sendMessage(ChatColor.GREEN + "HeadSmith reloaded: " + headsById.size() + " heads.");
             return true;
         }
 
@@ -216,7 +253,12 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
             return true;
         }
 
-        sender.sendMessage(ChatColor.RED + "Usage: /headsmith [show|search <query>|reload|give <id> [player] [amount]]");
+        if (subCmd.equals("help")) {
+            sendHelp(sender);
+            return true;
+        }
+
+        sendHelp(sender);
         return true;
     }
 
@@ -233,6 +275,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                 options.add("reload");
                 options.add("give");
             }
+            options.add("help");
             return options.stream().filter(s -> s.startsWith(partial)).collect(Collectors.toList());
         }
 
@@ -257,17 +300,43 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
 
     // Config loading
 
-    private void reloadHeads() {
-        // Clean up previously registered recipes
-        for (NamespacedKey key : registeredRecipeKeys) {
-            Bukkit.removeRecipe(key);
+    private void reloadHeadsSync() {
+        loadHeadData();
+        // Register all recipes synchronously (for startup)
+        for (Recipe recipe : pendingRecipes) {
+            Bukkit.addRecipe(recipe);
         }
+        pendingRecipes.clear();
+    }
+
+    private void reloadHeadsAsync(CommandSender sender) {
+        sender.sendMessage(ChatColor.YELLOW + "[HeadSmith] Starting reload...");
+
+        // Copy keys to remove and clear the list
+        List<NamespacedKey> keysToRemove = new ArrayList<>(registeredRecipeKeys);
         registeredRecipeKeys.clear();
 
+        // Load new head data (this populates pendingRecipes and registeredRecipeKeys)
+        loadHeadData();
+
+        int totalToRemove = keysToRemove.size();
+        int totalToAdd = pendingRecipes.size();
+        sender.sendMessage(ChatColor.YELLOW + "[HeadSmith] Loaded " + headsById.size() + " heads. Removing " + totalToRemove + " old recipes, adding " + totalToAdd + " new recipes...");
+
+        // First batch-remove old recipes, then batch-add new ones
+        removeRecipesBatched(sender, keysToRemove, () -> {
+            registerRecipesBatched(sender, () -> {
+                sender.sendMessage(ChatColor.GREEN + "[HeadSmith] Reload complete! " + totalToAdd + " recipes registered.");
+            });
+        });
+    }
+
+    private void loadHeadData() {
         headsById.clear();
         headIdByTextureId.clear();
         firstHeadByTag.clear();
         tagChildren.clear();
+        pendingRecipes.clear();
 
         reloadConfig();
 
@@ -338,8 +407,8 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
             }
         }
 
-        registerStonecutterRecipes();
-        registerCraftingRecipes();
+        collectStonecutterRecipes();
+        collectCraftingRecipes();
     }
 
     private List<String> readHeadsManifest() {
@@ -497,7 +566,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         return new LoadResult(loaded, excluded);
     }
 
-    private void registerStonecutterRecipes() {
+    private void collectStonecutterRecipes() {
         headStonecutterRecipes.clear();
         for (HeadDef head : headsById.values()) {
             for (StonecutterRecipeDef r : head.stonecutter()) {
@@ -506,7 +575,8 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                     ItemStack result = makeHeadItem(head.id(), r.amount());
                     StonecuttingRecipe recipe = new StonecuttingRecipe(key, result,
                         new RecipeChoice.MaterialChoice(r.input().material));
-                    Bukkit.addRecipe(recipe);
+                    pendingRecipes.add(recipe);
+                    registeredRecipeKeys.add(key);
                 } else if (r.input().headId != null) {
                     headStonecutterRecipes.add(new HeadStonecutterRecipe(r.input().headId, head.id(), r.amount()));
                 }
@@ -514,20 +584,20 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         }
     }
 
-    private void registerCraftingRecipes() {
+    private void collectCraftingRecipes() {
         for (HeadDef head : headsById.values()) {
             int totalRecipes = head.shaped().size() + head.shapeless().size();
             int index = 0;
             for (CraftShapedRecipeDef r : head.shaped()) {
-                registerShapedRecipe(head, r, index++, totalRecipes);
+                collectShapedRecipe(head, r, index++, totalRecipes);
             }
             for (CraftShapelessRecipeDef r : head.shapeless()) {
-                registerShapelessRecipe(head, r, index++, totalRecipes);
+                collectShapelessRecipe(head, r, index++, totalRecipes);
             }
         }
     }
 
-    private void registerShapedRecipe(HeadDef head, CraftShapedRecipeDef r, int index, int total) {
+    private void collectShapedRecipe(HeadDef head, CraftShapedRecipeDef r, int index, int total) {
         String keyName = total == 1 ? "craft_" + head.id() : "craft_" + head.id() + "_" + index;
         NamespacedKey key = new NamespacedKey(this, keyName);
         ItemStack result = makeHeadItem(r.id, r.amount);
@@ -545,11 +615,11 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
             }
         }
 
-        Bukkit.addRecipe(recipe);
+        pendingRecipes.add(recipe);
         registeredRecipeKeys.add(key);
     }
 
-    private void registerShapelessRecipe(HeadDef head, CraftShapelessRecipeDef r, int index, int total) {
+    private void collectShapelessRecipe(HeadDef head, CraftShapelessRecipeDef r, int index, int total) {
         String keyName = total == 1 ? "craft_" + head.id() : "craft_" + head.id() + "_" + index;
         NamespacedKey key = new NamespacedKey(this, keyName);
         ItemStack result = makeHeadItem(r.id, r.amount);
@@ -565,8 +635,77 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
             }
         }
 
-        Bukkit.addRecipe(recipe);
+        pendingRecipes.add(recipe);
         registeredRecipeKeys.add(key);
+    }
+
+    private void removeRecipesBatched(CommandSender sender, List<NamespacedKey> keys, Runnable onComplete) {
+        if (keys.isEmpty()) {
+            if (onComplete != null) onComplete.run();
+            return;
+        }
+        final int BATCH_SIZE = 50;
+        final int totalKeys = keys.size();
+        final int PROGRESS_INTERVAL_TICKS = 100; // 5 seconds
+        new BukkitRunnable() {
+            int index = 0;
+            int tickCount = 0;
+            @Override
+            public void run() {
+                int end = Math.min(index + BATCH_SIZE, totalKeys);
+                for (int i = index; i < end; i++) {
+                    Bukkit.removeRecipe(keys.get(i));
+                }
+                index = end;
+                tickCount++;
+
+                // Print progress every 5 seconds
+                if (tickCount % PROGRESS_INTERVAL_TICKS == 0 && index < totalKeys) {
+                    int percent = (index * 100) / totalKeys;
+                    sender.sendMessage(ChatColor.YELLOW + "[HeadSmith] Removing: " + index + "/" + totalKeys + " (" + percent + "%)");
+                }
+
+                if (index >= totalKeys) {
+                    cancel();
+                    if (onComplete != null) onComplete.run();
+                }
+            }
+        }.runTaskTimer(this, 0, 1);
+    }
+
+    private void registerRecipesBatched(CommandSender sender, Runnable onComplete) {
+        if (pendingRecipes.isEmpty()) {
+            if (onComplete != null) onComplete.run();
+            return;
+        }
+        final int BATCH_SIZE = 50;
+        final int totalRecipes = pendingRecipes.size();
+        final int PROGRESS_INTERVAL_TICKS = 100; // 5 seconds
+        new BukkitRunnable() {
+            int index = 0;
+            int tickCount = 0;
+            @Override
+            public void run() {
+                int end = Math.min(index + BATCH_SIZE, totalRecipes);
+                for (int i = index; i < end; i++) {
+                    Bukkit.addRecipe(pendingRecipes.get(i));
+                }
+                index = end;
+                tickCount++;
+
+                // Print progress every 5 seconds
+                if (tickCount % PROGRESS_INTERVAL_TICKS == 0 && index < totalRecipes) {
+                    int percent = (index * 100) / totalRecipes;
+                    sender.sendMessage(ChatColor.YELLOW + "[HeadSmith] Adding: " + index + "/" + totalRecipes + " (" + percent + "%)");
+                }
+
+                if (index >= totalRecipes) {
+                    cancel();
+                    pendingRecipes.clear();
+                    if (onComplete != null) onComplete.run();
+                }
+            }
+        }.runTaskTimer(this, 0, 1);
     }
 
     // Event handlers
@@ -768,13 +907,8 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
             }
         }
 
-        // Implicit fallback: silk touch → drop itself
-        if (silkTouch) {
-            return List.of(makeHeadItem(def.id(), 1));
-        }
-
-        // No match, no silk touch → no drops
-        return List.of();
+        // Implicit fallback: always drop itself
+        return List.of(makeHeadItem(def.id(), 1));
     }
 
     public ItemStack makeHeadItem(String headId, int amount) {

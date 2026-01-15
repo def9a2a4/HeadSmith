@@ -9,7 +9,7 @@ commands:
   headsmith:
     description: HeadSmith command - browse heads catalog, search, give, reload
     usage: /headsmith [reload|search <query>|give <head_id> [player] [amount]]
-    aliases: [heads, ch]
+    aliases: [hs]
 
 permissions:
   headsmith.admin:

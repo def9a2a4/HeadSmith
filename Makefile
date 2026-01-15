@@ -29,7 +29,7 @@ server: build
 	rm -f server/plugins/HeadSmith*.jar
 	rm -rf server/plugins/HeadSmith/
 	cp headsmith/build/libs/*.jar server/plugins/
-	cd server && java -Xmx2G -Xms2G -jar paper-1.21.10-105.jar nogui
+	cd server && java -Xmx2G -Xms2G -jar paper-1.21.11-55.jar nogui
 
 .PHONY: docs
 docs: count-heads
@@ -39,4 +39,4 @@ docs: count-heads
 
 .PHONY: clean
 clean:
-	gradle clean
+	cd headsmith && gradle clean

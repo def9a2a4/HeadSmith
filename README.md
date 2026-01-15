@@ -30,8 +30,12 @@ A Minecraft Paper plugin adding 3300+ survival-friendly decorative and functiona
 
 ## Commands
 
+Use `/headsmith` or `/hs` to access all commands.
+
 | Command                                       | Description                               | Permission          |
 | --------------------------------------------- | ----------------------------------------- | ------------------- |
+| `/headsmith`                                  | Show help message                         | -                   |
+| `/headsmith help`                             | Show help message                         | -                   |
 | `/headsmith show`                             | Open the head catalog menu                | `headsmith.catalog` |
 | `/headsmith search <query>`                   | Search for heads by name or tag           | `headsmith.catalog` |
 | `/headsmith reload`                           | Reload configuration and head definitions | `headsmith.admin`   |
