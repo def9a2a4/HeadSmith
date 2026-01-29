@@ -16,6 +16,7 @@ MATERIAL_PROPERTIES: dict[str, list[str]] = CONFIG["material_properties"]
 FONT_TO_MINI_BLOCK: dict[str, str] = CONFIG["font_to_mini_block"]
 MATERIAL_TAG_PATTERNS: dict[str, list[str]] = CONFIG.get("material_tag_patterns", {})
 MATERIAL_TAG_LISTS: dict[str, list[str]] = CONFIG.get("material_tag_lists", {})
+VALUABLE_DROP_MATERIALS: list[str] = CONFIG.get("valuable_drop_materials", [])
 
 MATERIALS: list[str] = CONFIG["materials"]
 
@@ -164,6 +165,19 @@ def generate_yaml_entry(material, texture):
         for prop in properties:
             props_section += f"      - {prop}\n"
 
+    # Build drops section for valuable materials
+    drops_section = ""
+    if material in VALUABLE_DROP_MATERIALS:
+        drops_section = f'''    drops:
+      on_break:
+        - when: {{ silk_touch: false }}
+          drops:
+            - {{ material: "{material}" }}
+        - when: {{ silk_touch: true }}
+          drops:
+            - {{ head: "{yaml_id}" }}
+'''
+
     return f'''  {yaml_id}:
     texture: "{texture}"
     name: "&7{display_name}"
@@ -171,7 +185,7 @@ def generate_yaml_entry(material, texture):
       stonecutter:
         - id: "{yaml_id}"
           input: {{ material: "{material}" }}
-'''
+{drops_section}'''
 
 
 def yaml_escape(s: str) -> str:
@@ -187,6 +201,7 @@ def generate_alphabet_entry(
     mini_block_id: str,
     inherited_tags: list[str],
     inherited_properties: list[str],
+    parent_material: str,
 ) -> str:
     """Generate a single alphabet YAML entry."""
     font_id = font_key.lower().replace(" ", "_")
@@ -206,6 +221,19 @@ def generate_alphabet_entry(
         for prop in inherited_properties:
             props_section += f"      - {prop}\n"
 
+    # Build drops section for alphabet blocks from valuable materials
+    drops_section = ""
+    if parent_material in VALUABLE_DROP_MATERIALS:
+        drops_section = f'''    drops:
+      on_break:
+        - when: {{ silk_touch: false }}
+          drops:
+            - {{ material: "{parent_material}" }}
+        - when: {{ silk_touch: true }}
+          drops:
+            - {{ head: "{yaml_id}" }}
+'''
+
     return f'''  {yaml_id}:
     texture: "{texture}"
     name: "&7{display_name}"
@@ -213,7 +241,7 @@ def generate_alphabet_entry(
       stonecutter:
         - id: "{yaml_id}"
           input: {{ head: "{mini_block_id}" }}
-'''
+{drops_section}'''
 
 
 def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[str]]]:
@@ -270,6 +298,7 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
                         mini_block_id,
                         inherited_tags,
                         inherited_properties,
+                        material,
                     )
                 )
             else:
@@ -297,6 +326,7 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
                             mini_block_id,
                             inherited_tags,
                             inherited_properties,
+                            material,
                         )
                     )
                     rune_idx += 1
@@ -323,6 +353,7 @@ def generate_alphabet(rows: list) -> tuple[dict[str, list[str]], dict[str, list[
                                 mini_block_id,
                                 inherited_tags,
                                 inherited_properties,
+                                material,
                             )
                         )
                     break

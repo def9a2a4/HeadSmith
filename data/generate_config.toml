@@ -1,5 +1,13 @@
 # Configuration for generate_mini_blocks.py
 
+# Materials that require silk touch to drop the mini block (otherwise drops the vanilla material)
+valuable_drop_materials = [
+    "DIAMOND_BLOCK",
+    "EMERALD_BLOCK",
+    "GOLD_BLOCK",
+    "NETHERITE_BLOCK",
+]
+
 # Minecraft material names for mini blocks (must be before table sections)
 materials = [
     # Ore/Gem Blocks
