@@ -58,7 +58,7 @@ import static anon.def9a2a4.headsmith.HeadUtils.*;
 
 public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCompleter {
 
-    private record LoadResult(int loaded, int excluded) {}
+    private record LoadResult(int loaded, int excluded, List<String> overridden) {}
 
     private final Map<String, HeadDef> headsById = new LinkedHashMap<>();
     private final Map<String, String> headIdByTextureId = new HashMap<>();
@@ -375,6 +375,7 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         // Load custom head files from data folder
         List<String> customFiles = getConfig().getStringList("custom-head-files");
         int customHeadCount = 0;
+        List<String> allOverridden = new ArrayList<>();
 
         for (String filePath : customFiles) {
             File headsFile = new File(getDataFolder(), filePath);
@@ -386,7 +387,12 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
             LoadResult result = loadHeadsFromFile(headsFile, filePath, fileTag);
             customHeadCount += result.loaded();
             totalExcluded += result.excluded();
+            allOverridden.addAll(result.overridden());
             getLogger().info("Loaded " + result.loaded() + " custom heads from " + filePath);
+        }
+
+        if (!allOverridden.isEmpty()) {
+            getLogger().info("Replaced " + allOverridden.size() + " bundled heads with custom values: " + allOverridden);
         }
 
         int totalFound = jarHeadCount + customHeadCount + totalExcluded;
@@ -486,31 +492,32 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         try (InputStream is = getResource(resourcePath)) {
             if (is == null) {
                 getLogger().warning("Resource not found in JAR: " + resourcePath);
-                return new LoadResult(0, 0);
+                return new LoadResult(0, 0, List.of());
             }
             YamlConfiguration cfg = YamlConfiguration.loadConfiguration(
                 new InputStreamReader(is, StandardCharsets.UTF_8));
-            return processHeadsConfig(cfg, resourcePath, fileTag);
+            return processHeadsConfig(cfg, resourcePath, fileTag, false);
         } catch (IOException e) {
             getLogger().warning("Failed to load " + resourcePath + ": " + e.getMessage());
-            return new LoadResult(0, 0);
+            return new LoadResult(0, 0, List.of());
         }
     }
 
     private LoadResult loadHeadsFromFile(File headsFile, String filePath, String fileTag) {
         YamlConfiguration cfg = YamlConfiguration.loadConfiguration(headsFile);
-        return processHeadsConfig(cfg, filePath, fileTag);
+        return processHeadsConfig(cfg, filePath, fileTag, true);
     }
 
-    private LoadResult processHeadsConfig(YamlConfiguration cfg, String source, String fileTag) {
+    private LoadResult processHeadsConfig(YamlConfiguration cfg, String source, String fileTag, boolean allowOverride) {
         ConfigurationSection headsSec = cfg.getConfigurationSection("heads");
         if (headsSec == null) {
             getLogger().warning(source + " missing 'heads:' section");
-            return new LoadResult(0, 0);
+            return new LoadResult(0, 0, List.of());
         }
 
         int loaded = 0;
         int excluded = 0;
+        List<String> overridden = new ArrayList<>();
         for (String headId : headsSec.getKeys(false)) {
             // Check if this specific head ID is excluded
             if (excludedHeads.contains(headId)) {
@@ -557,13 +564,22 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
                 name, lore, tags, properties, shaped, shapeless, stonecut, dropRules);
 
             if (headsById.containsKey(headId)) {
-                throw new IllegalStateException("Duplicate head ID '" + headId + "' in " + source);
+                boolean override = h.getBoolean("override", false);
+                if (allowOverride && override) {
+                    HeadDef oldDef = headsById.get(headId);
+                    headIdByTextureId.remove(oldDef.textureId());
+                    overridden.add(headId);
+                } else if (allowOverride) {
+                    throw new IllegalStateException("Duplicate head ID '" + headId + "' in " + source + " (add 'override: true' to replace bundled head)");
+                } else {
+                    throw new IllegalStateException("Duplicate head ID '" + headId + "' in " + source);
+                }
             }
             headsById.put(headId, def);
             headIdByTextureId.put(def.textureId(), headId);
             loaded++;
         }
-        return new LoadResult(loaded, excluded);
+        return new LoadResult(loaded, excluded, overridden);
     }
 
     private void collectStonecutterRecipes() {

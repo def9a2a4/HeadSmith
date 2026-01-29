@@ -54,3 +54,31 @@ Heads are defined in YAML files and loaded via `config.yml`. Each head can have:
 - Drop rules with silk touch conditions
 
 See the `headsmith/src/main/resources/heads/` directory for examples.
+
+### Custom Heads
+
+You can add custom heads by creating YAML files in the plugin's data folder and referencing them in `config.yml`:
+
+```yaml
+custom-head-files:
+  - my-heads.yml
+```
+
+### Overriding Bundled Heads
+
+To override a bundled head with your own version, use the same head ID and add `override: true`:
+
+```yaml
+heads:
+  mini_diamond_block:
+    override: true
+    texture: "eyJ0ZXh0..."
+    name: "&bCustom Mini Diamond"
+    drops:
+      on_break:
+        - when: { silk_touch: false }
+          drops:
+            - { material: "DIAMOND" }
+```
+
+Without `override: true`, duplicate head IDs will cause an error.
