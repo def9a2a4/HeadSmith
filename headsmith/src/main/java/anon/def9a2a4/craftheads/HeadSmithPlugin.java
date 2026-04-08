@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
+import org.bukkit.GameMode;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockState;
@@ -772,15 +773,39 @@ public final class HeadSmithPlugin extends JavaPlugin implements Listener, TabCo
         String headId = headIdByTextureId.get(textureIdOpt.get());
         if (headId == null) return;
 
-        // Cancel vanilla behavior and give custom head
         event.setCancelled(true);
 
         Player player = event.getPlayer();
         int targetSlot = event.getTargetSlot();
 
-        ItemStack customHead = makeHeadItem(headId, 1);
-        player.getInventory().setItem(targetSlot, customHead);
-        player.getInventory().setHeldItemSlot(targetSlot);
+        if (player.getGameMode() == GameMode.CREATIVE) {
+            // Creative: give a new item (vanilla creative pick-block behavior)
+            ItemStack customHead = makeHeadItem(headId, 1);
+            player.getInventory().setItem(targetSlot, customHead);
+            player.getInventory().setHeldItemSlot(targetSlot);
+        } else {
+            // Survival/Adventure: find matching item in inventory and select it
+            var inv = player.getInventory();
+            for (int i = 0; i < inv.getSize(); i++) {
+                ItemStack item = inv.getItem(i);
+                if (item == null) continue;
+                ItemMeta meta = item.getItemMeta();
+                if (meta == null) continue;
+                String itemHeadId = meta.getPersistentDataContainer()
+                    .get(pdcHeadIdKey, PersistentDataType.STRING);
+                if (headId.equals(itemHeadId)) {
+                    if (i <= 8) {
+                        inv.setHeldItemSlot(i);
+                    } else {
+                        ItemStack displaced = inv.getItem(targetSlot);
+                        inv.setItem(targetSlot, item);
+                        inv.setItem(i, displaced);
+                        inv.setHeldItemSlot(targetSlot);
+                    }
+                    return;
+                }
+            }
+        }
     }
 
     @EventHandler(priority = EventPriority.HIGH)
