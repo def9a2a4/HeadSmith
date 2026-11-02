@@ -1,8 +1,25 @@
+# ⚠️ **MOVED — HeadSmith now lives in [defCoreLib](https://github.com/def9a2a4/defCoreLib)**
+
+[![Download on Modrinth](https://img.shields.io/badge/download-modrinth-00AF5C?style=for-the-badge&logo=modrinth&logoColor=white)](https://modrinth.com/plugin/headsmith) [![Join the Discord](https://img.shields.io/badge/discord-join-5865F2?style=for-the-badge&logo=discord&logoColor=white)](https://def9a2a4.github.io/discord.html)
+
+HeadSmith is now a DefCoreLib companion module. Get the current version and docs here:
+
+- **Readme:** https://github.com/def9a2a4/defCoreLib/blob/main/docs/readmes/headsmith.md
+- **Head catalog:** https://def9a2a4.github.io/HeadSmith/ (still hosted from this repo)
+- **Download on Modrinth:** https://modrinth.com/plugin/headsmith
+
+Upgrading from this standalone plugin: install DefCoreLib plus the new HeadSmith jar. Heads placed by
+the old plugin are adopted automatically on startup (or run `/headsmith migrate`).
+
+*The plugin code here is kept for historical reference only.*
+
+---
+
 # HeadSmith
 
 A Minecraft Paper plugin adding 3300+ survival-friendly decorative and functional heads with crafting recipes.
 
-- Download on Modrinth: **Coming Soon!**
+- Download on Modrinth: [modrinth.com/plugin/headsmith](https://modrinth.com/plugin/headsmith)
 - Head Catalog: [def9a2a4.github.io/HeadSmith](https://def9a2a4.github.io/HeadSmith/)
 
 ![](docs/assets/header.png)
